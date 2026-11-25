@@ -9,7 +9,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-    <link rel="stylesheet" href="styles.css?v=10">
+    <link rel="stylesheet" href="styles.css?v=12">
 </head>
 <body>
 
@@ -52,7 +52,7 @@
                     IT Support | Technical Support | IT Infrastructure & Networking | Computer Vision & AI
                 </p>
                 <p class="hero-pitch" id="dynamicPitch">
-                   Computer Technology graduate experienced in <strong>IT streaming support (Detikcom),</strong> electrical & smart building systems, <strong>and real-time Computer Vision AI</strong>.
+                    Computer Technology graduate experienced in <strong>IT streaming support (Detikcom)</strong>, electrical & smart building systems, <strong>and real-time Computer Vision AI</strong>.
                 </p>
 
                 <div class="hero-actions">
@@ -549,7 +549,7 @@
                 <div class="stack-card">
                     <div class="stack-head"><i class="fa-solid fa-brain"></i> Computer Vision, AI & Code</div>
                     <div class="tech-pills">
-                        <span>Python & C++</span><span>Java & Dart</span><span>YOLOv8, Dlib & OpenCV</span><span>PyTorch, TensorFlow & NumPy</span><span>MySQL (DDL/DML) & Firebase</span><span>Microsoft Fabric & Azure AI</span>
+                        <span>Python & C++</span><span>JavaScript & Dart</span><span>YOLOv8, Dlib & OpenCV</span><span>PyTorch, TensorFlow & NumPy</span><span>MySQL (DDL/DML) & Firebase</span><span>Microsoft Fabric & Azure AI</span>
                     </div>
                 </div>
             </div>
@@ -622,7 +622,7 @@
             </div>
         </section>
 
-     <!-- SECTION 6: INTERACTIVE CONVERSATION LAUNCHER WITH BLUR MODAL -->
+        <!-- SECTION 6: INTERACTIVE CONVERSATION LAUNCHER WITH BLUR MODAL -->
         <section id="lets-talk" class="section">
             <div class="talk-box">
                 <div class="talk-header">
@@ -666,7 +666,7 @@
         </section>
     </main>
 
-<!-- Balanced Centered Minimalist Footer -->
+    <!-- Balanced Centered Minimalist Footer -->
     <footer id="contact" class="site-footer">
         <div class="container footer-center-wrap">
             <h4 class="footer-heading">Direct Contact</h4>
@@ -699,6 +699,7 @@
             <span>© <span id="year">2026</span> Thiflah Sa'diyah Alma Sholihah. All rights reserved.</span>
         </div>
     </footer>
+
     <!-- Interactive Blur Modal for Start a Conversation -->
     <div class="modal-backdrop" id="talkModal" aria-hidden="true">
         <div class="modal-dialog" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
@@ -722,7 +723,8 @@
             </div>
         </div>
     </div>
-    <!-- Embedded Interactive Engine -->
+
+    <!-- Clean, Self-Contained Interactive Engine -->
     <script>
         (function () {
             const yearEl = document.getElementById('year');
@@ -732,19 +734,19 @@
             const lensData = {
                 all: {
                     headline: "IT Support | Technical Support | IT Infrastructure & Networking | Computer Vision & AI",
-                    pitch: "Versatile engineer turning complex technical operations into reliable systems—from live national broadcasts at <strong>detikcom</strong> and <strong>149,821.2 kWh</strong> industrial energy digitization to patent-registered <strong>real-time Computer Vision AI</strong>."
+                    pitch: "Computer Technology graduate experienced in <strong>IT streaming support (Detikcom)</strong>, electrical & smart building systems, <strong>and real-time Computer Vision AI</strong>."
                 },
                 support: {
-                    headline: "IT Support & Technical Support Specialist — Live Broadcast, Lab & End-User Operations",
-                    pitch: "Google IT Support Certified engineer with hands-on incident troubleshooting at <strong>detikcom</strong> (vMix, OBS, Wirecast, ATEM, AnyDesk) and 1.5 years mentoring <strong>100+ students per batch</strong> across 6 computer hardware, OS, and database labs."
+                    headline: "IT Support & Technical Support — Live Broadcast, Lab & End-User Operations",
+                    pitch: "Google IT Support Certified graduate with internship experience troubleshooting live streams at <strong>Detikcom</strong> (vMix, OBS, Wirecast, ATEM, AnyDesk) and 1.5 years as a lab assistant supporting <strong>100+ students per batch</strong> across 6 computing courses."
                 },
                 infra: {
-                    headline: "IT Infrastructure, Network Security & Smart Building Integration Engineer",
-                    pitch: "<strong>Huawei HCIA-Security (1000/1000)</strong>, <strong>HCIA-Datacom (905/1000)</strong>, and <strong>Cisco CCNAv7 & CyberOps</strong> certified specialist experienced in IPsec VPNs, iptables, Wireshark, IIoT Building Automation (Kemnaker RI), and ISO 45001:2018."
+                    headline: "IT Infrastructure, Network Security & Smart Building Integration",
+                    pitch: "<strong>Huawei HCIA-Security (1000/1000)</strong>, <strong>HCIA-Datacom (905/1000)</strong>, and <strong>Cisco CCNAv7</strong> certified graduate with practical lab and internship experience in IPsec VPNs, Wireshark, Smart Building BAS (Kemnaker RI), and SDP electrical monitoring."
                 },
                 ai: {
-                    headline: "Computer Vision & Applied AI Engineer — Registered Patent Holder (SIPEKA)",
-                    pitch: "Co-inventor of <strong>SIPEKA (Patent EC002026058674)</strong> and <strong>3rd Place Winner at Huawei ICT Competition</strong>. Engineered a real-time driver drowsiness detection system using YOLOv8, Dlib, and OpenCV achieving <strong>91.5% mAP at 25 FPS (4 ms latency)</strong>."
+                    headline: "Computer Vision & Applied AI — Registered Patent Holder (SIPEKA)",
+                    pitch: "Co-inventor of <strong>SIPEKA (Patent EC002026058674)</strong> and <strong>3rd Place Winner at Huawei ICT Competition</strong>. Built a real-time driver drowsiness detection prototype using YOLOv8, Dlib, and OpenCV achieving <strong>91% accuracy at 25 FPS (4 ms/frame)</strong>."
                 }
             };
 
@@ -921,39 +923,37 @@
                 });
             }
 
-            // 3. Global Click Delegation
+            // 3. Modal Live Message Sync & Escape Key Close
+            const modal = document.getElementById('talkModal');
+            const modalTitle = document.getElementById('modalTitle');
+            const modalMessage = document.getElementById('modalMessage');
+            const modalEmailBtn = document.getElementById('modalEmailBtn');
+
+            function closeModal() {
+                if (modal) {
+                    modal.classList.remove('open');
+                    modal.setAttribute('aria-hidden', 'true');
+                    document.body.style.overflow = '';
+                }
+            }
+
+            if (modalMessage) {
+                modalMessage.addEventListener('input', () => {
+                    const track = modalTitle ? modalTitle.textContent : 'Opportunity';
+                    if (modalEmailBtn) {
+                        modalEmailBtn.href = `mailto:difla78@gmail.com?subject=${encodeURIComponent('Discussion: ' + track)}&body=${encodeURIComponent(modalMessage.value)}`;
+                    }
+                });
+            }
+
+            document.addEventListener('keydown', (e) => {
+                if (e.key === 'Escape' && modal && modal.classList.contains('open')) {
+                    closeModal();
+                }
+            });
+
+            // 4. Global Click Delegation
             document.addEventListener('click', function (e) {
-                // Open Blur Modal when a Role Track Card is clicked
-                const talkCard = e.target.closest('.talk-card[data-track]');
-                if (talkCard) {
-                    const track = talkCard.getAttribute('data-track');
-                    const modal = document.getElementById('talkModal');
-                    const titleEl = document.getElementById('modalTitle');
-                    const msgEl = document.getElementById('modalMessage');
-                    const emailBtn = document.getElementById('modalEmailBtn');
-
-                    if (modal && titleEl && msgEl && emailBtn) {
-                        titleEl.textContent = track;
-                        const defaultMsg = `Hi Thiflah,\n\nI reviewed your portfolio and would like to discuss opportunities or collaboration in ${track}.\n\nBest regards,`;
-                        msgEl.value = defaultMsg;
-                        emailBtn.href = `mailto:difla78@gmail.com?subject=${encodeURIComponent('Discussion: ' + track)}&body=${encodeURIComponent(defaultMsg)}`;
-                        modal.classList.add('open');
-                        modal.setAttribute('aria-hidden', 'false');
-                        document.body.style.overflow = 'hidden';
-                    }
-                    return;
-                }
-
-                // Close Blur Modal (via X button or clicking blurred backdrop)
-                if (e.target.closest('#closeTalkModal') || e.target.id === 'talkModal') {
-                    const modal = document.getElementById('talkModal');
-                    if (modal) {
-                        modal.classList.remove('open');
-                        modal.setAttribute('aria-hidden', 'true');
-                        document.body.style.overflow = '';
-                    }
-                    return;
-                }
                 // Mobile Menu Toggle
                 const toggleBtn = e.target.closest('#mobileToggle');
                 if (toggleBtn) {
@@ -993,28 +993,7 @@
                     if (targetPanel) targetPanel.classList.add('active');
                     return;
                 }
-                const modalMessageEl = document.getElementById('modalMessage');
-                if (modalMessageEl) {
-                    modalMessageEl.addEventListener('input', function () {
-                        const titleEl = document.getElementById('modalTitle');
-                        const emailBtn = document.getElementById('modalEmailBtn');
-                        const track = titleEl ? titleEl.textContent : 'Opportunity';
-                        if (emailBtn) {
-                            emailBtn.href = `mailto:difla78@gmail.com?subject=${encodeURIComponent('Discussion: ' + track)}&body=${encodeURIComponent(modalMessageEl.value)}`;
-                        }
-                    });
-                }
-    
-                document.addEventListener('keydown', function (e) {
-                    if (e.key === 'Escape') {
-                        const modal = document.getElementById('talkModal');
-                        if (modal && modal.classList.contains('open')) {
-                            modal.classList.remove('open');
-                            modal.setAttribute('aria-hidden', 'true');
-                            document.body.style.overflow = '';
-                        }
-                    }
-                }
+
                 // Credentials Filter
                 const filterBtn = e.target.closest('#credFilters .filter-btn');
                 if (filterBtn) {
@@ -1025,6 +1004,26 @@
                         const cat = card.getAttribute('data-category');
                         card.style.display = (filter === 'all' || cat === filter) ? 'block' : 'none';
                     });
+                    return;
+                }
+
+                // Open Blur Modal on Role Track Click
+                const talkCard = e.target.closest('.talk-card[data-track]');
+                if (talkCard && modal && modalTitle && modalMessage && modalEmailBtn) {
+                    const track = talkCard.getAttribute('data-track');
+                    modalTitle.textContent = track;
+                    const defaultMsg = `Hi Thiflah,\n\nI reviewed your portfolio and would like to discuss opportunities or collaboration in ${track}.\n\nBest regards,`;
+                    modalMessage.value = defaultMsg;
+                    modalEmailBtn.href = `mailto:difla78@gmail.com?subject=${encodeURIComponent('Discussion: ' + track)}&body=${encodeURIComponent(defaultMsg)}`;
+                    modal.classList.add('open');
+                    modal.setAttribute('aria-hidden', 'false');
+                    document.body.style.overflow = 'hidden';
+                    return;
+                }
+
+                // Close Blur Modal
+                if (e.target.closest('#closeTalkModal') || e.target === modal) {
+                    closeModal();
                 }
             });
         })();
