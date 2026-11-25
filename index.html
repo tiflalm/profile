@@ -370,16 +370,16 @@
                     <div class="bento-top-row">
                         <div class="bento-icon amber"><i class="fa-solid fa-database"></i></div>
                         <button type="button" class="code-preview-btn amber-btn" id="openNeiraModal">
-                            <i class="fa-solid fa-table"></i> Schema &amp; SQL ACL
+                            <i class="fa-solid fa-table"></i> SQL Queries &amp; CLI Log
                         </button>
                     </div>
                     <span class="bento-kicker">Database Systems (MariaDB) • Telkom University (2022/2023)</span>
                     <h4>Sistem Pengelolaan Kamar Kost Neira</h4>
                     <p>
-                        Designed an ERD and relational MariaDB schema (<code>kamar</code>, <code>penyewa_kost</code>, <code>kamar_kost</code>, <code>gedung</code>, <code>mengurus</code>) with foreign keys, <code>JOIN</code> &amp; <code>GROUP BY</code> queries, and role-based user privileges (<code>Yeni</code>, <code>Neira</code>, <code>Penyewa</code>).
+                        Designed and built relational tables in MariaDB (<code>pengurus_kost</code>, <code>kamar_kost</code>, <code>penyewa_kost</code>, <code>gedung</code>) with primary keys, <code>ALTER TABLE</code> foreign key constraints, <code>DESC</code> inspection, and full CLI session logging.
                     </p>
                     <div class="tech-pills">
-                        <span>MariaDB / SQL</span><span>ERD &amp; Relational Schema</span><span>JOIN &amp; GROUP BY</span><span>Role Privileges (ACL)</span>
+                        <span>MariaDB 10.4</span><span>DDL &amp; Foreign Keys</span><span>ALTER TABLE</span><span>CLI Session Log</span>
                     </div>
                 </div>
 
@@ -701,7 +701,7 @@
                     <span class="cred-tag org">Organizational & Community Leadership (2018 – Present)</span>
                     <h4>Campus Governance, Student Ambassador & Youth Networks</h4>
                     <p>
-                        <strong>GenBI Telkom University</strong> (Staff Dept. Internal, 2024–2025) • <strong>Student Affairs Ambassador (Buddy)</strong> Faculty of Applied Sciences (2024–2025) • <strong>BEM KEMA Telkom University</strong> (Ministry of PORA, 2023–2024) • <strong>IMPALA Universitas Brawijaya</strong> • <strong>IKAMABA</strong> • <strong>Ikatan Mahasiswa Jombang UB</strong> • <strong>Agent Nusantara Youth Leadership</strong> • <strong>IPNU IPPNU</strong> • <strong>Indonesia Millennial Connect</strong> (Funding) • <strong>Forum Anak Jombang</strong>.
+                        <strong>GenBI Telkom University</strong> (Staff Dept. Internal, 2024–2025) • <strong>Student Affairs Ambassador (Buddy)</strong> Faculty of Applied Sciences (2024–2025) • <strong>BEM KEMA Telkom University</strong> (Ministry of PORA, 2023–2024) • <strong>IMPALA Universitas Brawijaya</strong> • <strong>Ikatan Alumni Pon Pes Mamba'ul Ma'arif</strong> • <strong>Himpunan Mahasiswa Alumni Bahrul Ulum</strong> • <strong>Ikatan Mahasiswa Jombang UB</strong> • <strong>Agent Nusantara Youth Leadership</strong> • <strong>IPNU IPPNU</strong> • <strong>Indonesia Millennial Connect</strong> (Funding) • <strong>Forum Anak Jombang</strong>.
                     </p>
                 </div>
             </div>
@@ -905,35 +905,29 @@
                     </div>
 
                     <svg viewBox="0 0 420 175" style="width:100%;height:auto;border-radius:10px;border:1px solid #1e293b;background:#090d16;display:block;" aria-label="Simulated Color Detection Frame">
-                        <!-- Top bar like OpenCV window -->
                         <rect x="0" y="0" width="420" height="24" fill="#111827"/>
                         <circle cx="14" cy="12" r="4" fill="#ef4444"/>
                         <circle cx="27" cy="12" r="4" fill="#f59e0b"/>
                         <circle cx="40" cy="12" r="4" fill="#22c55e"/>
                         <text x="56" y="16" fill="#94a3b8" font-size="10" font-family="JetBrains Mono, monospace">Color Detection — cv2.imshow("Color Detection", frame)</text>
 
-                        <!-- Object 1: Red -->
                         <circle cx="95" cy="96" r="28" fill="#ef4444" opacity="0.9"/>
                         <circle cx="95" cy="96" r="32" fill="none" stroke="#00ff00" stroke-width="2" id="contourRed"/>
                         <text x="78" y="58" fill="#00ff00" font-size="11" font-weight="bold" font-family="JetBrains Mono, monospace">Red</text>
 
-                        <!-- Object 2: Green -->
                         <rect x="172" y="72" width="54" height="48" rx="6" fill="#22c55e" opacity="0.9"/>
                         <rect x="169" y="69" width="60" height="54" rx="7" fill="none" stroke="#00ff00" stroke-width="2" id="contourGreen"/>
                         <text x="180" y="62" fill="#00ff00" font-size="11" font-weight="bold" font-family="JetBrains Mono, monospace">Green</text>
 
-                        <!-- Object 3: Blue -->
                         <polygon points="295,68 332,120 258,120" fill="#3b82f6" opacity="0.9"/>
                         <polygon points="295,63 337,123 253,123" fill="none" stroke="#00ff00" stroke-width="2" id="contourBlue"/>
                         <text x="278" y="56" fill="#00ff00" font-size="11" font-weight="bold" font-family="JetBrains Mono, monospace">Blue</text>
 
-                        <!-- Object 4: Small noise (< 100 px, ignored) -->
                         <circle cx="378" cy="96" r="4" fill="#facc15"/>
                         <text x="355" y="116" fill="#64748b" font-size="8" font-family="JetBrains Mono, monospace">area&lt;100 (skip)</text>
 
-                        <!-- Bottom status bar -->
                         <rect x="0" y="148" width="420" height="27" fill="#111827"/>
-                        <text x="12" y="165" fill="#7dd3fc" font-size="10" font-family="JetBrains Mono, monospace" id="colorDetectionSummary">Active Target: Red | Mask HSV [0..10, 100..255, 100..255] | Press 'q' to exit</text>
+                        <text x="12" y="165" fill="#7dd3fc" font-size="10" font-family="JetBrains Mono, monospace" id="colorDetectionSummary">Active Target: Red | Mask HSV [0..10, 100..255, 100..255] | Contour area &gt; 100 px | Press 'q' to exit</text>
                     </svg>
                 </div>
 
@@ -951,26 +945,23 @@
         </div>
     </div>
 
-    <!-- Pop-Up Schema & SQL ACL Viewer for Sistem Pengelolaan Kamar Kost Neira -->
+    <!-- Pop-Up Schema, SQL Query & CLI Log Viewer for Sistem Pengelolaan Kamar Kost Neira -->
     <div class="modal-backdrop" id="neiraModal" aria-hidden="true">
         <div class="modal-dialog code-modal-dialog" role="dialog" aria-modal="true" aria-labelledby="neiraModalTitle">
             <button type="button" class="modal-close" id="closeNeiraModal" aria-label="Close">
                 <i class="fa-solid fa-xmark"></i>
             </button>
-            <span class="eyebrow light">Basis Data • MariaDB (2022/2023)</span>
+            <span class="eyebrow light">Basis Data • MariaDB 10.4.27 (Tubes)</span>
             <h3 id="neiraModalTitle">Sistem Pengelolaan Kamar Kost Neira</h3>
-            <p class="modal-sub">Relational schema, foreign key constraints, multi-table queries, and user privilege configuration.</p>
+            <p class="modal-sub" id="neiraTabDesc">DDL schema (CREATE DATABASE, CREATE TABLE, ALTER TABLE &amp; FOREIGN KEY) for database Tubes.</p>
 
-            <div class="spec-modal-grid">
-                <div class="spec-box">
-                    <strong>Tables &amp; Foreign Keys</strong>
-                    <p><code>kamar</code> (PK <code>Id_Kamar</code>, FKs to <code>gedung</code>, <code>kamar_kost</code>, <code>penyewa_kost</code>), <code>penyewa_kost</code>, <code>kamar_kost</code>, <code>gedung</code>, and <code>mengurus</code> (FKs to <code>pengurus_kost</code> &amp; <code>kamar</code>).</p>
-                </div>
-                <div class="spec-box">
-                    <strong>Queries &amp; User Privileges</strong>
-                    <p>Used <code>JOIN</code> and <code>GROUP BY</code> / <code>COUNT(*)</code> reports, plus user accounts <code>Yeni</code> (ALL privileges), <code>Neira</code> (SELECT, INSERT, UPDATE, DELETE, CREATE), and <code>Penyewa</code> (SELECT on <code>kamar</code>).</p>
-                </div>
+            <div class="code-version-tabs">
+                <button type="button" class="code-ver-btn neira-tab-btn active" data-neira="ddl">DDL &amp; Foreign Keys</button>
+                <button type="button" class="code-ver-btn neira-tab-btn" data-neira="desc">DESC &amp; Insert/FK Notes</button>
+                <button type="button" class="code-ver-btn neira-tab-btn" data-neira="cli">Full MariaDB CLI Log</button>
             </div>
+
+            <pre class="code-modal-pre"><code id="neiraCodeBlock"></code></pre>
         </div>
     </div>
 
@@ -1384,13 +1375,451 @@ cv2.destroyAllWindows()`;
                 White: "Active Target: White | Mask HSV [0..180, 0..30, 200..255] | Contour area > 100 px"
             };
 
+            const neiraQueries = {
+                ddl: `-- 1. Buat & gunakan database Tubes
+CREATE DATABASE Tubes;
+USE tubes;
+
+-- 2. Buat tabel utama beserta Primary Key
+CREATE TABLE Pengurus_Kost(
+    ID_Pengurus char(20),
+    Nama_Pengurus varchar(20),
+    Jabatan char(20),
+    Alamat varchar(30),
+    Gaji bigint(12),
+    Primary Key (ID_Pengurus)
+);
+
+CREATE TABLE Kamar_Kost(
+    Tipe_Kamar varchar(20),
+    Ukuran varchar(20),
+    Fasilitas_Kamar char(20),
+    Harga bigint(12),
+    Sistem_Pembayaran varchar(20),
+    Primary Key (Tipe_Kamar)
+);
+
+CREATE TABLE Penyewa_Kost(
+    Nama varchar(20),
+    Jumlah_Orang char(15),
+    Umur varchar(10),
+    Asal_Daerah varchar(20),
+    Primary Key (Nama)
+);
+
+CREATE TABLE Gedung(
+    ID_Gedung varchar(10),
+    Alamat varchar(20),
+    Tipe_Gedung varchar(10),
+    Primary Key (ID_Gedung)
+);
+
+-- 3. Tambah kolom relasi & Foreign Key constraints
+ALTER TABLE Pengurus_Kost ADD Tipe_Kamar varchar(20);
+ALTER TABLE Kamar_Kost ADD ID_Pengurus char(20);
+ALTER TABLE Kamar_Kost ADD ID_Gedung varchar(20);
+ALTER TABLE Kamar_Kost ADD Nama varchar(20);
+
+ALTER TABLE Kamar_Kost ADD
+    foreign key (ID_Pengurus) references Pengurus_Kost (ID_Pengurus);
+ALTER TABLE Kamar_Kost ADD
+    foreign key (ID_Gedung) references Gedung (ID_Gedung);
+ALTER TABLE Kamar_Kost ADD
+    foreign key (Nama) references Penyewa_Kost (Nama);
+ALTER TABLE Pengurus_Kost ADD
+    foreign key (Tipe_Kamar) references Kamar_Kost (Tipe_Kamar);`,
+
+                desc: `-- Struktur tabel hasil DESC di MariaDB (tubes)
+
+-- 1. pengurus_kost (PK: ID_Pengurus | MUL: Tipe_Kamar)
+-- Field: ID_Pengurus char(20), Nama_Pengurus varchar(20), Jabatan char(20),
+--        Alamat varchar(30), Gaji bigint(12), Tipe_Kamar varchar(20)
+
+-- 2. gedung (PK: ID_Gedung)
+-- Field: ID_Gedung varchar(10), Alamat varchar(20), Tipe_Gedung varchar(10)
+
+-- 3. kamar_kost (PK: Tipe_Kamar | UNI/MUL: ID_Pengurus, ID_Gedung, Nama)
+-- Field: Tipe_Kamar varchar(20), Ukuran varchar(20), Fasilitas_Kamar char(20),
+--        Harga bigint(12), Sistem_Pembayaran varchar(20), ID_Pengurus char(20),
+--        ID_Gedung varchar(20), Nama varchar(20)
+
+-- 4. penyewa_kost (PK: Nama)
+-- Field: Nama varchar(20), Jumlah_Orang char(15), Umur varchar(10), Asal_Daerah varchar(20)
+
+-- Catatan saat INSERT:
+-- ERROR 1452 (23000) muncul saat insert ke Pengurus_Kost karena nilai Tipe_Kamar
+-- ('A,B,C' / 'B,C') belum tersedia di tabel parent kamar_kost (Foreign Key constraint).`,
+
+                cli: `Microsoft Windows [Version 10.0.22621.1702]
+(c) Microsoft Corporation. All rights reserved.
+
+C:\\Users\\HP>mysql -u root -p
+Enter password:
+Welcome to the MariaDB monitor.  Commands end with ; or \\g.
+Your MariaDB connection id is 8
+Server version: 10.4.27-MariaDB mariadb.org binary distribution
+
+Copyright (c) 2000, 2018, Oracle, MariaDB Corporation Ab and others.
+
+Type 'help;' or '\\h' for help. Type '\\c' to clear the current input statement.
+
+MariaDB [(none)]> show databases;
++--------------------+
+| Database           |
++--------------------+
+| db_kuliah          |
+| family             |
+| information_schema |
+| latihan            |
+| mata_kuliah        |
+| modul1             |
+| modul2             |
+| modul3             |
+| modul6             |
+| mysql              |
+| performance_schema |
+| perpustakaan       |
+| phpmyadmin         |
+| prak_modul6        |
+| rental_mobilku     |
+| ta_prak_modul6     |
+| tamodul3           |
+| tamodul4           |
+| test               |
+| tubes              |
+| wordpres           |
+| wordpress          |
++--------------------+
+22 rows in set (0.054 sec)
+
+MariaDB [(none)]> use tubes;
+Database changed
+MariaDB [tubes]> show tables;
++-----------------+
+| Tables_in_tubes |
++-----------------+
+| gedung          |
+| kamar_kost      |
+| pengurus_kost   |
+| penyewa_kost    |
++-----------------+
+4 rows in set (0.001 sec)
+
+MariaDB [tubes]> insert into gedung values(
+    -> ;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '' at line 1
+MariaDB [tubes]> show desc gedung;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'gedung' at line 1
+MariaDB [tubes]> desc gedung;
++-------------+-------------+------+-----+---------+-------+
+| Field       | Type        | Null | Key | Default | Extra |
++-------------+-------------+------+-----+---------+-------+
+| Alamat      | char(35)    | YES  |     | NULL    |       |
+| Tipe_Gedung | varchar(25) | YES  |     | NULL    |       |
+| ID_Gedung   | char(30)    | YES  |     | NULL    |       |
++-------------+-------------+------+-----+---------+-------+
+3 rows in set (0.026 sec)
+
+MariaDB [tubes]> insert into gedung values(
+    -> ;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '' at line 1
+MariaDB [tubes]> drop database tubes;
+Query OK, 4 rows affected (0.022 sec)
+
+MariaDB [(none)]> CREATE DATABASE Tubes;
+Query OK, 1 row affected (0.002 sec)
+
+MariaDB [(none)]> CREATE TABLE Pengurus_Kost(
+    -> ID_Pengurus char(20),
+    -> Jabatan char(20),
+    -> Alamat varchar(30),
+    -> Gaji bigint(12),
+    -> Nama_Pengurus varchar(20));
+ERROR 1046 (3D000): No database selected
+MariaDB [(none)]> use tubes;
+Database changed
+MariaDB [tubes]> CREATE TABLE Pengurus_Kost(
+    -> ID_Pengurus char(20),
+    -> Nama_Pengurus varchar(20),
+    -> Jabatan char(20),
+    -> Alamat varchar(30),
+    -> Gaji bigint(12));
+Query OK, 0 rows affected (0.023 sec)
+
+MariaDB [tubes]> CREATE TABLE Kamar_Kost(
+    -> ;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '' at line 1
+MariaDB [tubes]> drop table pengurus_kost;
+Query OK, 0 rows affected (0.007 sec)
+
+MariaDB [tubes]> CREATE TABLE Pengurus_Kost(
+    -> ID_Pengurus char(20),
+    -> Nama_Pengurus varchar(20),
+    -> Jabatan char(20),
+    -> Alamat varchar(30),
+    -> Gaji bigint(12),
+    -> Primary Key (ID_Pengurus));
+Query OK, 0 rows affected (0.016 sec)
+
+MariaDB [tubes]> CREATE TABLE Kamar_Kost(
+    -> Tipe_Kamar varchar(20),
+    -> Ukuran varchar(20),
+    -> Fasilitas_Kamar char(20),
+    -> Harga bigint(12),
+    -> Sistem_Pembayaran varchar(20),
+    -> Primary Key (Tipe_Kamar));
+Query OK, 0 rows affected (0.023 sec)
+
+MariaDB [tubes]> CREATE TABLE Penyewa_Kost(
+    -> Nama varchar(20),
+    -> Jumlah_Orang char(15),
+    -> Umur varchar(10),
+    -> Asal_Daerah varchar(20),
+    -> Primary Key (Nama));
+Query OK, 0 rows affected (0.021 sec)
+
+MariaDB [tubes]> CREATE TABLE Gedung(
+    -> ID_Gedung varchar(10),
+    -> Alamat varchar(20),
+    -> Tipe_Gedung varchar(10),
+    -> Primary Key (ID_Gedung));
+Query OK, 0 rows affected (0.020 sec)
+
+MariaDB [tubes]> ALTER TABLE Pengurus_Kost ADD Tipe_Kamar varchar(20);
+Query OK, 0 rows affected (0.020 sec)
+Records: 0  Duplicates: 0  Warnings: 0
+
+MariaDB [tubes]> ALTER TABLE Kamar_Kost ADD ID_Pengurus char(20);
+Query OK, 0 rows affected (0.017 sec)
+Records: 0  Duplicates: 0  Warnings: 0
+
+MariaDB [tubes]> ALTER TABLE Kamar_Kost ADD ID_Gedung varchar(20);
+Query OK, 0 rows affected (0.019 sec)
+Records: 0  Duplicates: 0  Warnings: 0
+
+MariaDB [tubes]> ALTER TABLE Kamar_Kost ADD Nama varchar(20);
+Query OK, 0 rows affected (0.015 sec)
+Records: 0  Duplicates: 0  Warnings: 0
+
+MariaDB [tubes]> ALTER TABLE Kamar_Kost ADD
+    -> foreign key (ID_Pengurus) references Pengurus_Kost (ID_Pengurus);
+Query OK, 0 rows affected (0.052 sec)
+Records: 0  Duplicates: 0  Warnings: 0
+
+MariaDB [tubes]> ALTER TABLE Kamar_Kost ADD
+    -> foreign key (ID_Gedung) references Gedung (ID_Gedung);
+Query OK, 0 rows affected (0.070 sec)
+Records: 0  Duplicates: 0  Warnings: 0
+
+MariaDB [tubes]> ALTER TABLE Kamar_Kost ADD
+    -> foreign key (Nama) references Penyewa_Kost (Nama);
+Query OK, 0 rows affected (0.051 sec)
+Records: 0  Duplicates: 0  Warnings: 0
+
+MariaDB [tubes]> ALTER TABLE Pengurus_Kost ADD
+    -> foreign key (Tipe_Kamar) references Kamar_Kost (Tipe_Kamar);
+Query OK, 0 rows affected (0.050 sec)
+Records: 0  Duplicates: 0  Warnings: 0
+
+MariaDB [tubes]> INSERT INTO Pengurus_Kost values(
+    -> 'Neira', 'NEI_001', 'Penanggung_Jawab', 2.500.000),
+    -> ;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '.000),' at line 2
+MariaDB [tubes]> INSERT INTO Pengurus_Kost values(
+    -> 'Neira', 'NEI_001', 'Penanggung_Jawab', 2.500.000, 'Jakarta Barat'),
+    -> ('Samsul', 'NEI_002', 'Security', 2.000.000, 'Bandung'),
+    -> ('Ina', 'NEI_003', 'Cleaning Service', 2.000.000, 'Blitar'),
+    -> ('Sita', 'NEI_004', 'Laundry', 2.000.000, 'Cianjur');
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '.000, 'Jakarta Barat'),
+('Samsul', 'NEI_002', 'Security', 2.000.000, 'Bandung...' at line 2
+MariaDB [tubes]> INSERT INTO Pengurus_Kost values(
+    -> 'Neira', 'NEI_001', 'Penanggung_Jawab', 2500000, 'Jakarta Barat'),
+    -> ('Samsul', 'NEI_002', 'Security', 2000000, 'Bandung'),
+    -> ('Ina', 'NEI_003', 'Cleaning Service', 2000000, 'Blitar'),
+    -> ('Sita', 'NEI_004', 'Laundry', 2000000, 'Cianjur');
+ERROR 1136 (21S01): Column count doesn't match value count at row 1
+MariaDB [tubes]> INSERT INTO Pengurus_Kost values(
+    -> 'NEI_001', 'Neira', 'Penanggung Jawab', 'Jakarta Barat', 3000000),
+    -> ('NEI_002', 'Samsul', 'Security', 'Bandung', 2500000),
+    -> ('NEI_003', 'Ina', 'Cleaning Service', 'Blitar', 2000000),
+    -> ('NEI_004', 'Sita', 'Laundry', 'Cianjur', 2000000);
+ERROR 1136 (21S01): Column count doesn't match value count at row 1
+MariaDB [tubes]> INSERT INTO Pengurus_Kost values(
+    -> 'NEI_001', 'Neira', 'Penanggung Jawab', 'Jakarta Barat', 3000000, 'A,B,C'),
+    -> ('NEI_002', 'Samsul', 'Security', 'Bandung', 2500000, 'A,B,C),
+    '> ('NEI_002', 'Samsul', 'Security', 'Bandung', 2500000, 'A,B,C),;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'NEI_002', 'Samsul', 'Security', 'Bandung', 2500000, 'A,B,C),' at line 3
+MariaDB [tubes]> 'NEI_001', 'Neira', 'Penanggung Jawab', 'Jakarta Barat', 3000000, 'A,B,C'),
+    -> ;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near ''NEI_001', 'Neira', 'Penanggung Jawab', 'Jakarta Barat', 3000000, 'A,B,C'),' at line 1
+MariaDB [tubes]> INSERT INTO Pengurus_Kost values(
+    -> 'NEI_001', 'Neira', 'Penanggung Jawab', 'Jakarta Barat', 3000000, 'A,B,C'),
+    -> ('NEI_002', 'Samsul', 'Security', 'Bandung', 2500000, 'A,B,C'),
+    -> ('NEI_003', 'Ina', 'Cleaning Service', 'Blitar', 2000000, 'A,B,C'),
+    -> ('NEI_004', 'Sita', 'Laundry', 'Cianjur', 2000000, 'B,C');
+ERROR 1452 (23000): Cannot add or update a child row: a foreign key constraint fails (\`tubes\`.\`pengurus_kost\`, CONSTRAINT \`pengurus_kost_ibfk_1\` FOREIGN KEY (\`Tipe_Kamar\`) REFERENCES \`kamar_kost\` (\`Tipe_Kamar\`))
+MariaDB [tubes]> show tables;
++-----------------+
+| Tables_in_tubes |
++-----------------+
+| gedung          |
+| kamar_kost      |
+| pengurus_kost   |
+| penyewa_kost    |
++-----------------+
+4 rows in set (0.001 sec)
+
+MariaDB [tubes]> desc pengurus_kost;
++---------------+-------------+------+-----+---------+-------+
+| Field         | Type        | Null | Key | Default | Extra |
++---------------+-------------+------+-----+---------+-------+
+| ID_Pengurus   | char(20)    | NO   | PRI | NULL    |       |
+| Nama_Pengurus | varchar(20) | YES  |     | NULL    |       |
+| Jabatan       | char(20)    | YES  |     | NULL    |       |
+| Alamat        | varchar(30) | YES  |     | NULL    |       |
+| Gaji          | bigint(12)  | YES  |     | NULL    |       |
+| Tipe_Kamar    | varchar(20) | YES  | MUL | NULL    |       |
++---------------+-------------+------+-----+---------+-------+
+6 rows in set (0.017 sec)
+
+MariaDB [tubes]>
+MariaDB [tubes]> desc gedung;
++-------------+-------------+------+-----+---------+-------+
+| Field       | Type        | Null | Key | Default | Extra |
++-------------+-------------+------+-----+---------+-------+
+| Alamat      | varchar(20) | YES  |     | NULL    |       |
+| Tipe_Gedung | varchar(10) | YES  |     | NULL    |       |
+| ID_Gedung   | varchar(10) | NO   | PRI | NULL    |       |
++-------------+-------------+------+-----+---------+-------+
+3 rows in set (0.013 sec)
+
+MariaDB [tubes]> desc kamar_kost;
++-------------------+-------------+------+-----+---------+-------+
+| Field             | Type        | Null | Key | Default | Extra |
++-------------------+-------------+------+-----+---------+-------+
+| Tipe_Kamar        | varchar(20) | NO   | PRI | NULL    |       |
+| Ukuran            | varchar(20) | YES  |     | NULL    |       |
+| Fasilitas_Kamar   | char(20)    | YES  |     | NULL    |       |
+| Harga             | bigint(12)  | YES  |     | NULL    |       |
+| Sistem_Pembayaran | varchar(20) | YES  |     | NULL    |       |
+| ID_Pengurus       | char(20)    | YES  | MUL | NULL    |       |
+| ID_Gedung         | varchar(20) | YES  | MUL | NULL    |       |
+| Nama              | varchar(20) | YES  | MUL | NULL    |       |
++-------------------+-------------+------+-----+---------+-------+
+8 rows in set (0.014 sec)
+
+MariaDB [tubes]> desc penyewa_kost;
++--------------+-------------+------+-----+---------+-------+
+| Field        | Type        | Null | Key | Default | Extra |
++--------------+-------------+------+-----+---------+-------+
+| Nama         | varchar(20) | NO   | PRI | NULL    |       |
+| Jumlah_Orang | char(15)    | YES  |     | NULL    |       |
+| Umur         | varchar(10) | YES  |     | NULL    |       |
+| Asal_Daerah  | varchar(20) | YES  |     | NULL    |       |
++--------------+-------------+------+-----+---------+-------+
+4 rows in set (0.016 sec)
+
+MariaDB [tubes]> alter table kamar_kost drop foreign key id_pengurus;
+ERROR 1091 (42000): Can't DROP FOREIGN KEY \`id_pengurus\`; check that it exists
+MariaDB [tubes]> alter table kamar_kost drop foreign key fk_1;
+ERROR 1091 (42000): Can't DROP FOREIGN KEY \`fk_1\`; check that it exists
+MariaDB [tubes]> alter table kamar_kost drop foreign key fk_ID_Pengurus;
+ERROR 1091 (42000): Can't DROP FOREIGN KEY \`fk_ID_Pengurus\`; check that it exists
+MariaDB [tubes]>
+MariaDB [tubes]> alter table kamar_kost order drop foreign key ID_Pengurus;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'drop foreign key ID_Pengurus' at line 1
+MariaDB [tubes]> alter table kamar_kost orders\\ drop foreign key ID_Pengurus;
+ERROR: Unknown command '\\ '.
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '\\ drop foreign key ID_Pengurus' at line 1
+MariaDB [tubes]> alter table kamar_kost orders drop foreign key ID_Pengurus;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'drop foreign key ID_Pengurus' at line 1
+MariaDB [tubes]> alter table kamar_kost orders drop foreign key ID_Pengurus;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'drop foreign key ID_Pengurus' at line 1
+MariaDB [tubes]> alter table kamar_kost orders drop foreign key FK_ID_Pengurus;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'drop foreign key FK_ID_Pengurus' at line 1
+MariaDB [tubes]> alter table kamar_kost orders drop constraint FK_ID_Pengurus;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'drop constraint FK_ID_Pengurus' at line 1
+MariaDB [tubes]> alter table kamar_kost drop constraint ID_Pengurus;
+ERROR 1553 (HY000): Cannot drop index 'ID_Pengurus': needed in a foreign key constraint
+MariaDB [tubes]> alter table kamar_kost drop foreign key constraint ID_Pengurus;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'constraint ID_Pengurus' at line 1
+MariaDB [tubes]> desc kamar_kost;
++-------------------+-------------+------+-----+---------+-------+
+| Field             | Type        | Null | Key | Default | Extra |
++-------------------+-------------+------+-----+---------+-------+
+| Tipe_Kamar        | varchar(20) | NO   | PRI | NULL    |       |
+| Ukuran            | varchar(20) | YES  |     | NULL    |       |
+| Fasilitas_Kamar   | char(20)    | YES  |     | NULL    |       |
+| Harga             | bigint(12)  | YES  |     | NULL    |       |
+| Sistem_Pembayaran | varchar(20) | YES  |     | NULL    |       |
+| ID_Pengurus       | char(20)    | NO   | UNI | NULL    |       |
+| ID_Gedung         | varchar(20) | YES  | MUL | NULL    |       |
+| Nama              | varchar(20) | YES  | MUL | NULL    |       |
++-------------------+-------------+------+-----+---------+-------+
+8 rows in set (0.017 sec)
+
+MariaDB [tubes]> desc penyewa_kost;
++--------------+-------------+------+-----+---------+-------+
+| Field        | Type        | Null | Key | Default | Extra |
++--------------+-------------+------+-----+---------+-------+
+| Nama         | varchar(20) | NO   | PRI | NULL    |       |
+| Jumlah_Orang | char(15)    | YES  |     | NULL    |       |
+| Umur         | varchar(10) | YES  |     | NULL    |       |
+| Asal_Daerah  | varchar(20) | YES  |     | NULL    |       |
++--------------+-------------+------+-----+---------+-------+
+4 rows in set (0.014 sec)
+
+MariaDB [tubes]> desc kamar_kost;
++-------------------+-------------+------+-----+---------+-------+
+| Field             | Type        | Null | Key | Default | Extra |
++-------------------+-------------+------+-----+---------+-------+
+| Tipe_Kamar        | varchar(20) | NO   | PRI | NULL    |       |
+| Ukuran            | varchar(20) | YES  |     | NULL    |       |
+| Fasilitas_Kamar   | char(20)    | YES  |     | NULL    |       |
+| Harga             | bigint(12)  | YES  |     | NULL    |       |
+| Sistem_Pembayaran | varchar(20) | YES  |     | NULL    |       |
+| ID_Pengurus       | char(20)    | YES  | UNI | NULL    |       |
+| ID_Gedung         | varchar(20) | YES  | MUL | NULL    |       |
+| Nama              | varchar(20) | YES  | MUL | NULL    |       |
++-------------------+-------------+------+-----+---------+-------+
+8 rows in set (0.015 sec)
+
+MariaDB [tubes]> desc penyewa_kost;
++--------------+-------------+------+-----+---------+-------+
+| Field        | Type        | Null | Key | Default | Extra |
++--------------+-------------+------+-----+---------+-------+
+| Nama         | varchar(20) | NO   | PRI | NULL    |       |
+| Jumlah_Orang | char(15)    | YES  |     | NULL    |       |
+| Umur         | varchar(10) | YES  |     | NULL    |       |
+| Asal_Daerah  | varchar(20) | YES  |     | NULL    |       |
++--------------+-------------+------+-----+---------+-------+
+4 rows in set (0.014 sec)
+
+MariaDB [tubes]> desc kamar_kost;
++-------------------+-------------+------+-----+---------+-------+
+| Field             | Type        | Null | Key | Default | Extra |
++-------------------+-------------+------+-----+---------+-------+
+| Tipe_Kamar        | varchar(20) | NO   | PRI | NULL    |       |
+| Ukuran            | varchar(20) | YES  |     | NULL    |       |
+| Fasilitas_Kamar   | char(20)    | YES  |     | NULL    |       |
+| Harga             | bigint(12)  | YES  |     | NULL    |       |
+| Sistem_Pembayaran | varchar(20) | YES  |     | NULL    |       |
+| ID_Pengurus       | char(20)    | YES  | UNI | NULL    |       |
+| ID_Gedung         | varchar(20) | YES  | MUL | NULL    |       |
+| Nama              | varchar(20) | YES  | MUL | NULL    |       |
++-------------------+-------------+------+-----+---------+-------+
+8 rows in set (0.017 sec)`
+            };
+
             const lineFollowerCodeBlock = document.getElementById('lineFollowerCodeBlock');
             const sibukuCodeBlock = document.getElementById('sibukuCodeBlock');
             const sibukuVersionDesc = document.getElementById('sibukuVersionDesc');
             const colorCodeBlock = document.getElementById('colorCodeBlock');
+            const neiraCodeBlock = document.getElementById('neiraCodeBlock');
             if (lineFollowerCodeBlock) lineFollowerCodeBlock.textContent = lineFollowerDigitalCode;
             if (sibukuCodeBlock) sibukuCodeBlock.textContent = sibukuCodes.v2;
             if (colorCodeBlock) colorCodeBlock.textContent = colorDetectionCode;
+            if (neiraCodeBlock) neiraCodeBlock.textContent = neiraQueries.ddl;
 
             // 4. Production-Accurate SIPEKA Telemetry Simulator
             const earSlider = document.getElementById('earSlider');
@@ -1738,6 +2167,27 @@ cv2.destroyAllWindows()`;
                     const summaryEl = document.getElementById('colorDetectionSummary');
                     if (summaryEl && colorRangeMeta[selectedColor]) {
                         summaryEl.textContent = `${colorRangeMeta[selectedColor]} | Press 'q' to exit`;
+                    }
+                    return;
+                }
+
+                const neiraTabBtn = e.target.closest('.neira-tab-btn');
+                if (neiraTabBtn) {
+                    document.querySelectorAll('.neira-tab-btn').forEach(b => b.classList.remove('active'));
+                    neiraTabBtn.classList.add('active');
+                    const mode = neiraTabBtn.getAttribute('data-neira');
+                    const descEl = document.getElementById('neiraTabDesc');
+                    if (neiraCodeBlock && neiraQueries[mode]) {
+                        neiraCodeBlock.textContent = neiraQueries[mode];
+                    }
+                    if (descEl) {
+                        if (mode === 'ddl') {
+                            descEl.textContent = 'DDL schema (CREATE DATABASE, CREATE TABLE, ALTER TABLE & FOREIGN KEY) for database Tubes.';
+                        } else if (mode === 'desc') {
+                            descEl.textContent = 'Column definitions from DESC across all 4 tables and notes on Foreign Key constraint behavior.';
+                        } else {
+                            descEl.textContent = 'MariaDB 10.4.27 CLI session log showing database reset, table creation, and query responses.';
+                        }
                     }
                     return;
                 }
