@@ -135,7 +135,7 @@
             </div>
         </section>
 
-        <!-- SECTION 2: SELECTED WORK & SIPEKA CASE STUDY + INTERACTIVE EAR DEMO -->
+        <!-- SECTION 2: SELECTED WORK & SIPEKA CASE STUDY + PRODUCTION TELEMETRY SIMULATOR -->
         <section id="impact" class="section">
             <div class="section-head">
                 <span class="eyebrow">02 / Selected Work & Technical Proof</span>
@@ -143,7 +143,7 @@
                 <p class="section-sub">Real systems built, deployed, and operated across computer vision AI, broadcast infrastructure, smart buildings, and robotics.</p>
             </div>
 
-            <!-- Flagship SIPEKA Card with 4-Step Pipeline & Interactive EAR Demo Side-by-Side -->
+            <!-- Flagship SIPEKA Card with 4-Step Pipeline & Production-Accurate Simulator -->
             <div class="sipeka-showcase">
                 <div class="sipeka-header">
                     <div class="flagship-tags">
@@ -163,29 +163,29 @@
                             <div class="flow-item">
                                 <span class="flow-num">1</span>
                                 <div>
-                                    <strong>Face detection</strong>
-                                    <p>YOLOv8 locates the driver in every frame.</p>
+                                    <strong>Person & ROI detection</strong>
+                                    <p>YOLOv8n (<code>conf &gt; 0.5</code>) isolates the driver bounding box as a grayscale ROI.</p>
                                 </div>
                             </div>
                             <div class="flow-item">
                                 <span class="flow-num">2</span>
                                 <div>
-                                    <strong>Landmark analysis</strong>
-                                    <p>Dlib extracts eye closure, mouth opening, and head tilt.</p>
+                                    <strong>68-Landmark analysis</strong>
+                                    <p>Dlib extracts eye contours, mouth opening, and eye-center tilt angle inside the ROI.</p>
                                 </div>
                             </div>
                             <div class="flow-item">
                                 <span class="flow-num">3</span>
                                 <div>
-                                    <strong>Fatigue decision</strong>
-                                    <p>EAR, MAR, and head pose are combined to separate a blink from fatigue.</p>
+                                    <strong>Multi-modal fatigue decision</strong>
+                                    <p>Triggers when <code>EAR &lt; 0.25</code> (3s), <code>MAR &gt; 0.15</code> (5s), or <code>|Tilt| &gt; 15°</code> (60s).</p>
                                 </div>
                             </div>
                             <div class="flow-item">
                                 <span class="flow-num">4</span>
                                 <div>
-                                    <strong>Alert and reporting</strong>
-                                    <p>A warning is triggered and data is sent to a server-based monitoring dashboard.</p>
+                                    <strong>Audio alarm & REST API</strong>
+                                    <p>Plays <code>music.wav</code> via Pygame and dispatches async JSON telemetry to the server.</p>
                                 </div>
                             </div>
                         </div>
@@ -206,53 +206,82 @@
                         </div>
 
                         <div class="tech-pills">
-                            <span>Python</span><span>OpenCV</span><span>PyTorch</span><span>YOLOv8</span><span>Dlib</span><span>REST API</span>
+                            <span>Python</span><span>YOLOv8n</span><span>Dlib 68-Landmarks</span><span>OpenCV</span><span>PyTorch</span><span>REST API</span>
                         </div>
                     </div>
 
-                    <!-- Right: Interactive EAR Technical Proof Demo -->
+                    <!-- Right: Production-Accurate Multi-Modal Simulator -->
                     <div class="ear-demo-box" id="earDemoBox">
                         <div class="ear-top">
-                            <span class="ear-kicker"><i class="fa-solid fa-wave-square"></i> Interactive: how EAR works</span>
-                            <p>Eye aspect ratio falls as the eye closes. Adjust the slider or run a micro-sleep.</p>
+                            <div class="ear-header-row">
+                                <span class="ear-kicker"><i class="fa-solid fa-wave-square"></i> Interactive: SIPEKA Telemetry Simulator</span>
+                                <span class="ear-status normal" id="simStatusBadge">PENGEMUDI AMAN</span>
+                            </div>
+                            <p>Test the exact production thresholds from the Python pipeline (<code>EAR &lt; 0.25</code> for 3.0s, <code>MAR &gt; 0.15</code> for 5.0s, <code>|Angle| &gt; 15°</code> for 60s).</p>
                         </div>
 
+                        <!-- Live OpenCV Frame Preview -->
                         <div class="ear-readout-card">
                             <div class="ear-visual">
-                                <svg viewBox="0 0 180 80" class="eye-svg" aria-hidden="true">
-                                    <!-- Upper & Lower Eyelid Paths controlled by JS -->
-                                    <path id="eyeUpper" d="M 15 40 Q 90 8 165 40" fill="none" stroke="#38bdf8" stroke-width="3.5" stroke-linecap="round"/>
-                                    <path id="eyeLower" d="M 15 40 Q 90 72 165 40" fill="none" stroke="#38bdf8" stroke-width="3.5" stroke-linecap="round"/>
-                                    <!-- Vertical & Horizontal Landmark Guides -->
-                                    <line x1="15" y1="40" x2="165" y2="40" stroke="rgba(148,163,184,0.45)" stroke-dasharray="3 3" stroke-width="1.5"/>
-                                    <line id="eyeVert" x1="90" y1="24" x2="90" y2="56" stroke="#f59e0b" stroke-width="2"/>
-                                    <circle id="eyePupil" cx="90" cy="40" r="10" fill="#60a5fa" opacity="0.85"/>
+                                <svg viewBox="0 0 180 95" class="eye-svg" aria-hidden="true">
+                                    <g id="faceHeadGroup" transform="rotate(0 90 47)">
+                                        <rect x="28" y="6" width="124" height="83" rx="8" fill="none" stroke="rgba(59,130,246,0.45)" stroke-dasharray="4 3" stroke-width="1.2"/>
+                                        <path id="eyeLeftUpper" d="M 42 36 Q 60 22 78 36" fill="none" stroke="#facc15" stroke-width="2.5" stroke-linecap="round"/>
+                                        <path id="eyeLeftLower" d="M 42 36 Q 60 50 78 36" fill="none" stroke="#facc15" stroke-width="2.5" stroke-linecap="round"/>
+                                        <path id="eyeRightUpper" d="M 102 36 Q 120 22 138 36" fill="none" stroke="#facc15" stroke-width="2.5" stroke-linecap="round"/>
+                                        <path id="eyeRightLower" d="M 102 36 Q 120 50 138 36" fill="none" stroke="#facc15" stroke-width="2.5" stroke-linecap="round"/>
+                                        <path id="mouthUpper" d="M 66 68 Q 90 64 114 68" fill="none" stroke="#e879f9" stroke-width="2.5" stroke-linecap="round"/>
+                                        <path id="mouthLower" d="M 66 68 Q 90 72 114 68" fill="none" stroke="#e879f9" stroke-width="2.5" stroke-linecap="round"/>
+                                    </g>
                                 </svg>
                             </div>
-                            <div class="ear-values">
-                                <div class="ear-number" id="earValueDisplay">0.32</div>
-                                <span class="ear-status normal" id="earStatusBadge">Normal</span>
+                            <div class="telemetry-readout">
+                                <div>EAR: <strong id="earValText">0.30</strong> <small>(thresh &lt; 0.25)</small></div>
+                                <div>MAR: <strong id="marValText">0.10</strong> <small>(thresh &gt; 0.15)</small></div>
+                                <div>Head Tilt: <strong id="tiltValText">0°</strong> <small>(thresh &gt; 15°)</small></div>
+                                <div class="alert-reason" id="alertReasonText">Condition: Normal alertness</div>
                             </div>
                         </div>
 
-                        <div class="ear-controls">
-                            <div class="slider-header">
-                                <label for="earSlider">Eye opening</label>
-                                <button type="button" class="microsleep-btn" id="runMicrosleepBtn">
-                                    <i class="fa-solid fa-play"></i> Run micro-sleep
-                                </button>
+                        <!-- 3 Sliders Matching Python Thresholds -->
+                        <div class="ear-controls-grid">
+                            <div class="control-row">
+                                <div class="slider-header">
+                                    <label for="earSlider">EAR (Eye Aspect Ratio)</label>
+                                    <span id="earTimerLabel">0.0s / 3.0s</span>
+                                </div>
+                                <input type="range" id="earSlider" min="0.10" max="0.40" step="0.01" value="0.30">
                             </div>
-                            <input type="range" id="earSlider" min="0.10" max="0.40" step="0.01" value="0.32">
+
+                            <div class="control-row">
+                                <div class="slider-header">
+                                    <label for="marSlider">MAR (Mouth Aspect Ratio)</label>
+                                    <span id="marTimerLabel">0.0s / 5.0s</span>
+                                </div>
+                                <input type="range" id="marSlider" min="0.05" max="0.40" step="0.01" value="0.10">
+                            </div>
+
+                            <div class="control-row">
+                                <div class="slider-header">
+                                    <label for="tiltSlider">Head Tilt Angle (°)</label>
+                                    <span id="tiltTimerLabel">0.0s / 60.0s</span>
+                                </div>
+                                <input type="range" id="tiltSlider" min="-30" max="30" step="1" value="0">
+                            </div>
                         </div>
 
-                        <div class="ear-timer-bar">
-                            <span>Below threshold (&lt; 0.22): <strong id="belowTimerDisplay">0.0 s</strong> (alert at 1.0 s)</span>
-                            <div class="timer-track">
-                                <div class="timer-fill" id="timerFill"></div>
-                            </div>
+                        <!-- Scenario Triggers -->
+                        <div class="sim-btn-group">
+                            <button type="button" class="microsleep-btn" id="simEyeBtn">
+                                <i class="fa-solid fa-eye-slash"></i> Simulate Closed Eyes (3s)
+                            </button>
+                            <button type="button" class="microsleep-btn secondary" id="simYawnBtn">
+                                <i class="fa-solid fa-face-tired"></i> Simulate Yawn (5s)
+                            </button>
                         </div>
 
-                        <p class="ear-footnote">Illustrative demo; thresholds are examples, not the production values.</p>
+                        <!-- Live JSON Payload Output -->
+                        <pre class="json-preview" id="jsonPayloadPreview">{"driver_id":"Driver","eye_state":"Open","mouth_state":"Closed","head_pose":"Normal","yawning":false,"drowsiness_status":"Normal"}</pre>
                     </div>
                 </div>
             </div>
@@ -373,259 +402,3 @@
                                 <h3>Field Data Collector — Sensus Ekonomi 2026</h3>
                                 <p class="panel-company">Badan Pusat Statistik (BPS) • Jun 2026 – Jul 2026</p>
                             </div>
-                        </div>
-                        <ul class="panel-list">
-                            <li>Conducted structured field enumeration covering <strong>327 records</strong> of residents and business entities within the assigned work area in accordance with national statistical procedures.</li>
-                            <li>Recorded, cross-checked, and verified collected datasets to ensure high data accuracy, completeness, and consistency.</li>
-                        </ul>
-                        <div class="tech-pills">
-                            <span>Field Data Collection</span><span>Data Validation & QA</span><span>Sensus Ekonomi 2026</span>
-                        </div>
-                    </div>
-
-                    <!-- Panel 3: detikcom -->
-                    <div class="career-panel" id="exp-detik">
-                        <div class="panel-header">
-                            <div>
-                                <span class="panel-badge">Internship • South Jakarta, On-site</span>
-                                <h3>Information Technology Streaming Support</h3>
-                                <p class="panel-company">PT Trans Digital Media (Detikcom) • Nov 2025 – May 2026</p>
-                            </div>
-                        </div>
-                        <ul class="panel-list">
-                            <li>Prepared, configured, and tested streaming hardware and encoder pipelines prior to daily national live broadcasts (<em>Detik Pagi</em>, <em>Detik Sore</em>, and special live events).</li>
-                            <li>Monitored audiovisual signal integrity, bitrate performance, and network connectivity throughout multi-platform live transmissions.</li>
-                            <li>Executed rapid troubleshooting for stream latency, encoder sync, and hardware connectivity using remote support tools (<strong>AnyDesk</strong>).</li>
-                            <li>Operated live production environments using <strong>vMix, Wirecast, OBS Studio, and ATEM switchers</strong> in close coordination with production teams.</li>
-                        </ul>
-                        <div class="tech-pills">
-                            <span>vMix</span><span>Wirecast</span><span>OBS Studio</span><span>ATEM Switchers</span><span>AnyDesk</span><span>Live Network Monitoring</span>
-                        </div>
-                    </div>
-
-                    <!-- Panel 4: PT Kerta Rajasa Raya -->
-                    <div class="career-panel" id="exp-kerta">
-                        <div class="panel-header">
-                            <div>
-                                <span class="panel-badge">Internship • Sidoarjo, East Java</span>
-                                <h3>Electrical Technician</h3>
-                                <p class="panel-company">PT Kerta Rajasa Raya • Oct 2025 – Nov 2025</p>
-                            </div>
-                        </div>
-                        <ul class="panel-list">
-                            <li>Monitored and recorded daily kWh meter readings across <strong>6 Sub-Distribution Panels (SDPs)</strong> in the Circular Loom production division.</li>
-                            <li>Inspected and recorded industrial power inverter operating parameters to support preventive electrical maintenance.</li>
-                            <li>Digitized manual inspection sheets into structured datasets, achieving <strong>100% accuracy in tracking 149,821.2 kWh</strong> of plant energy usage.</li>
-                        </ul>
-                        <div class="tech-pills">
-                            <span>Sub-Distribution Panels (SDP)</span><span>Power Inverters</span><span>kWh Energy Auditing</span><span>Industrial Electrical Systems</span>
-                        </div>
-                    </div>
-
-                    <!-- Panel 5: Kemnaker -->
-                    <div class="career-panel" id="exp-kemnaker">
-                        <div class="panel-header">
-                            <div>
-                                <span class="panel-badge">Internship • Sidoarjo (BPVP)</span>
-                                <h3>Smart Building Integration Systems</h3>
-                                <p class="panel-company">Kementerian Ketenagakerjaan Republik Indonesia • Sep 2025 – Oct 2025</p>
-                            </div>
-                        </div>
-                        <ul class="panel-list">
-                            <li>Installed and configured IoT-based smart building devices, smart sensors, energy management systems, and Building Automation System (BAS) interfaces.</li>
-                            <li>Executed workshop electrical voltage measurements, circuit installation assembly, and system simulations in compliance with OHS safety standards.</li>
-                        </ul>
-                        <div class="tech-pills">
-                            <span>Industrial IoT (IIoT)</span><span>Building Automation (BAS)</span><span>Energy Management</span><span>Electrical Safety & Compliance</span>
-                        </div>
-                    </div>
-
-                    <!-- Panel 6: ENS Lab -->
-                    <div class="career-panel" id="exp-ens">
-                        <div class="panel-header">
-                            <div>
-                                <span class="panel-badge">Apprenticeship • Bandung</span>
-                                <h3>Computer Vision Specialist & RoadSafe Intelligence (ROSI) Team Leader</h3>
-                                <p class="panel-company">Embedded and Network System Laboratory • Sep 2024 – Jul 2025</p>
-                            </div>
-                        </div>
-                        <ul class="panel-list">
-                            <li>Designed and trained a real-time driver drowsiness detection prototype using <strong>YOLOv8 and Dlib</strong>, reaching <strong>91% accuracy</strong> and <strong>91.5% mAP</strong>.</li>
-                            <li>Integrated Eye Aspect Ratio (EAR), Mouth Aspect Ratio (MAR), and head tilt angle analytics at <strong>25 FPS</strong> with <strong>4 ms inference latency</strong> per frame.</li>
-                            <li>Collaborated on presenting real-time visual detection telemetry to a REST API-based monitoring dashboard.</li>
-                            <li>Led the <strong>RoadSafe Intelligence (ROSI)</strong> team (Oct 2024 – Feb 2025) to 3rd Place at the Huawei ICT Competition National Final.</li>
-                        </ul>
-                        <div class="tech-pills">
-                            <span>Python</span><span>YOLOv8</span><span>Dlib</span><span>OpenCV</span><span>PyTorch</span><span>REST API</span><span>Team Leadership</span>
-                        </div>
-                    </div>
-
-                    <!-- Panel 7: Telkom University -->
-                    <div class="career-panel" id="exp-telkom">
-                        <div class="panel-header">
-                            <div>
-                                <span class="panel-badge">Part-time • Bandung • 100+ Students / Batch</span>
-                                <h3>Practicum Assistant Coordinator & Lab Mentor (6 Subjects)</h3>
-                                <p class="panel-company">Telkom University • Mar 2024 – Aug 2025</p>
-                            </div>
-                        </div>
-                        <div class="lab-matrix">
-                            <div class="lab-box">
-                                <strong>Network Security Coordinator <small>(Mar – Aug 2025)</small></strong>
-                                <p>Coordinated assistants across <strong>4 classes</strong> covering Kali Linux, Nmap, SQL injection, on-path attacks, iptables, Certificate Authorities, site-to-site IPsec VPNs, IDS, honeypots, and malware forensics.</p>
-                            </div>
-                            <div class="lab-box">
-                                <strong>Database Practicum Assistant <small>(Mar – Aug 2025)</small></strong>
-                                <p>Supervised MySQL relational database design, SQL DDL/DML, normalization, aggregate functions, and troubleshooting library database case studies.</p>
-                            </div>
-                            <div class="lab-box">
-                                <strong>Algorithm & Programming <small>(Mar 2024 – Aug 2025)</small></strong>
-                                <p>Mentored C++ fundamentals (arrays, pointers, functions), searching & sorting algorithms (sequential, binary, insertion sort), and code debugging.</p>
-                            </div>
-                            <div class="lab-box">
-                                <strong>Computer Systems Assistant <small>(Oct 2024 – Mar 2025)</small></strong>
-                                <p>Guided hardware diagnostics (HWiNFO), OS security, IP configuration, network cabling, PC-to-PC connectivity, and XAMPP setup.</p>
-                            </div>
-                            <div class="lab-box">
-                                <strong>Computer Network System <small>(Mar – Aug 2024)</small></strong>
-                                <p>Supervised IPv4/IPv6 subnetting, TCP/UDP analysis via Wireshark, Cisco Packet Tracer & eNSP simulations, and switch-and-router security.</p>
-                            </div>
-                            <div class="lab-box">
-                                <strong>Digital Systems Assistant <small>(Mar – Aug 2024)</small></strong>
-                                <p>Guided students in designing and troubleshooting logic gates, combinational circuits, and sequential digital circuits.</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- SECTION 4: CORE COMPETENCY MATRIX -->
-        <section id="stack" class="section">
-            <div class="section-head">
-                <span class="eyebrow">04 / Technical Arsenal</span>
-                <h2>Skills, Tools & Infrastructure Stack</h2>
-            </div>
-
-            <div class="stack-grid">
-                <div class="stack-card">
-                    <div class="stack-head"><i class="fa-solid fa-headset"></i> IT & Technical Support</div>
-                    <div class="tech-pills">
-                        <span>Hardware & OS Troubleshooting</span><span>Windows & Linux Admin</span><span>Kali Linux & HWiNFO</span><span>Remote Support (AnyDesk)</span><span>VMware & VirtualBox</span><span>XAMPP & System Maintenance</span>
-                    </div>
-                </div>
-                <div class="stack-card">
-                    <div class="stack-head"><i class="fa-solid fa-network-wired"></i> Networking & Cybersecurity</div>
-                    <div class="tech-pills">
-                        <span>Cisco CCNA & MikroTik</span><span>Huawei Datacom & Security</span><span>IPv4/IPv6 Subnetting</span><span>Wireshark & Nmap</span><span>IPsec VPN, iptables & IDS</span><span>Packet Tracer, eNSP & PNETLab</span>
-                    </div>
-                </div>
-                <div class="stack-card">
-                    <div class="stack-head"><i class="fa-solid fa-tower-broadcast"></i> Broadcast, IIoT & Electrical</div>
-                    <div class="tech-pills">
-                        <span>vMix, Wirecast & OBS</span><span>ATEM Switchers</span><span>Smart Building (BAS) & IIoT</span><span>SDP, Inverters & kWh</span><span>ISO 45001:2018 OHS</span><span>Proteus & FluidSIM</span>
-                    </div>
-                </div>
-                <div class="stack-card">
-                    <div class="stack-head"><i class="fa-solid fa-brain"></i> Computer Vision, AI & Code</div>
-                    <div class="tech-pills">
-                        <span>Python & C++</span><span>JavaScript & Dart</span><span>YOLOv8, Dlib & OpenCV</span><span>PyTorch, TensorFlow & NumPy</span><span>MySQL (DDL/DML) & Firebase</span><span>Microsoft Fabric & Azure AI</span>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- SECTION 5: INTERACTIVE CREDENTIAL VAULT (EDUCATION, 24+ CERTS & LEADERSHIP) -->
-        <section id="credentials" class="section">
-            <div class="section-head-flex">
-                <div>
-                    <span class="eyebrow">05 / Verified Qualifications</span>
-                    <h2>Education, Certifications & Leadership</h2>
-                </div>
-                <div class="filter-tabs" id="credFilters">
-                    <button type="button" class="filter-btn active" data-filter="all">All Credentials</button>
-                    <button type="button" class="filter-btn" data-filter="edu">Education & Honors</button>
-                    <button type="button" class="filter-btn" data-filter="net">Huawei, Cisco & Infra</button>
-                    <button type="button" class="filter-btn" data-filter="iso">ISO, BNSP & Cloud/AI</button>
-                    <button type="button" class="filter-btn" data-filter="org">Leadership</button>
-                </div>
-            </div>
-
-            <div class="cred-grid" id="credGrid">
-                <!-- Education & Honors -->
-                <div class="cred-card" data-category="edu">
-                    <span class="cred-tag edu">Academic • GPA 3.88/4.00 (Cum Laude)</span>
-                    <h4>Telkom University — Associate Degree (D3) in Computer Technology</h4>
-                    <p>Aug 2022 – Jul 2025 • Thesis: <em>Sistem Pendeteksi Kantuk Pengemudi</em> (Registered Patent <code>EC002026058674</code>). Includes Kampus Merdeka Student Exchange at <strong>Batam State Polytechnic</strong> (Instrumentation Engineering, PMM Batch 3).</p>
-                </div>
-
-                <div class="cred-card" data-category="edu">
-                    <span class="cred-tag gold">National Awards & Scholarship</span>
-                    <h4>Huawei ICT 3rd Winner & Bank Indonesia Awardee</h4>
-                    <p>3rd Place Winner in Innovation Track at <strong>Huawei ICT Competition 2024–2025 National Final</strong> & <strong>Bank Indonesia Scholarship Awardee (2024)</strong>.</p>
-                </div>
-
-                <!-- Huawei & Cisco -->
-                <div class="cred-card" data-category="net">
-                    <span class="cred-tag net">Huawei ICT Academy</span>
-                    <h4>HCIA-Security (1000/1000), Datacom (905) & AI (790)</h4>
-                    <p>Verified certifications in <strong>HCIA-Security V4.0</strong> (Perfect Score), <strong>HCIA-Datacom V1.0</strong>, <strong>HCIA-AI V3.0</strong>, and <strong>Huawei Digital Power</strong>.</p>
-                </div>
-
-                <div class="cred-card" data-category="net">
-                    <span class="cred-tag net">Cisco Networking Academy & IDN.ID</span>
-                    <h4>CCNAv7, CyberOps Associate & Network Labs</h4>
-                    <p>Cisco CCNA Enterprise Networking, Security & Automation, Introduction to Networks, CyberOps Associate, plus ID-Networkers (PNETLab, MikroTik, Cisco, Linux dari Nol+, Dart).</p>
-                </div>
-
-                <!-- ISO, BNSP, Google, Cloud -->
-                <div class="cred-card" data-category="iso">
-                    <span class="cred-tag iso">BSN & BNSP Indonesia</span>
-                    <h4>SNI ISO 45001:2018, ISO 37001:2016 & BNSP</h4>
-                    <p>Certified in Occupational Health & Safety (ISO 45001), Anti-Bribery Management (ISO 37001), <strong>BNSP Electrical Power Utilization Installation</strong>, and <strong>BNSP Public Speaking</strong>.</p>
-                </div>
-
-                <div class="cred-card" data-category="iso">
-                    <span class="cred-tag iso">Google, Microsoft, AWS & ASEAN</span>
-                    <h4>Google IT Support, Azure Gen AI & Fabric</h4>
-                    <p>Google IT Support Professional Certificate, Microsoft Elevate & Dicoding (Gen AI with Azure, Data Science with Fabric, AWS Cloud Practitioner, JavaScript), ASEAN AI Career Readiness, GNIK 12+ Skills, & DTS Product Photography.</p>
-                </div>
-
-                <!-- Leadership -->
-                <div class="cred-card full-cred" data-category="org">
-                    <span class="cred-tag org">Organizational & Community Leadership (2018 – Present)</span>
-                    <h4>Campus Governance, Student Ambassador & Youth Networks</h4>
-                    <p>
-                        <strong>GenBI Telkom University</strong> (Staff Dept. Internal, 2024–2025) • <strong>Student Affairs Ambassador (Buddy)</strong> Faculty of Applied Sciences (2024–2025) • <strong>BEM KEMA Telkom University</strong> (Ministry of PORA, 2023–2024) • <strong>IMPALA Universitas Brawijaya</strong> • <strong>IKAMABA</strong> • <strong>Ikatan Mahasiswa Jombang UB</strong> • <strong>Agent Nusantara Youth Leadership</strong> • <strong>IPNU IPPNU</strong> • <strong>Indonesia Millennial Connect</strong> (Funding) • <strong>Forum Anak Jombang</strong>.
-                    </p>
-                </div>
-            </div>
-        </section>
-
-        <!-- SECTION 6: RECRUITER CONVERSATION STARTER -->
-        <section id="lets-talk" class="section">
-            <div class="talk-box">
-                <div class="talk-header">
-                    <span class="eyebrow light">06 / Start a Conversation</span>
-                    <h2>Let's discuss how I can support your engineering or IT operations</h2>
-                    <p>Click a role track below to open a pre-filled email draft directly, or message me on LinkedIn.</p>
-                </div>
-
-                <div class="talk-grid">
-                    <a href="mailto:difla78@gmail.com?subject=Interview%20Inquiry%20-%20IT%20Support%20/%20Technical%20Support&body=Hi%20Thiflah,%0A%0AWe%20reviewed%20your%20portfolio%20and%20would%20love%20to%20schedule%20a%20chat%20regarding%20an%20IT%20/%20Technical%20Support%20role." class="talk-card">
-                        <i class="fa-solid fa-headset"></i>
-                        <div>
-                            <strong>IT & Technical Support</strong>
-                            <span>Troubleshooting, Windows/Linux, broadcast & user support</span>
-                        </div>
-                        <i class="fa-solid fa-arrow-up-right-from-square"></i>
-                    </a>
-                    <a href="mailto:difla78@gmail.com?subject=Interview%20Inquiry%20-%20IT%20Infrastructure%20%26%20Networking&body=Hi%20Thiflah,%0A%0AWe%20reviewed%20your%20networking%20and%20infrastructure%20background%20and%20would%20like%20to%20connect." class="talk-card">
-                        <i class="fa-solid fa-network-wired"></i>
-                        <div>
-                            <strong>IT Infrastructure & Networking</strong>
-                            <span>Cisco/Huawei routing, network security, IIoT & systems</span>
-                        </div>
-                        <i class="fa-solid fa-arrow-up-right-from-square"></i>
-                    </a>
-                    <a href="mailto:difla78@gmail.com?subject=Interview%20Inquiry%20-%20Computer%20Vision%20%26%20AI&body=Hi%20Thiflah,%0A%0AWe%20were%20impressed%20by%20your%20SIPEKA%20patent%20and%20Computer%20Vision%20work%20and%20would
