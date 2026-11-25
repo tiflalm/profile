@@ -834,6 +834,18 @@ input[type="range"] {
     border-color: #6d28d9;
 }
 
+.code-preview-btn.emerald-btn {
+    background: #ecfdf5;
+    color: #047857;
+    border-color: #a7f3d0;
+}
+
+.code-preview-btn.emerald-btn:hover {
+    background: #047857;
+    color: #ffffff;
+    border-color: #047857;
+}
+
 .code-preview-btn.cyan-btn {
     background: #ecfeff;
     color: #0e7490;
