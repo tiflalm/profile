@@ -9,7 +9,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-    <link rel="stylesheet" href="styles.css?v=7">
+    <link rel="stylesheet" href="styles.css?v=5">
 </head>
 <body>
 
@@ -631,51 +631,81 @@
             </div>
         </section>
 
-        <!-- SECTION 6: CONVERSATION & COLLABORATION INVITATION -->
+        <!-- SECTION 6: RECRUITER CONVERSATION STARTER (EMAIL OR LINKEDIN CHOICE) -->
         <section id="lets-talk" class="section">
             <div class="talk-box">
                 <div class="talk-header">
                     <span class="eyebrow light">06 / Start a Conversation</span>
                     <h2>Let's discuss how I can support your engineering or IT operations</h2>
-                    <p>Open for full-time opportunities, technical collaborations, and project discussions. Feel free to reach out or connect across any of these focus areas:</p>
+                    <p>Select a role track below to choose whether to connect via pre-filled Email or LinkedIn message.</p>
                 </div>
 
-                <div class="talk-grid">
-                    <!-- Track 1 -->
-                    <div class="talk-card">
-                        <i class="fa-solid fa-headset"></i>
-                        <div>
-                            <strong>IT & Technical Support</strong>
-                            <span>Troubleshooting, Windows/Linux, broadcast & user support</span>
+                <div class="talk-grid" id="talkGrid">
+                    <!-- Track 1: IT & Technical Support -->
+                    <div class="talk-card-wrap" data-track="support">
+                        <button type="button" class="talk-card-trigger">
+                            <i class="fa-solid fa-headset"></i>
+                            <div>
+                                <strong>IT & Technical Support</strong>
+                                <span>Troubleshooting, Windows/Linux, broadcast & user support</span>
+                            </div>
+                            <i class="fa-solid fa-chevron-down toggle-chevron"></i>
+                        </button>
+                        <div class="talk-channel-menu">
+                            <a href="mailto:difla78@gmail.com?subject=Interview%20Inquiry%20-%20IT%20Support%20/%20Technical%20Support&body=Hi%20Thiflah,%0A%0AWe%20reviewed%20your%20portfolio%20and%20would%20love%20to%20schedule%20a%20chat%20regarding%20an%20IT%20/%20Technical%20Support%20role." class="channel-btn email">
+                                <i class="fa-solid fa-envelope"></i> Send via Email
+                            </a>
+                            <button type="button" class="channel-btn linkedin" data-msg="Hi Thiflah, I reviewed your portfolio and would love to connect regarding an IT / Technical Support opportunity.">
+                                <i class="fa-brands fa-linkedin"></i> Message on LinkedIn
+                            </button>
                         </div>
                     </div>
 
-                    <!-- Track 2 -->
-                    <div class="talk-card">
-                        <i class="fa-solid fa-network-wired"></i>
-                        <div>
-                            <strong>IT Infrastructure & Networking</strong>
-                            <span>Cisco/Huawei routing, network security, IIoT & systems</span>
+                    <!-- Track 2: IT Infrastructure & Networking -->
+                    <div class="talk-card-wrap" data-track="infra">
+                        <button type="button" class="talk-card-trigger">
+                            <i class="fa-solid fa-network-wired"></i>
+                            <div>
+                                <strong>IT Infrastructure & Networking</strong>
+                                <span>Cisco/Huawei routing, network security, IIoT & systems</span>
+                            </div>
+                            <i class="fa-solid fa-chevron-down toggle-chevron"></i>
+                        </button>
+                        <div class="talk-channel-menu">
+                            <a href="mailto:difla78@gmail.com?subject=Interview%20Inquiry%20-%20IT%20Infrastructure%20%26%20Networking&body=Hi%20Thiflah,%0A%0AWe%20reviewed%20your%20networking%20and%20infrastructure%20background%20and%20would%20like%20to%20connect." class="channel-btn email">
+                                <i class="fa-solid fa-envelope"></i> Send via Email
+                            </a>
+                            <button type="button" class="channel-btn linkedin" data-msg="Hi Thiflah, I reviewed your networking and infrastructure background on your portfolio and would love to connect.">
+                                <i class="fa-brands fa-linkedin"></i> Message on LinkedIn
+                            </button>
                         </div>
                     </div>
 
-                    <!-- Track 3 -->
-                    <div class="talk-card">
-                        <i class="fa-solid fa-eye"></i>
-                        <div>
-                            <strong>Computer Vision & AI</strong>
-                            <span>Real-time YOLOv8/OpenCV inference & applied AI systems</span>
+                    <!-- Track 3: Computer Vision & AI -->
+                    <div class="talk-card-wrap" data-track="ai">
+                        <button type="button" class="talk-card-trigger">
+                            <i class="fa-solid fa-eye"></i>
+                            <div>
+                                <strong>Computer Vision & AI</strong>
+                                <span>Real-time YOLOv8/OpenCV inference & applied AI systems</span>
+                            </div>
+                            <i class="fa-solid fa-chevron-down toggle-chevron"></i>
+                        </button>
+                        <div class="talk-channel-menu">
+                            <a href="mailto:difla78@gmail.com?subject=Interview%20Inquiry%20-%20Computer%20Vision%20%26%20AI&body=Hi%20Thiflah,%0A%0AWe%20were%20impressed%20by%20your%20SIPEKA%20patent%20and%20Computer%20Vision%20work%20and%20would%20love%20to%20talk." class="channel-btn email">
+                                <i class="fa-solid fa-envelope"></i> Send via Email
+                            </a>
+                            <button type="button" class="channel-btn linkedin" data-msg="Hi Thiflah, I was impressed by your SIPEKA patent and Computer Vision work on your portfolio and would love to connect.">
+                                <i class="fa-brands fa-linkedin"></i> Message on LinkedIn
+                            </button>
                         </div>
                     </div>
                 </div>
 
-                <div class="talk-cta-bar">
-                    <a href="https://www.linkedin.com/in/tiflaalma/" target="_blank" rel="noopener" class="btn btn-primary">
-                        <i class="fa-brands fa-linkedin"></i> Connect & Message on LinkedIn
-                    </a>
-                    <a href="mailto:difla78@gmail.com" class="btn btn-secondary">
-                        <i class="fa-solid fa-envelope"></i> Email Me (difla78@gmail.com)
-                    </a>
+                <!-- Toast feedback when LinkedIn template is copied -->
+                <div class="linkedin-toast" id="linkedinToast" aria-live="polite">
+                    <i class="fa-solid fa-circle-check"></i>
+                    <span>Intro message copied to clipboard! Opening LinkedIn profile...</span>
                 </div>
             </div>
         </section>
@@ -725,7 +755,7 @@
             const lensData = {
                 all: {
                     headline: "IT Support | Technical Support | IT Infrastructure & Networking | Computer Vision & AI",
-                    pitch: "Computer Technology graduate experienced in <strong>IT streaming support (Detikcom) </strong> electrical & smart building systems, <strong>and real-time Computer Vision AI</strong>."
+                    pitch: "Versatile engineer turning complex technical operations into reliable systems—from live national broadcasts at <strong>detikcom</strong> and <strong>149,821.2 kWh</strong> industrial energy digitization to patent-registered <strong>real-time Computer Vision AI</strong>."
                 },
                 support: {
                     headline: "IT Support & Technical Support Specialist — Live Broadcast, Lab & End-User Operations",
@@ -916,7 +946,7 @@
 
             // 3. Global Click Delegation
             document.addEventListener('click', function (e) {
-                // Mobile Menu Toggle
+                // Mobile Toggle
                 const toggleBtn = e.target.closest('#mobileToggle');
                 if (toggleBtn) {
                     const navMenu = document.getElementById('navMenu');
@@ -966,6 +996,32 @@
                         const cat = card.getAttribute('data-category');
                         card.style.display = (filter === 'all' || cat === filter) ? 'block' : 'none';
                     });
+                    return;
+                }
+
+                // Section 06: Toggle Email / LinkedIn Options per Role Track
+                const talkTrigger = e.target.closest('.talk-card-trigger');
+                if (talkTrigger) {
+                    const currentWrap = talkTrigger.closest('.talk-card-wrap');
+                    const isOpen = currentWrap.classList.contains('open');
+                    document.querySelectorAll('.talk-card-wrap').forEach(w => w.classList.remove('open'));
+                    if (!isOpen) currentWrap.classList.add('open');
+                    return;
+                }
+
+                // Section 06: Copy Intro Message & Open LinkedIn
+                const linkedinBtn = e.target.closest('.channel-btn.linkedin');
+                if (linkedinBtn) {
+                    const msg = linkedinBtn.getAttribute('data-msg') || '';
+                    if (navigator.clipboard && msg) {
+                        navigator.clipboard.writeText(msg).catch(() => {});
+                    }
+                    const toast = document.getElementById('linkedinToast');
+                    if (toast) {
+                        toast.classList.add('show');
+                        setTimeout(() => toast.classList.remove('show'), 3600);
+                    }
+                    window.open('https://www.linkedin.com/in/tiflaalma/', '_blank', 'noopener');
                 }
             });
         })();
