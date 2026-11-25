@@ -4,738 +4,176 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Thiflah Sa'diyah Alma Sholihah | IT Support | Technical Support | IT Infrastructure & Networking | Computer Vision & AI</title>
-    <meta name="description" content="Executive Portfolio of Thiflah Sa'diyah Alma Sholihah - IT Support, Technical Support, IT Infrastructure & Networking, Computer Vision & AI. Telkom University Graduate (GPA 3.88/4.00, Cum Laude), Patent Holder (SIPEKA), Huawei HCIA Security (1000/1000).">
-    <!-- Fonts -->
+    <meta name="description" content="Interactive Portfolio of Thiflah Sa'diyah Alma Sholihah - IT Support, Technical Support, IT Infrastructure & Networking, Computer Vision & AI.">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-    <!-- Font Awesome Icons -->
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
 
-    <!-- Fixed Glassmorphism Navigation Bar -->
-    <nav class="navbar" id="navbar">
+    <!-- Top Glass Navigation -->
+    <nav class="navbar">
         <div class="nav-container">
-            <div class="nav-brand-wrapper">
-                <a href="#" class="nav-brand">TSAS<span>.dev</span></a>
-                <span class="status-badge"><span class="status-dot"></span> Open to Work</span>
+            <div class="nav-left">
+                <a href="#" class="brand">TSAS<span>.dev</span></a>
+                <span class="availability-pill"><span class="pulse-dot"></span> Open to Opportunities</span>
             </div>
-            <ul class="nav-links" id="navLinks">
+            <ul class="nav-menu" id="navMenu">
                 <li><a href="#about">About</a></li>
-                <li><a href="#experience">Experience</a></li>
-                <li><a href="#projects">Projects & Patent</a></li>
-                <li><a href="#skills">Skills</a></li>
-                <li><a href="#certifications">Certifications</a></li>
-                <li><a href="#education">Education</a></li>
-                <li><a href="#lets-talk" class="nav-btn"><i class="fa-regular fa-comments"></i> Let's Talk</a></li>
+                <li><a href="#impact">Impact & Cases</a></li>
+                <li><a href="#experience">Career Explorer</a></li>
+                <li><a href="#stack">Tech Stack</a></li>
+                <li><a href="#credentials">Credentials</a></li>
+                <li><a href="#lets-talk" class="nav-cta">Let's Talk</a></li>
             </ul>
-            <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Toggle Menu">
+            <button class="mobile-toggle" id="mobileToggle" aria-label="Menu">
                 <i class="fa-solid fa-bars"></i>
             </button>
         </div>
     </nav>
 
-    <!-- Executive Hero Section -->
-    <header class="hero" id="hero">
-        <div class="hero-glow"></div>
-        <div class="container hero-grid">
-            <div class="avatar-wrapper">
-                <div class="avatar-ring">
-                    <img src="https://lh3.googleusercontent.com/d/1RK4xgKJOUnvhTyLE5zBZ_kh1P7fIqriR" alt="Thiflah Sa'diyah Alma Sholihah" class="avatar" id="profileImg">
+    <!-- Hero Section with Recruiter Role Lens -->
+    <header class="hero">
+        <div class="hero-grid-bg"></div>
+        <div class="container hero-layout">
+            <div class="hero-main">
+                <div class="role-lens-bar">
+                    <span class="lens-label"><i class="fa-solid fa-sliders"></i> Recruiter View:</span>
+                    <button class="lens-btn active" data-lens="all">Full Profile</button>
+                    <button class="lens-btn" data-lens="support">IT & Technical Support</button>
+                    <button class="lens-btn" data-lens="infra">Infra & Networking</button>
+                    <button class="lens-btn" data-lens="ai">Computer Vision & AI</button>
                 </div>
-                <div class="verified-chip">
-                    <i class="fa-solid fa-award"></i> Registered Patent Holder
-                </div>
-                <div class="verified-chip secondary-chip">
-                    <i class="fa-solid fa-shield-halved"></i> ISO 45001 & BNSP Certified
-                </div>
-            </div>
 
-            <div class="hero-content">
-                <div class="hero-tag">IT Support • Infrastructure & Networking • Computer Vision & AI</div>
-                <h1 id="name">Thiflah Sa'diyah Alma Sholihah</h1>
-                <h2 class="subtitle" id="title">IT Support | Technical Support | IT Infrastructure & Networking | Computer Vision & AI</h2>
-                
-                <p class="hero-desc" id="heroDesc">
-                    Computer Technology graduate from Telkom University (<strong>GPA 3.88/4.00, Cum Laude</strong>) who bridges hands-on IT & technical support, enterprise networking, live national broadcast operations at <strong>detikcom</strong>, IIoT smart building & industrial electrical monitoring, and registered patent-holding <strong>Computer Vision & AI</strong> systems.
+                <h1>Thiflah Sa'diyah Alma Sholihah</h1>
+                <p class="hero-headline" id="dynamicHeadline">
+                    IT Support | Technical Support | IT Infrastructure & Networking | Computer Vision & AI
+                </p>
+                <p class="hero-pitch" id="dynamicPitch">
+                    Versatile engineer turning complex technical operations into reliable systems—from live national broadcasts at <strong>detikcom</strong> and <strong>149,821.2 kWh</strong> industrial energy digitization to patent-registered <strong>real-time Computer Vision AI</strong>.
                 </p>
 
-                <div class="contact-pills">
-                    <a href="mailto:difla78@gmail.com" class="pill"><i class="fa-solid fa-envelope"></i> difla78@gmail.com</a>
-                    <a href="https://www.linkedin.com/in/tiflaalma/" target="_blank" rel="noopener" class="pill"><i class="fa-brands fa-linkedin"></i> linkedin.com/in/tiflaalma</a>
-                    <span class="pill"><i class="fa-solid fa-location-dot"></i> Jombang / South Jakarta, Indonesia</span>
-                </div>
-
-                <div class="hero-cta">
+                <div class="hero-actions">
                     <a href="#lets-talk" class="btn btn-primary">
-                        <i class="fa-solid fa-comments"></i> Start a Conversation
+                        <i class="fa-regular fa-comments"></i> Start a Conversation
                     </a>
-                    <a href="cv-thiflah-alma.pdf" download class="btn btn-glass">
+                    <a href="cv-thiflah-alma.pdf" download class="btn btn-secondary">
                         <i class="fa-solid fa-file-arrow-down"></i> Download CV (PDF)
                     </a>
-                    <a href="https://www.linkedin.com/in/tiflaalma/" target="_blank" rel="noopener" class="btn btn-glass">
-                        <i class="fa-brands fa-linkedin-in"></i> Connect on LinkedIn
+                    <a href="https://www.linkedin.com/in/tiflaalma/" target="_blank" rel="noopener" class="btn btn-icon" title="LinkedIn">
+                        <i class="fa-brands fa-linkedin-in"></i>
                     </a>
-                    <a href="https://github.com/tiflalm" target="_blank" rel="noopener" class="btn btn-glass">
-                        <i class="fa-brands fa-github"></i> GitHub
+                    <a href="https://github.com/tiflalm" target="_blank" rel="noopener" class="btn btn-icon" title="GitHub">
+                        <i class="fa-brands fa-github"></i>
+                    </a>
+                    <a href="mailto:difla78@gmail.com" class="btn btn-icon" title="Email">
+                        <i class="fa-solid fa-envelope"></i>
                     </a>
                 </div>
             </div>
-        </div>
 
-        <!-- 4-Pillar Recruiter Proof Strip -->
-        <div class="container">
-            <div class="metrics-grid">
-                <div class="metric-card">
-                    <div class="metric-top">
-                        <i class="fa-solid fa-graduation-cap"></i>
-                        <span class="metric-badge">Academic</span>
+            <!-- Interactive Executive Profile Card -->
+            <div class="hero-profile-card">
+                <div class="profile-top">
+                    <img src="https://lh3.googleusercontent.com/d/1RK4xgKJOUnvhTyLE5zBZ_kh1P7fIqriR" alt="Thiflah Sa'diyah Alma Sholihah" class="profile-photo">
+                    <div class="profile-badges">
+                        <span class="mini-badge gold"><i class="fa-solid fa-certificate"></i> Patent EC002026058674</span>
+                        <span class="mini-badge blue"><i class="fa-solid fa-shield-halved"></i> HCIA-Security 1000/1000</span>
+                        <span class="mini-badge green"><i class="fa-solid fa-award"></i> Huawei ICT 3rd Winner</span>
                     </div>
-                    <span class="metric-value">3.88<small>/4.00</small></span>
-                    <span class="metric-label">Cum Laude GPA — Telkom University</span>
                 </div>
-                <div class="metric-card">
-                    <div class="metric-top">
-                        <i class="fa-solid fa-shield-halved"></i>
-                        <span class="metric-badge">Perfect Score</span>
+                <div class="profile-stats">
+                    <div class="stat-item">
+                        <span class="stat-num">3.88<small>/4.00</small></span>
+                        <span class="stat-desc">Cum Laude GPA</span>
                     </div>
-                    <span class="metric-value">1000<small>/1000</small></span>
-                    <span class="metric-label">Huawei HCIA-Security V4.0 Exam</span>
+                    <div class="stat-item">
+                        <span class="stat-num">100+</span>
+                        <span class="stat-desc">Students/Batch Mentored</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-num">24+</span>
+                        <span class="stat-desc">Global & National Certs</span>
+                    </div>
                 </div>
-                <div class="metric-card">
-                    <div class="metric-top">
-                        <i class="fa-solid fa-eye"></i>
-                        <span class="metric-badge">National 3rd</span>
-                    </div>
-                    <span class="metric-value">91.5% <small>mAP</small></span>
-                    <span class="metric-label">Real-Time AI Drowsiness Model (25 FPS)</span>
-                </div>
-                <div class="metric-card">
-                    <div class="metric-top">
-                        <i class="fa-solid fa-certificate"></i>
-                        <span class="metric-badge">Registered IP</span>
-                    </div>
-                    <span class="metric-value">SIPEKA</span>
-                    <span class="metric-label">Patent ID: EC002026058674 (Apr 2026)</span>
+                <div class="profile-location">
+                    <i class="fa-solid fa-location-dot"></i> Jombang / South Jakarta • Available On-Site, Hybrid & Remote
                 </div>
             </div>
         </div>
     </header>
 
     <main class="container">
-        <!-- Value Proposition / Executive Summary -->
+        <!-- SECTION 1: CRISP ABOUT / CORE VALUE PROPOSITION -->
         <section id="about" class="section">
-            <div class="section-header">
-                <span class="section-eyebrow">Why Hire Me</span>
-                <h2 class="section-title"><i class="fa-solid fa-user-tie"></i> Executive Value Proposition</h2>
-            </div>
-
-            <div class="bento-about">
-                <div class="card about-main-card">
-                    <p>
-                        Results-driven <strong>Associate Degree (D3) graduate in Computer Technology</strong> from Telkom University (<strong>GPA 3.88/4.00, Cum Laude</strong>) with a versatile, hands-on engineering background spanning <strong>IT Support, Technical Support, IT Infrastructure & Networking, Live Broadcast Operations, IIoT Smart Building & Electrical Systems, and Computer Vision & AI</strong>.
-                    </p>
-                    <p style="margin-top: 14px;">
-                        Whether troubleshooting live multi-platform streams at <strong>detikcom</strong>, collecting and validating 327 economic census records for <strong>Badan Pusat Statistik (BPS)</strong>, digitizing 149,821.2 kWh of industrial energy logs at <strong>PT Kerta Rajasa Raya</strong>, or mentoring 100+ students per batch across 6 computer technology laboratory courses, I bring structured analytical rigor, rapid on-site troubleshooting, and clear cross-functional communication.
-                    </p>
-                </div>
-
-                <div class="about-pillars">
-                    <div class="pillar-card">
-                        <div class="pillar-icon blue"><i class="fa-solid fa-server"></i></div>
-                        <div>
-                            <h4>IT Support & Networking</h4>
-                            <p>Live streaming pipelines (vMix, OBS, Wirecast, ATEM), Linux/Windows admin, Cisco/Huawei networking & AnyDesk support.</p>
-                        </div>
-                    </div>
-                    <div class="pillar-card">
-                        <div class="pillar-icon emerald"><i class="fa-solid fa-microchip"></i></div>
-                        <div>
-                            <h4>Computer Vision & Registered Patent</h4>
-                            <p>Co-inventor of SIPEKA (YOLOv8 + Dlib, 4 ms latency) & 3rd Winner Huawei ICT Competition.</p>
-                        </div>
-                    </div>
-                    <div class="pillar-card">
-                        <div class="pillar-icon amber"><i class="fa-solid fa-bolt"></i></div>
-                        <div>
-                            <h4>Smart Building & Electrical</h4>
-                            <p>BNSP & ISO 45001 certified in IIoT building automation, SDP kWh metering & industrial inverters.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Work Experience Section with Interactive Filter -->
-        <section id="experience" class="section">
-            <div class="section-header-flex">
-                <div>
-                    <span class="section-eyebrow">Proven Track Record</span>
-                    <h2 class="section-title"><i class="fa-solid fa-briefcase"></i> Work Experience</h2>
-                </div>
-                <div class="filter-tabs" id="expFilters">
-                    <button class="filter-btn active" data-filter="all">All Roles (7)</button>
-                    <button class="filter-btn" data-filter="it">IT, Networking & AI</button>
-                    <button class="filter-btn" data-filter="elec">Electrical & IIoT</button>
-                    <button class="filter-btn" data-filter="ops">Data & Talent Ops</button>
-                </div>
-            </div>
-            
-            <div class="timeline-grid" id="expGrid">
-                <!-- Experience 1: Staffinc Group -->
-                <div class="card exp-card" data-category="ops">
-                    <div class="card-header">
-                        <div class="exp-meta">
-                            <span class="card-date"><i class="fa-regular fa-calendar"></i> Oct 2026 – Present</span>
-                            <span class="exp-badge">Freelance • Remote</span>
-                        </div>
-                        <h3 class="card-title">Staffinc Group</h3>
-                        <div class="card-subtitle">Recruiter Affiliate</div>
-                    </div>
-                    <div class="card-body">
-                        <ul>
-                            <li>Sourced, screened, and matched qualified candidates with open technical and operational roles across partner organizations.</li>
-                            <li>Managed digital candidate outreach and pipeline tracking to accelerate recruitment fulfillment.</li>
-                        </ul>
-                    </div>
-                </div>
-
-                <!-- Experience 2: Badan Pusat Statistik -->
-                <div class="card exp-card" data-category="ops">
-                    <div class="card-header">
-                        <div class="exp-meta">
-                            <span class="card-date"><i class="fa-regular fa-calendar"></i> Jun 2026 – Jul 2026</span>
-                            <span class="exp-badge">Contract • Jombang, East Java</span>
-                        </div>
-                        <h3 class="card-title">Badan Pusat Statistik (BPS)</h3>
-                        <div class="card-subtitle">Field Data Collector — Sensus Ekonomi 2026</div>
-                    </div>
-                    <div class="card-body">
-                        <ul>
-                            <li>Conducted structured field enumeration covering <strong>327 records</strong> of residents and business entities within the assigned work area in strict accordance with national census SOPs.</li>
-                            <li>Recorded, cross-checked, and verified collected datasets to ensure accuracy, completeness, and consistency.</li>
-                        </ul>
-                    </div>
-                </div>
-
-                <!-- Experience 3: detikcom -->
-                <div class="card exp-card" data-category="it">
-                    <div class="card-header">
-                        <div class="exp-meta">
-                            <span class="card-date"><i class="fa-regular fa-calendar"></i> Nov 2025 – May 2026</span>
-                            <span class="exp-badge">Contract • South Jakarta</span>
-                        </div>
-                        <h3 class="card-title">PT Trans Digital Media (detikcom)</h3>
-                        <div class="card-subtitle">Information Technology Streaming Support</div>
-                    </div>
-                    <div class="card-body">
-                        <ul>
-                            <li>Prepared, configured, and tested streaming hardware and encoder pipelines prior to daily national live broadcasts (<em>Detik Pagi</em>, <em>Detik Sore</em>, and live events).</li>
-                            <li>Monitored audiovisual signal quality, streaming bitrate performance, and network connectivity during multi-platform transmissions.</li>
-                            <li>Performed rapid troubleshooting for stream delays, encoder sync, and hardware connectivity using remote support tools (<strong>AnyDesk</strong>).</li>
-                            <li>Supported live broadcast workflows using <strong>vMix, Wirecast, OBS Studio, and ATEM switchers</strong> in close coordination with production teams.</li>
-                        </ul>
-                    </div>
-                </div>
-
-                <!-- Experience 4: PT Kerta Rajasa Raya -->
-                <div class="card exp-card" data-category="elec">
-                    <div class="card-header">
-                        <div class="exp-meta">
-                            <span class="card-date"><i class="fa-regular fa-calendar"></i> Oct 2025 – Nov 2025</span>
-                            <span class="exp-badge">Internship • Sidoarjo, East Java</span>
-                        </div>
-                        <h3 class="card-title">PT Kerta Rajasa Raya</h3>
-                        <div class="card-subtitle">Electrical Technician</div>
-                    </div>
-                    <div class="card-body">
-                        <ul>
-                            <li>Monitored and recorded daily kWh meter readings across <strong>6 Sub-Distribution Panels (SDPs)</strong> in the Circular Loom production division.</li>
-                            <li>Inspected and recorded industrial power inverter operating data to support preventive electrical equipment monitoring.</li>
-                            <li>Digitized manual inspection logs into structured reporting datasets, achieving <strong>100% accuracy in tracking 149,821.2 kWh</strong> of energy consumption.</li>
-                        </ul>
-                    </div>
-                </div>
-
-                <!-- Experience 5: Kementerian Ketenagakerjaan RI -->
-                <div class="card exp-card" data-category="elec">
-                    <div class="card-header">
-                        <div class="exp-meta">
-                            <span class="card-date"><i class="fa-regular fa-calendar"></i> Sep 2025 – Oct 2025</span>
-                            <span class="exp-badge">Internship • Sidoarjo (BPVP)</span>
-                        </div>
-                        <h3 class="card-title">Kementerian Ketenagakerjaan RI</h3>
-                        <div class="card-subtitle">Smart Building Integration Systems</div>
-                    </div>
-                    <div class="card-body">
-                        <ul>
-                            <li>Installed and integrated IoT-based smart building devices, smart sensors, energy management systems, and Building Automation System (BAS) control interfaces.</li>
-                            <li>Performed workshop electrical voltage measurements, circuit installation assembly, and functional simulations under strict safety compliance.</li>
-                        </ul>
-                    </div>
-                </div>
-
-                <!-- Experience 6: Embedded & Network System Laboratory -->
-                <div class="card exp-card" data-category="it">
-                    <div class="card-header">
-                        <div class="exp-meta">
-                            <span class="card-date"><i class="fa-regular fa-calendar"></i> Sep 2024 – Jul 2025</span>
-                            <span class="exp-badge">Apprenticeship • Bandung</span>
-                        </div>
-                        <h3 class="card-title">Embedded and Network System Laboratory</h3>
-                        <div class="card-subtitle">Computer Vision Specialist & RoadSafe Intelligence (ROSI) Team Leader</div>
-                    </div>
-                    <div class="card-body">
-                        <ul>
-                            <li>Designed a real-time driver drowsiness detection prototype using <strong>YOLOv8 and Dlib</strong>, achieving <strong>91% accuracy</strong> and <strong>91.5% mAP</strong>.</li>
-                            <li>Integrated Eye Aspect Ratio (EAR), Mouth Aspect Ratio (MAR), and head tilt pattern analysis at <strong>25 FPS</strong> with low inference latency (<strong>4 ms/frame</strong>) connected to an API-based monitoring dashboard.</li>
-                            <li>Led the <strong>RoadSafe Intelligence (ROSI)</strong> team (Oct 2024 – Feb 2025) from prototyping through national competition finals.</li>
-                        </ul>
-                    </div>
-                </div>
-
-                <!-- Experience 7: Telkom University Lab Assistant (Full Width 6-Subject Matrix) -->
-                <div class="card exp-card full-span-card" data-category="it">
-                    <div class="card-header">
-                        <div class="exp-meta">
-                            <span class="card-date"><i class="fa-regular fa-calendar"></i> Mar 2024 – Aug 2025 (1 yr 6 mos)</span>
-                            <span class="exp-badge">Part-time • Bandung, West Java</span>
-                        </div>
-                        <h3 class="card-title">Telkom University</h3>
-                        <div class="card-subtitle">Practicum Assistant Coordinator & Multi-Course Lab Mentor (100+ Students/Batch)</div>
-                    </div>
-                    <div class="card-body">
-                        <div class="sub-roles-grid">
-                            <div class="sub-role-item">
-                                <h4><i class="fa-solid fa-shield-halved"></i> Network Security Assistant Coordinator <small>(Mar – Aug 2025)</small></h4>
-                                <p>Coordinated assistants across <strong>4 classes</strong> covering Kali Linux, Nmap, SQL injection, on-path attacks, iptables, Certificate Authorities, site-to-site IPsec VPNs, IDS, honeypots, and malware forensics.</p>
-                            </div>
-                            <div class="sub-role-item">
-                                <h4><i class="fa-solid fa-database"></i> Database Practicum Assistant <small>(Mar – Aug 2025)</small></h4>
-                                <p>Supervised MySQL practical sessions covering relational database design, SQL DDL/DML, normalization, aggregate functions, and troubleshooting library database case studies.</p>
-                            </div>
-                            <div class="sub-role-item">
-                                <h4><i class="fa-solid fa-code"></i> Algorithm & Programming Assistant <small>(Mar 2024 – Aug 2025)</small></h4>
-                                <p>Mentored C++ fundamentals (arrays, pointers, functions), searching & sorting algorithms (sequential, binary, insertion sort), and real-time code debugging.</p>
-                            </div>
-                            <div class="sub-role-item">
-                                <h4><i class="fa-solid fa-desktop"></i> Computer Systems Practicum Assistant <small>(Oct 2024 – Mar 2025)</small></h4>
-                                <p>Guided hardware diagnostics (HWiNFO), OS security, IP configuration, network cabling, PC-to-PC connectivity, and XAMPP server setup.</p>
-                            </div>
-                            <div class="sub-role-item">
-                                <h4><i class="fa-solid fa-network-wired"></i> Computer Network System Assistant <small>(Mar – Aug 2024)</small></h4>
-                                <p>Supervised IPv4/IPv6 subnetting, TCP/UDP analysis with Wireshark, Cisco Packet Tracer & eNSP simulations, and switch-and-router security.</p>
-                            </div>
-                            <div class="sub-role-item">
-                                <h4><i class="fa-solid fa-microchip"></i> Digital Systems Practicum Assistant <small>(Mar – Aug 2024)</small></h4>
-                                <p>Guided students in designing and troubleshooting basic logic gates, combinational circuits, and sequential logic implementations.</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Featured Projects & Registered Patent Section -->
-        <section id="projects" class="section">
-            <div class="section-header-flex">
-                <div>
-                    <span class="section-eyebrow">Engineering & Intellectual Property</span>
-                    <h2 class="section-title"><i class="fa-solid fa-code"></i> Featured Projects & Registered Patent</h2>
-                </div>
-                <div class="filter-tabs" id="projectFilters">
-                    <button class="filter-btn active" data-filter="all">All Projects</button>
-                    <button class="filter-btn" data-filter="ai">Computer Vision & AI</button>
-                    <button class="filter-btn" data-filter="iot">IoT, Robotics & Smart Building</button>
-                </div>
-            </div>
-
-            <div class="grid-layout" id="projectsGrid">
-                <!-- Project 1 (Patent + Award) -->
-                <div class="card project-card featured-patent-card" data-category="ai">
-                    <div class="project-top">
-                        <span class="project-category">Registered Patent & Computer Vision</span>
-                        <span class="project-award"><i class="fa-solid fa-certificate"></i> Patent EC002026058674</span>
-                    </div>
-                    <h3 class="card-title">SIPEKA: Real-Time Driver Drowsiness Detection System</h3>
-                    <div class="card-body">
-                        <p>
-                            Officially registered intellectual property (<em>Sistem Pendeteksi Kantuk Pengemudi</em>, issued Apr 7, 2026) and <strong>National 3rd Place Winner</strong> at Huawei ICT Competition. Uses YOLOv8, Dlib, and OpenCV to track EAR, MAR, and head pose at 25 FPS (4 ms latency), streaming real-time fatigue alerts to a REST API dashboard.
-                        </p>
-                    </div>
-                    <div class="tag-cloud">
-                        <span class="tag">Python</span>
-                        <span class="tag">YOLOv8</span>
-                        <span class="tag">OpenCV</span>
-                        <span class="tag">Dlib</span>
-                        <span class="tag">NumPy</span>
-                        <span class="tag">REST API</span>
-                    </div>
-                </div>
-
-                <!-- Project 2 -->
-                <div class="card project-card" data-category="iot">
-                    <div class="project-top">
-                        <span class="project-category">IIoT & Smart Building</span>
-                        <span class="project-year">Sep – Oct 2025</span>
-                    </div>
-                    <h3 class="card-title">IIoT Building Automation & Energy Management</h3>
-                    <div class="card-body">
-                        <p>
-                            Integrated IoT smart sensors, energy monitoring interfaces, CCTV security systems, and low-voltage electrical control panels during intensive specialization at Kementerian Ketenagakerjaan RI (BPVP Sidoarjo), validated with Proteus and FluidSIM simulations.
-                        </p>
-                    </div>
-                    <div class="tag-cloud">
-                        <span class="tag">IIoT Sensors</span>
-                        <span class="tag">Smart Building (BAS)</span>
-                        <span class="tag">Energy Management</span>
-                        <span class="tag">Proteus & FluidSIM</span>
-                    </div>
-                </div>
-
-                <!-- Project 3 -->
-                <div class="card project-card" data-category="iot">
-                    <div class="project-top">
-                        <span class="project-category">Robotics & Control Systems</span>
-                        <span class="project-year">May – Jun 2024</span>
-                    </div>
-                    <h3 class="card-title">PID-Controlled Line Following Robot</h3>
-                    <div class="card-body">
-                        <p>
-                            Autonomous line-following robot engineered on Arduino Nano with an infrared sensor array governed by a tuned PID control loop. Integrated with a custom MIT App Inventor Android app for real-time Bluetooth sensor calibration and live Kp/Ki/Kd tuning.
-                        </p>
-                    </div>
-                    <div class="tag-cloud">
-                        <span class="tag">Arduino Nano</span>
-                        <span class="tag">C++</span>
-                        <span class="tag">PID Control</span>
-                        <span class="tag">Bluetooth</span>
-                        <span class="tag">MIT App Inventor</span>
-                    </div>
-                </div>
-
-                <!-- Project 4 -->
-                <div class="card project-card" data-category="iot">
-                    <div class="project-top">
-                        <span class="project-category">IoT & Renewable Energy</span>
-                        <span class="project-year">Aug 2023 – Jan 2024</span>
-                    </div>
-                    <h3 class="card-title">Solar-Powered IoT Hydroponic Monitoring</h3>
-                    <div class="card-body">
-                        <p>
-                            Off-grid smart agriculture prototype utilizing solar panel power management and embedded pH/nutrient sensors synchronized with Google Firebase for continuous remote water quality monitoring.
-                        </p>
-                    </div>
-                    <div class="tag-cloud">
-                        <span class="tag">IoT Sensors</span>
-                        <span class="tag">Firebase</span>
-                        <span class="tag">Solar Power</span>
-                        <span class="tag">Embedded Systems</span>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Skills & Competencies Section -->
-        <section id="skills" class="section">
-            <div class="section-header">
-                <span class="section-eyebrow">Core Competencies</span>
-                <h2 class="section-title"><i class="fa-solid fa-layer-group"></i> Technical Skills & Tools</h2>
-            </div>
-
-            <div class="skills-grid">
-                <div class="card skill-box">
-                    <div class="skill-icon"><i class="fa-solid fa-headset"></i></div>
-                    <h3 class="skill-cat-title">IT Support, OS & Cybersecurity</h3>
-                    <div class="tag-cloud">
-                        <span class="tag">IT & Technical Troubleshooting</span>
-                        <span class="tag">Linux & Kali Linux</span>
-                        <span class="tag">Windows OS & HWiNFO</span>
-                        <span class="tag">Nmap, Wireshark & IDS</span>
-                        <span class="tag">IPsec VPN & iptables</span>
-                        <span class="tag">Remote Support (AnyDesk)</span>
-                        <span class="tag">VMware & VirtualBox</span>
-                    </div>
-                </div>
-
-                <div class="card skill-box">
-                    <div class="skill-icon"><i class="fa-solid fa-network-wired"></i></div>
-                    <h3 class="skill-cat-title">Infrastructure, Networking & Broadcast</h3>
-                    <div class="tag-cloud">
-                        <span class="tag">Cisco, MikroTik & eNSP</span>
-                        <span class="tag">PNETLab & Subnetting</span>
-                        <span class="tag">vMix, Wirecast & OBS</span>
-                        <span class="tag">ATEM Switchers</span>
-                        <span class="tag">IIoT & Smart Building</span>
-                        <span class="tag">SDP, Inverters & kWh</span>
-                        <span class="tag">ISO 45001 OHS & Proteus</span>
-                    </div>
-                </div>
-
-                <div class="card skill-box">
-                    <div class="skill-icon"><i class="fa-solid fa-brain"></i></div>
-                    <h3 class="skill-cat-title">Programming, Computer Vision & AI</h3>
-                    <div class="tag-cloud">
-                        <span class="tag">Python & C++</span>
-                        <span class="tag">JavaScript & Dart</span>
-                        <span class="tag">YOLOv8, Dlib & OpenCV</span>
-                        <span class="tag">PyTorch, TensorFlow & NumPy</span>
-                        <span class="tag">MySQL (DDL/DML) & XAMPP</span>
-                        <span class="tag">Firebase & Microsoft Fabric</span>
-                        <span class="tag">Field Data Verification</span>
-                    </div>
-                </div>
-
-                <div class="card skill-box">
-                    <div class="skill-icon"><i class="fa-solid fa-comments"></i></div>
-                    <h3 class="skill-cat-title">Leadership & Communication</h3>
-                    <div class="tag-cloud">
-                        <span class="tag">Indonesian (Native)</span>
-                        <span class="tag">English (Working Proficiency)</span>
-                        <span class="tag">Public Speaking (BNSP)</span>
-                        <span class="tag">Team & Lab Coordination</span>
-                        <span class="tag">Incident Response</span>
-                        <span class="tag">Cross-Functional Teamwork</span>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Licenses & Certifications Section -->
-        <section id="certifications" class="section">
-            <div class="section-header">
-                <span class="section-eyebrow">Verified Credentials & Standards</span>
-                <h2 class="section-title"><i class="fa-solid fa-certificate"></i> Licenses & Certifications</h2>
-            </div>
-
-            <div class="grid-layout">
-                <!-- Card 1: Huawei & Cisco -->
-                <div class="card cert-card">
-                    <div class="cert-header">
-                        <span class="cert-issuer">Huawei ICT Academy & Cisco</span>
-                        <h3 class="card-title">Enterprise Networking & Security</h3>
-                    </div>
-                    <div class="card-body">
-                        <ul class="cert-list">
-                            <li><strong>HCIA-Security V4.0</strong> — <span class="score-pill">1000 / 1000</span><br>Network defense, firewall hardening, and security operations.</li>
-                            <li><strong>HCIA-Datacom V1.0</strong> — <span class="score-pill">905 / 1000</span> & <strong>HCIA-AI V3.0</strong> — <span class="score-pill">790 / 1000</span></li>
-                            <li><strong>Huawei Digital Power</strong> — Smart energy & digital power systems.</li>
-                            <li><strong>Cisco CCNAv7 & CyberOps Associate:</strong> Introduction to Networks, Enterprise Networking, Security & Automation, CyberOps, and Networking Basics.</li>
-                        </ul>
-                    </div>
-                </div>
-
-                <!-- Card 2: BSN, BNSP & Google -->
-                <div class="card cert-card">
-                    <div class="cert-header">
-                        <span class="cert-issuer">BSN, BNSP Indonesia & Google</span>
-                        <h3 class="card-title">ISO Standards, National Competency & IT</h3>
-                    </div>
-                    <div class="card-body">
-                        <ul class="cert-list">
-                            <li><strong>BSN SNI ISO 45001:2018</strong> — Occupational Health & Safety Management System (Issued Oct 2026).</li>
-                            <li><strong>BSN SNI ISO 37001:2016</strong> — Anti-Bribery Management System (Issued Oct 2026).</li>
-                            <li><strong>BNSP Electrical Power Utilization Installation</strong> & <strong>BNSP Public Speaking</strong> National Competency Certificates.</li>
-                            <li><strong>Google IT Support Professional Certificate</strong> & <strong>GNIK 12+ Essential Skills</strong>.</li>
-                        </ul>
-                    </div>
-                </div>
-
-                <!-- Card 3: Cloud, AI & Data -->
-                <div class="card cert-card">
-                    <div class="cert-header">
-                        <span class="cert-issuer">Microsoft, Dicoding & ASEAN Foundation</span>
-                        <h3 class="card-title">Cloud Computing, Data Science & Gen AI</h3>
-                    </div>
-                    <div class="card-body">
-                        <ul class="cert-list">
-                            <li><strong>Microsoft Elevate & Dicoding (2026):</strong> Building Gen AI Applications with Microsoft Azure & Data Science with Microsoft Fabric.</li>
-                            <li><strong>ASEAN Foundation (Oct 2026):</strong> AI Career Readiness.</li>
-                            <li><strong>Dicoding Cloud & Dev:</strong> AWS Cloud Practitioner Essentials & Dasar Pemrograman JavaScript.</li>
-                        </ul>
-                    </div>
-                </div>
-
-                <!-- Card 4: ID-Networkers & Digital Talent -->
-                <div class="card cert-card">
-                    <div class="cert-header">
-                        <span class="cert-issuer">ID-Networkers (IDN.ID), Kemendikbud & DTS</span>
-                        <h3 class="card-title">Infrastructure Labs, Linux & Exchange</h3>
-                    </div>
-                    <div class="card-body">
-                        <ul class="cert-list">
-                            <li><strong>ID-Networkers Infrastructure Track:</strong> Simulasi Jaringan dengan PNETLab, Cisco Dasar, MikroTik Dasar, Jaringan Komputer Dasar, Belajar Linux dari Nol+, & Pemrograman Dart Dasar.</li>
-                            <li><strong>Kemendikbudristek & ICE Institute:</strong> Student Exchange Certificate (Politeknik Negeri Batam) & 30th Cyber Education Forum.</li>
-                            <li><strong>Digital Talent Scholarship (Kominfo):</strong> Product Photography (Digital Entrepreneurship Academy).</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Education, Awards & Leadership Section -->
-        <section id="education" class="section">
-            <div class="section-header">
-                <span class="section-eyebrow">Academic, Honors & Organizations</span>
-                <h2 class="section-title"><i class="fa-solid fa-graduation-cap"></i> Education, Awards & Leadership</h2>
-            </div>
-
-            <div class="grid-layout">
-                <!-- Education 1 -->
-                <div class="card">
-                    <div class="card-header">
-                        <span class="card-date"><i class="fa-regular fa-calendar"></i> Aug 2022 – Jul 2025</span>
-                        <h3 class="card-title">Telkom University</h3>
-                        <div class="card-subtitle">Associate Degree (D3) in Computer Technology • GPA 3.88/4.00</div>
-                    </div>
-                    <div class="card-body">
-                        <ul>
-                            <li>Graduated <strong>Cum Laude (GPA 3.88/4.00)</strong> with registered patent thesis: <em>"Pengembangan Sistem Deteksi Kantuk pada Pengemudi"</em>.</li>
-                            <li><strong>Batam State Polytechnic (Aug 2023 – Jan 2024):</strong> Kampus Merdeka Student Exchange in Instrumentation Engineering; Equipment Committee for <em>"Euphoria Sunnight 2023"</em> (PMM Batch 3).</li>
-                        </ul>
-                    </div>
-                </div>
-
-                <!-- Honors & Patent -->
-                <div class="card">
-                    <div class="card-header">
-                        <span class="card-date"><i class="fa-solid fa-award"></i> 2024 – 2026</span>
-                        <h3 class="card-title">Honors & Registered Patent</h3>
-                        <div class="card-subtitle">National Recognition & Intellectual Property</div>
-                    </div>
-                    <div class="card-body">
-                        <ul>
-                            <li><strong>Registered Intellectual Property (Apr 2026):</strong> <em>Sistem Pendeteksi Kantuk Pengemudi (SIPEKA)</em> — Patent ID <code>EC002026058674</code>.</li>
-                            <li><strong>3rd Place, Innovation Track</strong> — Huawei ICT Competition 2024–2025 National Final.</li>
-                            <li><strong>Bank Indonesia Scholarship Awardee</strong> (Sep 2024) — Telkom University.</li>
-                        </ul>
-                    </div>
-                </div>
-
-                <!-- Organizational & Community Leadership -->
-                <div class="card">
-                    <div class="card-header">
-                        <span class="card-date"><i class="fa-solid fa-users"></i> 2018 – Present</span>
-                        <h3 class="card-title">Organizational & Community Leadership</h3>
-                        <div class="card-subtitle">Campus Governance & Youth Engagement</div>
-                    </div>
-                    <div class="card-body">
-                        <ul>
-                            <li><strong>GenBI Telkom University (Sep 2024 – Aug 2025):</strong> Staff Department Internal, organizing community service and internal unity programs.</li>
-                            <li><strong>Faculty of Applied Sciences (Mar 2024 – Mar 2025):</strong> Student Affairs Ambassador (Buddy) & <strong>BEM KEMA Telkom University</strong> Staff of Ministry of PORA (Jan 2023 – Mar 2024).</li>
-                            <li><strong>Active Alumni & Youth Networks:</strong> IMPALA Universitas Brawijaya, IKAMABA, Ikatan Mahasiswa Jombang UB, Agent Nusantara Youth Leadership, IPNU IPPNU, Indonesia Millennial Connect (Funding), & Forum Anak Jombang.</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Recruiter Conversation Starter CTA Section -->
-        <section id="lets-talk" class="section">
-            <div class="cta-banner">
-                <div class="cta-banner-content">
-                    <span class="cta-eyebrow">Direct Recruiter & Hiring Manager Channel</span>
-                    <h2>Interested in discussing how I can contribute to your team?</h2>
-                    <p>
-                        Select a topic below to open a pre-filled conversation via email, or connect directly on LinkedIn. Available for full-time, contract, and hybrid/on-site opportunities.
-                    </p>
-                    <div class="topic-cards">
-                        <a href="mailto:difla78@gmail.com?subject=Interview%20Invitation%20-%20IT%20Support%20/%20Infrastructure%20%26%20Networking&body=Hi%20Thiflah,%0A%0AWe%20reviewed%20your%20portfolio%20and%20would%20love%20to%20discuss%20an%20IT%20Support%20/%20Infrastructure%20%26%20Networking%20opportunity%20with%20you." class="topic-card">
-                            <i class="fa-solid fa-server"></i>
-                            <div>
-                                <strong>IT Support, Infra & Networking</strong>
-                                <span>Discuss technical support, Linux/Windows, & network security</span>
-                            </div>
-                            <i class="fa-solid fa-arrow-right topic-arrow"></i>
-                        </a>
-                        <a href="mailto:difla78@gmail.com?subject=Interview%20Invitation%20-%20Computer%20Vision%20%26%20AI%20Role&body=Hi%20Thiflah,%0A%0AWe%20were%20impressed%20by%20your%20SIPEKA%20patent%20and%20YOLOv8%20work%20and%20would%20like%20to%20connect." class="topic-card">
-                            <i class="fa-solid fa-brain"></i>
-                            <div>
-                                <strong>Computer Vision & AI</strong>
-                                <span>Discuss SIPEKA patent, YOLOv8, & real-time inference</span>
-                            </div>
-                            <i class="fa-solid fa-arrow-right topic-arrow"></i>
-                        </a>
-                        <a href="mailto:difla78@gmail.com?subject=Interview%20Invitation%20-%20Electrical%20/%20Smart%20Building%20Role&body=Hi%20Thiflah,%0A%0AWe%20reviewed%20your%20BNSP%20and%20Smart%20Building%20background%20and%20would%20love%20to%20chat." class="topic-card">
-                            <i class="fa-solid fa-bolt"></i>
-                            <div>
-                                <strong>Electrical & Smart Building (IIoT)</strong>
-                                <span>Discuss BAS integration, SDP metering, & ISO 45001</span>
-                            </div>
-                            <i class="fa-solid fa-arrow-right topic-arrow"></i>
-                        </a>
-                    </div>
-                </div>
-            </div>
-        </section>
-    </main>
-
-    <!-- Presisi 3-Column Dark Executive Footer -->
-    <footer id="contact" class="site-footer">
-        <div class="container footer-grid">
-            <!-- Kolom 1: Profil Singkat -->
-            <div class="footer-col">
-                <h3 class="footer-name">Thiflah Sa'diyah Alma Sholihah</h3>
-                <p class="footer-desc">
-                    IT Support | Technical Support | IT Infrastructure & Networking | Computer Vision & AI. Computer Technology Graduate from Telkom University (GPA 3.88/4.00, Cum Laude).
+            <div class="section-head">
+                <span class="eyebrow">01 / About Me</span>
+                <h2>What I Bring to Your Team</h2>
+                <p class="about-lead">
+                    I bridge hardware, networks, and intelligent software—solving live operational bottlenecks on-site while building scalable automation and AI systems.
                 </p>
             </div>
 
-            <!-- Kolom 2: Quick Contact -->
-            <div class="footer-col">
-                <h4 class="footer-heading">Quick Contact</h4>
-                <ul class="footer-list">
-                    <li>
-                        <i class="fa-regular fa-envelope"></i>
-                        <a href="mailto:difla78@gmail.com">difla78@gmail.com</a>
-                    </li>
-                    <li>
-                        <i class="fa-brands fa-linkedin"></i>
-                        <a href="https://www.linkedin.com/in/tiflaalma/" target="_blank" rel="noopener">linkedin.com/in/tiflaalma</a>
-                    </li>
-                    <li>
-                        <i class="fa-brands fa-github"></i>
-                        <a href="https://github.com/tiflalm" target="_blank" rel="noopener">github.com/tiflalm</a>
-                    </li>
-                    <li>
-                        <i class="fa-solid fa-location-dot"></i>
-                        <span>Jombang / South Jakarta, Indonesia</span>
-                    </li>
-                </ul>
+            <div class="about-grid">
+                <div class="about-card">
+                    <div class="about-num">01</div>
+                    <h4>Rapid IT & Broadcast Troubleshooting</h4>
+                    <p>Hands-on incident resolution across Windows/Linux systems, live multi-platform encoders (vMix, OBS, Wirecast, ATEM), and 6 university computing labs.</p>
+                </div>
+                <div class="about-card">
+                    <div class="about-num">02</div>
+                    <h4>Infrastructure, Security & IIoT</h4>
+                    <p>Certified in Huawei Security (1000/1000), Cisco CCNAv7, SNI ISO 45001:2018, and BNSP Electrical Power—experienced in IPsec VPNs, SDP metering, and smart buildings.</p>
+                </div>
+                <div class="about-card">
+                    <div class="about-num">03</div>
+                    <h4>Applied Computer Vision & Data</h4>
+                    <p>Co-inventor of registered patent <strong>SIPEKA</strong> (YOLOv8 + Dlib at 4 ms latency) with proven field data accuracy across 327 BPS census records and 149,821.2 kWh industrial logs.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 2: FEATURED ENGINEERING & OPERATIONAL CASE STUDIES -->
+        <section id="impact" class="section">
+            <div class="section-head">
+                <span class="eyebrow">02 / Engineering & Operational Showcase</span>
+                <h2>Featured Case Studies & Registered Patent</h2>
+                <p class="section-sub">Real systems built, deployed, and operated across AI, broadcast infrastructure, smart buildings, and robotics.</p>
             </div>
 
-            <!-- Kolom 3: Key Highlights -->
-            <div class="footer-col">
-                <h4 class="footer-heading">Key Highlights</h4>
-                <ul class="footer-list">
-                    <li>
-                        <i class="fa-solid fa-certificate icon-gold"></i>
-                        <span>Patent Holder: SIPEKA (EC002026058674)</span>
-                    </li>
-                    <li>
-                        <i class="fa-solid fa-trophy icon-gold"></i>
-                        <span>3rd Winner Huawei ICT Competition 2024–2025</span>
-                    </li>
-                    <li>
-                        <i class="fa-solid fa-shield-halved icon-green"></i>
-                        <span>SNI ISO 45001:2018 & BNSP Certified</span>
-                    </li>
-                    <li>
-                        <i class="fa-solid fa-ribbon icon-blue"></i>
-                        <span>Huawei HCIA Security (1000/1000) & CCNAv7</span>
-                    </li>
-                </ul>
-            </div>
-        </div>
+            <!-- Flagship Patent Showcase Card -->
+            <div class="flagship-card">
+                <div class="flagship-content">
+                    <div class="flagship-tags">
+                        <span class="badge-gold"><i class="fa-solid fa-certificate"></i> Registered Intellectual Property: EC002026058674</span>
+                        <span class="badge-blue"><i class="fa-solid fa-trophy"></i> 3rd Winner — Huawei ICT Competition National Final</span>
+                    </div>
+                    <h3>SIPEKA — Real-Time Driver Drowsiness Detection System</h3>
+                    <p>
+                        Engineered an end-to-end computer vision safety system capable of detecting driver micro-sleep and fatigue in real time. Combined object detection with multi-modal facial landmark geometry (Eye Aspect Ratio, Mouth Aspect Ratio, and head-tilt angle estimation) connected to a REST API monitoring dashboard.
+                    </p>
 
-        <div class="container footer-bottom">
-            <span class="copyright-text">© <span id="year">2026</span> Thiflah Sa'diyah Alma Sholihah. All rights reserved.</span>
-            <span class="built-with">IT Support • Technical Support • IT Infrastructure & Networking • Computer Vision & AI</span>
-        </div>
-    </footer>
-
-    <script src="script.js"></script>
-</body>
-</html>
+                    <!-- Visual Architecture Pipeline -->
+                    <div class="pipeline-box">
+                        <div class="pipe-step">
+                            <span class="pipe-label">Input</span>
+                            <strong>Live Camera Feed</strong>
+                        </div>
+                        <i class="fa-solid fa-arrow-right pipe-arrow"></i>
+                        <div class="pipe-step">
+                            <span class="pipe-label">Detection</span>
+                            <strong>YOLOv8 + Dlib</strong>
+                        </div>
+                        <i class="fa-solid fa-arrow-right pipe-arrow"></i>
+                        <div class="pipe-step">
+                            <span class="pipe-label">Analytics</span>
+                            <strong>EAR / MAR / Head Pose</strong>
+                        </div>
+                        <i class="fa-solid fa-arrow-right pipe-arrow"></i>
+                        <div class="pipe-step highlight">
+                            <span class="pipe-label">Output (4 ms)</span>
+                            <strong>REST API Fatigue Alert</strong>
+                        </div>
+                    </div>
