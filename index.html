@@ -549,7 +549,7 @@
                 <div class="stack-card">
                     <div class="stack-head"><i class="fa-solid fa-brain"></i> Computer Vision, AI & Code</div>
                     <div class="tech-pills">
-                        <span>Python & C++</span><span>JavaScript & Dart</span><span>YOLOv8, Dlib & OpenCV</span><span>PyTorch, TensorFlow & NumPy</span><span>MySQL (DDL/DML) & Firebase</span><span>Microsoft Fabric & Azure AI</span>
+                        <span>Python & C++</span><span>Java & Dart</span><span>YOLOv8, Dlib & OpenCV</span><span>PyTorch, TensorFlow & NumPy</span><span>MySQL (DDL/DML) & Firebase</span><span>Microsoft Fabric & Azure AI</span>
                     </div>
                 </div>
             </div>
@@ -699,6 +699,29 @@
             <span>© <span id="year">2026</span> Thiflah Sa'diyah Alma Sholihah. All rights reserved.</span>
         </div>
     </footer>
+    <!-- Interactive Blur Modal for Start a Conversation -->
+    <div class="modal-backdrop" id="talkModal" aria-hidden="true">
+        <div class="modal-dialog" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+            <button type="button" class="modal-close" id="closeTalkModal" aria-label="Close modal">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+            <span class="eyebrow light">Quick Connect</span>
+            <h3 id="modalTitle">IT & Technical Support</h3>
+            <p class="modal-sub">Customize your message below or send directly via Email or LinkedIn:</p>
+
+            <label for="modalMessage" class="modal-label">Message Preview</label>
+            <textarea id="modalMessage" rows="4" class="modal-textarea"></textarea>
+
+            <div class="modal-actions">
+                <a href="mailto:difla78@gmail.com" id="modalEmailBtn" class="btn btn-primary">
+                    <i class="fa-solid fa-envelope"></i> Send via Email
+                </a>
+                <a href="https://www.linkedin.com/in/tiflaalma/" target="_blank" rel="noopener" id="modalLinkedinBtn" class="btn btn-secondary">
+                    <i class="fa-brands fa-linkedin"></i> Message on LinkedIn
+                </a>
+            </div>
+        </div>
+    </div>
     <!-- Embedded Interactive Engine -->
     <script>
         (function () {
@@ -900,6 +923,37 @@
 
             // 3. Global Click Delegation
             document.addEventListener('click', function (e) {
+                // Open Blur Modal when a Role Track Card is clicked
+                const talkCard = e.target.closest('.talk-card[data-track]');
+                if (talkCard) {
+                    const track = talkCard.getAttribute('data-track');
+                    const modal = document.getElementById('talkModal');
+                    const titleEl = document.getElementById('modalTitle');
+                    const msgEl = document.getElementById('modalMessage');
+                    const emailBtn = document.getElementById('modalEmailBtn');
+
+                    if (modal && titleEl && msgEl && emailBtn) {
+                        titleEl.textContent = track;
+                        const defaultMsg = `Hi Thiflah,\n\nI reviewed your portfolio and would like to discuss opportunities or collaboration in ${track}.\n\nBest regards,`;
+                        msgEl.value = defaultMsg;
+                        emailBtn.href = `mailto:difla78@gmail.com?subject=${encodeURIComponent('Discussion: ' + track)}&body=${encodeURIComponent(defaultMsg)}`;
+                        modal.classList.add('open');
+                        modal.setAttribute('aria-hidden', 'false');
+                        document.body.style.overflow = 'hidden';
+                    }
+                    return;
+                }
+
+                // Close Blur Modal (via X button or clicking blurred backdrop)
+                if (e.target.closest('#closeTalkModal') || e.target.id === 'talkModal') {
+                    const modal = document.getElementById('talkModal');
+                    if (modal) {
+                        modal.classList.remove('open');
+                        modal.setAttribute('aria-hidden', 'true');
+                        document.body.style.overflow = '';
+                    }
+                    return;
+                }
                 // Mobile Menu Toggle
                 const toggleBtn = e.target.closest('#mobileToggle');
                 if (toggleBtn) {
@@ -939,7 +993,28 @@
                     if (targetPanel) targetPanel.classList.add('active');
                     return;
                 }
-
+                const modalMessageEl = document.getElementById('modalMessage');
+                if (modalMessageEl) {
+                    modalMessageEl.addEventListener('input', function () {
+                        const titleEl = document.getElementById('modalTitle');
+                        const emailBtn = document.getElementById('modalEmailBtn');
+                        const track = titleEl ? titleEl.textContent : 'Opportunity';
+                        if (emailBtn) {
+                            emailBtn.href = `mailto:difla78@gmail.com?subject=${encodeURIComponent('Discussion: ' + track)}&body=${encodeURIComponent(modalMessageEl.value)}`;
+                        }
+                    });
+                }
+    
+                document.addEventListener('keydown', function (e) {
+                    if (e.key === 'Escape') {
+                        const modal = document.getElementById('talkModal');
+                        if (modal && modal.classList.contains('open')) {
+                            modal.classList.remove('open');
+                            modal.setAttribute('aria-hidden', 'true');
+                            document.body.style.overflow = '';
+                        }
+                    }
+                }
                 // Credentials Filter
                 const filterBtn = e.target.closest('#credFilters .filter-btn');
                 if (filterBtn) {
