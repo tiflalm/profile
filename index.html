@@ -9,7 +9,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-    <link rel="stylesheet" href="styles.css?v=24">
+    <link rel="stylesheet" href="styles.css?v=25">
 </head>
 <body>
 
@@ -52,7 +52,7 @@
                     IT Support | Technical Support | IT Infrastructure & Networking | Computer Vision & AI
                 </p>
                 <p class="hero-pitch" id="dynamicPitch">
-                    Computer Technology graduate experienced in <strong>IT streaming support (Detikcom)</strong>, electrical & smart building systems, <strong>and real-time Computer Vision AI</strong>.
+                    Computer Technology graduate experienced in <strong>IT streaming support (Detikcom)</strong>, electrical & smart building systems, and <strong>real-time Computer Vision AI</strong>.
                 </p>
 
                 <div class="hero-actions">
@@ -336,7 +336,7 @@
                     <div class="bento-top-row">
                         <div class="bento-icon violet"><i class="fa-solid fa-book-bookmark"></i></div>
                         <button type="button" class="code-preview-btn" id="openSibukuModal">
-                            <i class="fa-solid fa-code"></i> View C++ Code (v1 &amp; v2)
+                            <i class="fa-solid fa-code"></i> Code &amp; Output Demo
                         </button>
                     </div>
                     <span class="bento-kicker">Iterative Academic Software • Telkom University (2022–2023)</span>
@@ -353,7 +353,7 @@
                     <div class="bento-top-row">
                         <div class="bento-icon rose"><i class="fa-solid fa-palette"></i></div>
                         <button type="button" class="code-preview-btn rose-btn" id="openColorModal">
-                            <i class="fa-brands fa-python"></i> View Python Code
+                            <i class="fa-brands fa-python"></i> Code &amp; Detection Result
                         </button>
                     </div>
                     <span class="bento-kicker">Digital Systems • Telkom University (2023)</span>
@@ -836,7 +836,7 @@
             <div id="lfAnalogView" style="display:none;">
                 <div class="spec-modal-grid">
                     <div class="spec-box">
-                        <strong> Hardware</strong>
+                        <strong>Hardware</strong>
                         <p>Photodiodes + white LEDs &amp; 1kΩ/330Ω resistors, LM324 comparator with 50kΩ VR &amp; red/yellow LEDs + 560Ω resistors, and dual TIP41A/TIP41C motor driver PCBs.</p>
                     </div>
                     <div class="spec-box">
@@ -848,26 +848,27 @@
         </div>
     </div>
 
-    <!-- Pop-Up C++ Source Code Viewer for SIBUKU (v2.0 Modular & v1.0 Base) -->
+    <!-- Pop-Up C++ Source Code & Output Viewer for SIBUKU (v2.0 Modular, v1.0 Base & Output Demo) -->
     <div class="modal-backdrop" id="sibukuModal" aria-hidden="true">
         <div class="modal-dialog code-modal-dialog" role="dialog" aria-modal="true" aria-labelledby="sibukuModalTitle">
             <button type="button" class="modal-close" id="closeSibukuModal" aria-label="Close">
                 <i class="fa-solid fa-xmark"></i>
             </button>
             <span class="eyebrow light">Telkom University • D3 Computer Technology</span>
-            <h3 id="sibukuModalTitle">SIBUKU — C++ Source Evolution</h3>
+            <h3 id="sibukuModalTitle">SIBUKU — C++ Source &amp; Execution Output</h3>
             <p class="modal-sub" id="sibukuVersionDesc">v2.0 (Advanced Semester): Modular procedures, Bubble Sort ascending book codes, &lt;ctime&gt; system timestamps &amp; H+7 return policy.</p>
 
             <div class="code-version-tabs">
                 <button type="button" class="code-ver-btn sib-ver-btn active" data-ver="v2">v2.0 — Modular + Bubble Sort + &lt;ctime&gt;</button>
                 <button type="button" class="code-ver-btn sib-ver-btn" data-ver="v1">v1.0 — Base CLI Prototype</button>
+                <button type="button" class="code-ver-btn sib-ver-btn" data-ver="output">Sample CLI Output &amp; Fine Calc</button>
             </div>
 
             <pre class="code-modal-pre"><code id="sibukuCodeBlock"></code></pre>
         </div>
     </div>
 
-    <!-- Pop-Up Python Source Code Viewer for Real-Time HSV Color Detection -->
+    <!-- Pop-Up Python Source Code & Detection Result Viewer for Real-Time HSV Color Detection -->
     <div class="modal-backdrop" id="colorModal" aria-hidden="true">
         <div class="modal-dialog code-modal-dialog" role="dialog" aria-modal="true" aria-labelledby="colorModalTitle">
             <button type="button" class="modal-close" id="closeColorModal" aria-label="Close">
@@ -875,8 +876,78 @@
             </button>
             <span class="eyebrow light">Sistem Digital • Assessment CLO 3 (2023)</span>
             <h3 id="colorModalTitle">CLO3_TypeA.py — Real-Time HSV Color Detection</h3>
-            <p class="modal-sub">Converts camera feed from BGR to HSV, applies color range masks, filters contours &gt; 100 px, and draws bounding contours + labels until <code>q</code> is pressed.</p>
-            <pre class="code-modal-pre"><code id="colorCodeBlock"></code></pre>
+            <p class="modal-sub" id="colorTabDesc">Converts camera feed from BGR to HSV, applies color range masks, filters contours &gt; 100 px, and draws bounding contours + labels until <code>q</code> is pressed.</p>
+
+            <div class="code-version-tabs">
+                <button type="button" class="code-ver-btn clr-tab-btn active" data-clr="code">Python Source Code</button>
+                <button type="button" class="code-ver-btn clr-tab-btn" data-clr="output">Simulated Detection Result</button>
+            </div>
+
+            <div id="colorCodeView">
+                <pre class="code-modal-pre"><code id="colorCodeBlock"></code></pre>
+            </div>
+
+            <div id="colorOutputView" style="display:none;">
+                <div class="ear-demo-box" style="margin-bottom:14px;">
+                    <div class="ear-header-row">
+                        <span class="ear-kicker"><i class="fa-solid fa-camera"></i> Window: "Color Detection" (OpenCV cv2.imshow Preview)</span>
+                        <span class="ear-status normal" id="colorResultBadge">AREA &gt; 100 PX • ACTIVE</span>
+                    </div>
+                    <p style="margin-bottom:10px;">Select a color mask range to preview how <code>detect_color()</code> highlights objects with contour area above 100 pixels:</p>
+
+                    <div class="code-version-tabs" style="margin-bottom:12px;" id="colorSampleSelector">
+                        <button type="button" class="code-ver-btn clr-sample-btn active" data-color="Red">Red [0–10]</button>
+                        <button type="button" class="code-ver-btn clr-sample-btn" data-color="Yellow">Yellow [20–30]</button>
+                        <button type="button" class="code-ver-btn clr-sample-btn" data-color="Green">Green [50–70]</button>
+                        <button type="button" class="code-ver-btn clr-sample-btn" data-color="Blue">Blue [90–120]</button>
+                        <button type="button" class="code-ver-btn clr-sample-btn" data-color="Black">Black [V&le;30]</button>
+                        <button type="button" class="code-ver-btn clr-sample-btn" data-color="White">White [S&le;30, V&ge;200]</button>
+                    </div>
+
+                    <svg viewBox="0 0 420 175" style="width:100%;height:auto;border-radius:10px;border:1px solid #1e293b;background:#090d16;display:block;" aria-label="Simulated Color Detection Frame">
+                        <!-- Top bar like OpenCV window -->
+                        <rect x="0" y="0" width="420" height="24" fill="#111827"/>
+                        <circle cx="14" cy="12" r="4" fill="#ef4444"/>
+                        <circle cx="27" cy="12" r="4" fill="#f59e0b"/>
+                        <circle cx="40" cy="12" r="4" fill="#22c55e"/>
+                        <text x="56" y="16" fill="#94a3b8" font-size="10" font-family="JetBrains Mono, monospace">Color Detection — cv2.imshow("Color Detection", frame)</text>
+
+                        <!-- Object 1: Red -->
+                        <circle cx="95" cy="96" r="28" fill="#ef4444" opacity="0.9"/>
+                        <circle cx="95" cy="96" r="32" fill="none" stroke="#00ff00" stroke-width="2" id="contourRed"/>
+                        <text x="78" y="58" fill="#00ff00" font-size="11" font-weight="bold" font-family="JetBrains Mono, monospace">Red</text>
+
+                        <!-- Object 2: Green -->
+                        <rect x="172" y="72" width="54" height="48" rx="6" fill="#22c55e" opacity="0.9"/>
+                        <rect x="169" y="69" width="60" height="54" rx="7" fill="none" stroke="#00ff00" stroke-width="2" id="contourGreen"/>
+                        <text x="180" y="62" fill="#00ff00" font-size="11" font-weight="bold" font-family="JetBrains Mono, monospace">Green</text>
+
+                        <!-- Object 3: Blue -->
+                        <polygon points="295,68 332,120 258,120" fill="#3b82f6" opacity="0.9"/>
+                        <polygon points="295,63 337,123 253,123" fill="none" stroke="#00ff00" stroke-width="2" id="contourBlue"/>
+                        <text x="278" y="56" fill="#00ff00" font-size="11" font-weight="bold" font-family="JetBrains Mono, monospace">Blue</text>
+
+                        <!-- Object 4: Small noise (< 100 px, ignored) -->
+                        <circle cx="378" cy="96" r="4" fill="#facc15"/>
+                        <text x="355" y="116" fill="#64748b" font-size="8" font-family="JetBrains Mono, monospace">area&lt;100 (skip)</text>
+
+                        <!-- Bottom status bar -->
+                        <rect x="0" y="148" width="420" height="27" fill="#111827"/>
+                        <text x="12" y="165" fill="#7dd3fc" font-size="10" font-family="JetBrains Mono, monospace" id="colorDetectionSummary">Active Target: Red | Mask HSV [0..10, 100..255, 100..255] | Press 'q' to exit</text>
+                    </svg>
+                </div>
+
+                <div class="spec-modal-grid">
+                    <div class="spec-box">
+                        <strong>HSV Threshold Ranges Used</strong>
+                        <p><code>Red</code> [0–10], <code>Yellow</code> [20–30], <code>Green</code> [50–70], <code>Blue</code> [90–120], <code>Black</code> [H 0–180, S 0–255, V 0–30], and <code>White</code> [H 0–180, S 0–30, V 200–255].</p>
+                    </div>
+                    <div class="spec-box">
+                        <strong>Contour &amp; Noise Filtering</strong>
+                        <p>Uses <code>cv2.findContours(..., cv2.RETR_EXTERNAL, cv2.CHAIN_APPROX_SIMPLE)</code> and ignores noise smaller than <code>area &gt; 100</code> pixels before drawing green contours &amp; labels.</p>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 
@@ -1014,7 +1085,7 @@ void follow_line() {
   setMotor(robotSpeedLeft, robotSpeedRight);
 }`;
 
-            // 3. SIBUKU Code Versions (v2.0 Modular & v1.0 Base)
+            // 3. SIBUKU Code Versions & Sample Output
             const sibukuCodes = {
                 v2: `#include <iostream>
 #include <ctime>
@@ -1218,7 +1289,27 @@ int main (){
 		break;
 	}
 	return 0;
-}`
+}`,
+                output: `[1] daftar_buku(3) — Input: [405, 102, 218] -> Bubble Sort (Ascending)
+Masukkan Kode Buku Pilihan Ke - 1 : 405
+Masukkan Kode Buku Pilihan Ke - 2 : 102
+Masukkan Kode Buku Pilihan Ke - 3 : 218
+Buku yang dipinjam: 102 218 405
+
+[2] pengembalian_buku() — Contoh Kasus Keterlambatan (2 Hari)
+ANDA TERLAMBAT MENGEMBALIKAN BUKU, DENDA Rp 50.000 / HARI
+Berapa hari anda terlambat mengembalikan buku? 2
+Jadi total denda yang harus anda bayar sebesar Rp. 100000
+
+[3] bukti_peminjaman(3, ...) — Struck Bukti Peminjaman Buku
+************************** SIBUKU **************************
+*************** Struck Bukti Peminjaman Buku ***************
+Nama                 : Thiflah Sa'diyah Alma Sholihah
+NIM                  : 670522xxxx
+Fakultas             : Fakultas Ilmu Terapan
+Buku Yang Dipinjam   : 3
+Tanggal Peminjaman   : 26-11-2026
+       Tanggal Pengembalian H+7 Setelah Tanggal Peminjaman`
             };
 
             const colorDetectionCode = `import cv2
@@ -1283,6 +1374,15 @@ while True:
 # Tutup kamera dan jendela
 cap.release()
 cv2.destroyAllWindows()`;
+
+            const colorRangeMeta = {
+                Red: "Active Target: Red | Mask HSV [0..10, 100..255, 100..255] | Contour area > 100 px",
+                Yellow: "Active Target: Yellow | Mask HSV [20..30, 100..255, 100..255] | Contour area > 100 px",
+                Green: "Active Target: Green | Mask HSV [50..70, 100..255, 100..255] | Contour area > 100 px",
+                Blue: "Active Target: Blue | Mask HSV [90..120, 100..255, 100..255] | Contour area > 100 px",
+                Black: "Active Target: Black | Mask HSV [0..180, 0..255, 0..30] | Contour area > 100 px",
+                White: "Active Target: White | Mask HSV [0..180, 0..30, 200..255] | Contour area > 100 px"
+            };
 
             const lineFollowerCodeBlock = document.getElementById('lineFollowerCodeBlock');
             const sibukuCodeBlock = document.getElementById('sibukuCodeBlock');
@@ -1599,9 +1699,45 @@ cv2.destroyAllWindows()`;
                         sibukuCodeBlock.textContent = sibukuCodes[ver];
                     }
                     if (sibukuVersionDesc) {
-                        sibukuVersionDesc.textContent = ver === 'v2'
-                            ? 'v2.0 (Advanced Semester): Modular procedures, Bubble Sort ascending book codes, <ctime> system timestamps & H+7 return policy.'
-                            : 'v1.0 (Initial Semester): Core CLI prototype using struct records, switch-case menu branching & manual date entry.';
+                        if (ver === 'v2') {
+                            sibukuVersionDesc.textContent = 'v2.0 (Advanced Semester): Modular procedures, Bubble Sort ascending book codes, <ctime> system timestamps & H+7 return policy.';
+                        } else if (ver === 'v1') {
+                            sibukuVersionDesc.textContent = 'v1.0 (Initial Semester): Core CLI prototype using struct records, switch-case menu branching & manual date entry.';
+                        } else {
+                            sibukuVersionDesc.textContent = 'Sample execution output for Bubble Sort book codes, Rp 50.000/day late fine calculation, and Struck Bukti Peminjaman Buku.';
+                        }
+                    }
+                    return;
+                }
+
+                const clrTabBtn = e.target.closest('.clr-tab-btn');
+                if (clrTabBtn) {
+                    document.querySelectorAll('.clr-tab-btn').forEach(b => b.classList.remove('active'));
+                    clrTabBtn.classList.add('active');
+                    const mode = clrTabBtn.getAttribute('data-clr');
+                    const codeView = document.getElementById('colorCodeView');
+                    const outView = document.getElementById('colorOutputView');
+                    const descEl = document.getElementById('colorTabDesc');
+                    if (mode === 'code') {
+                        if (codeView) codeView.style.display = 'block';
+                        if (outView) outView.style.display = 'none';
+                        if (descEl) descEl.innerHTML = 'Converts camera feed from BGR to HSV, applies color range masks, filters contours &gt; 100 px, and draws bounding contours + labels until <code>q</code> is pressed.';
+                    } else {
+                        if (codeView) codeView.style.display = 'none';
+                        if (outView) outView.style.display = 'block';
+                        if (descEl) descEl.innerHTML = 'Simulated output preview of <code>detect_color()</code> drawing contours and labels for objects above <code>100 px</code> in HSV color space.';
+                    }
+                    return;
+                }
+
+                const clrSampleBtn = e.target.closest('.clr-sample-btn');
+                if (clrSampleBtn) {
+                    document.querySelectorAll('.clr-sample-btn').forEach(b => b.classList.remove('active'));
+                    clrSampleBtn.classList.add('active');
+                    const selectedColor = clrSampleBtn.getAttribute('data-color');
+                    const summaryEl = document.getElementById('colorDetectionSummary');
+                    if (summaryEl && colorRangeMeta[selectedColor]) {
+                        summaryEl.textContent = `${colorRangeMeta[selectedColor]} | Press 'q' to exit`;
                     }
                     return;
                 }
