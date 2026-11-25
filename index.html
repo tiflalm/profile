@@ -9,7 +9,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="styles.css?v=3">
 </head>
 <body>
 
@@ -28,7 +28,7 @@
                 <li><a href="#credentials">Credentials</a></li>
                 <li><a href="#lets-talk" class="nav-cta">Let's Talk</a></li>
             </ul>
-            <button class="mobile-toggle" id="mobileToggle" aria-label="Menu">
+            <button type="button" class="mobile-toggle" id="mobileToggle" aria-label="Menu">
                 <i class="fa-solid fa-bars"></i>
             </button>
         </div>
@@ -41,10 +41,10 @@
             <div class="hero-main">
                 <div class="role-lens-bar">
                     <span class="lens-label"><i class="fa-solid fa-sliders"></i> Recruiter View:</span>
-                    <button class="lens-btn active" data-lens="all">Full Profile</button>
-                    <button class="lens-btn" data-lens="support">IT & Technical Support</button>
-                    <button class="lens-btn" data-lens="infra">Infra & Networking</button>
-                    <button class="lens-btn" data-lens="ai">Computer Vision & AI</button>
+                    <button type="button" class="lens-btn active" data-lens="all">Full Profile</button>
+                    <button type="button" class="lens-btn" data-lens="support">IT & Technical Support</button>
+                    <button type="button" class="lens-btn" data-lens="infra">Infra & Networking</button>
+                    <button type="button" class="lens-btn" data-lens="ai">Computer Vision & AI</button>
                 </div>
 
                 <h1>Thiflah Sa'diyah Alma Sholihah</h1>
@@ -59,8 +59,8 @@
                     <a href="#lets-talk" class="btn btn-primary">
                         <i class="fa-regular fa-comments"></i> Start a Conversation
                     </a>
-                    <a href="cv-thiflah-alma.pdf" download class="btn btn-secondary">
-                        <i class="fa-solid fa-file-arrow-down"></i> Download CV (PDF)
+                    <a href="./cv-thiflah-alma.pdf" target="_blank" rel="noopener" class="btn btn-secondary">
+                        <i class="fa-solid fa-file-pdf"></i> View / Download CV (PDF)
                     </a>
                     <a href="https://www.linkedin.com/in/tiflaalma/" target="_blank" rel="noopener" class="btn btn-icon" title="LinkedIn">
                         <i class="fa-brands fa-linkedin-in"></i>
@@ -203,7 +203,7 @@
                 </div>
             </div>
 
-            <!-- 3-Column Bento Grid for Other Key Projects & Operational Systems -->
+            <!-- 3-Column Bento Grid -->
             <div class="bento-grid">
                 <div class="bento-card">
                     <div class="bento-icon blue"><i class="fa-solid fa-tower-broadcast"></i></div>
@@ -254,37 +254,37 @@
             <div class="career-explorer">
                 <!-- Left Tabs -->
                 <div class="career-tabs" role="tablist">
-                    <button class="career-tab active" data-target="exp-detik">
+                    <button type="button" class="career-tab active" data-target="exp-detik">
                         <span class="tab-period">Nov 2025 – May 2026</span>
                         <strong>detikcom (PT Trans Digital Media)</strong>
                         <small>IT Streaming Support</small>
                     </button>
-                    <button class="career-tab" data-target="exp-telkom">
+                    <button type="button" class="career-tab" data-target="exp-telkom">
                         <span class="tab-period">Mar 2024 – Aug 2025 (1 yr 6 mos)</span>
                         <strong>Telkom University</strong>
                         <small>Practicum Coordinator & 6-Course Mentor</small>
                     </button>
-                    <button class="career-tab" data-target="exp-ens">
+                    <button type="button" class="career-tab" data-target="exp-ens">
                         <span class="tab-period">Sep 2024 – Jul 2025</span>
                         <strong>Embedded & Network System Lab</strong>
                         <small>Computer Vision Specialist & ROSI Lead</small>
                     </button>
-                    <button class="career-tab" data-target="exp-kerta">
+                    <button type="button" class="career-tab" data-target="exp-kerta">
                         <span class="tab-period">Oct 2025 – Nov 2025</span>
                         <strong>PT Kerta Rajasa Raya</strong>
                         <small>Electrical Technician</small>
                     </button>
-                    <button class="career-tab" data-target="exp-kemnaker">
+                    <button type="button" class="career-tab" data-target="exp-kemnaker">
                         <span class="tab-period">Sep 2025 – Oct 2025</span>
                         <strong>Kementerian Ketenagakerjaan RI</strong>
                         <small>Smart Building Integration Systems</small>
                     </button>
-                    <button class="career-tab" data-target="exp-bps">
+                    <button type="button" class="career-tab" data-target="exp-bps">
                         <span class="tab-period">Jun 2026 – Jul 2026</span>
                         <strong>Badan Pusat Statistik (BPS)</strong>
                         <small>Field Data Collector (Sensus Ekonomi 2026)</small>
                     </button>
-                    <button class="career-tab" data-target="exp-staffinc">
+                    <button type="button" class="career-tab" data-target="exp-staffinc">
                         <span class="tab-period">Oct 2026 – Present</span>
                         <strong>Staffinc Group</strong>
                         <small>Recruiter Affiliate (Remote)</small>
@@ -489,11 +489,11 @@
                     <h2>Education, Certifications & Leadership</h2>
                 </div>
                 <div class="filter-tabs" id="credFilters">
-                    <button class="filter-btn active" data-filter="all">All Credentials</button>
-                    <button class="filter-btn" data-filter="edu">Education & Honors</button>
-                    <button class="filter-btn" data-filter="net">Huawei, Cisco & Infra</button>
-                    <button class="filter-btn" data-filter="iso">ISO, BNSP & Cloud/AI</button>
-                    <button class="filter-btn" data-filter="org">Leadership</button>
+                    <button type="button" class="filter-btn active" data-filter="all">All Credentials</button>
+                    <button type="button" class="filter-btn" data-filter="edu">Education & Honors</button>
+                    <button type="button" class="filter-btn" data-filter="net">Huawei, Cisco & Infra</button>
+                    <button type="button" class="filter-btn" data-filter="iso">ISO, BNSP & Cloud/AI</button>
+                    <button type="button" class="filter-btn" data-filter="org">Leadership</button>
                 </div>
             </div>
 
@@ -621,6 +621,85 @@
         </div>
     </footer>
 
-    <script src="script.js"></script>
+    <!-- Embedded Interactive Engine (Zero Cache Dependency) -->
+    <script>
+        (function () {
+            const yearEl = document.getElementById('year');
+            if (yearEl) yearEl.textContent = new Date().getFullYear();
+
+            const lensData = {
+                all: {
+                    headline: "IT Support | Technical Support | IT Infrastructure & Networking | Computer Vision & AI",
+                    pitch: "Versatile engineer turning complex technical operations into reliable systems—from live national broadcasts at <strong>detikcom</strong> and <strong>149,821.2 kWh</strong> industrial energy digitization to patent-registered <strong>real-time Computer Vision AI</strong>."
+                },
+                support: {
+                    headline: "IT Support & Technical Support Specialist — Live Broadcast, Lab & End-User Operations",
+                    pitch: "Google IT Support Certified engineer with hands-on incident troubleshooting at <strong>detikcom</strong> (vMix, OBS, Wirecast, ATEM, AnyDesk) and 1.5 years mentoring <strong>100+ students per batch</strong> across 6 computer hardware, OS, and database labs."
+                },
+                infra: {
+                    headline: "IT Infrastructure, Network Security & Smart Building Integration Engineer",
+                    pitch: "<strong>Huawei HCIA-Security (1000/1000)</strong>, <strong>HCIA-Datacom (905/1000)</strong>, and <strong>Cisco CCNAv7 & CyberOps</strong> certified specialist experienced in IPsec VPNs, iptables, Wireshark, IIoT Building Automation (Kemnaker RI), and ISO 45001:2018 electrical systems."
+                },
+                ai: {
+                    headline: "Computer Vision & Applied AI Engineer — Registered Patent Holder (SIPEKA)",
+                    pitch: "Co-inventor of <strong>SIPEKA (Patent EC002026058674)</strong> and <strong>3rd Place Winner at Huawei ICT Competition</strong>. Engineered a real-time driver drowsiness detection system using YOLOv8, Dlib, and OpenCV achieving <strong>91.5% mAP at 25 FPS (4 ms latency)</strong>."
+                }
+            };
+
+            document.addEventListener('click', function (e) {
+                // 1. Mobile Toggle
+                const toggleBtn = e.target.closest('#mobileToggle');
+                if (toggleBtn) {
+                    const navMenu = document.getElementById('navMenu');
+                    if (navMenu) navMenu.classList.toggle('open');
+                    return;
+                }
+
+                if (e.target.closest('#navMenu a')) {
+                    const navMenu = document.getElementById('navMenu');
+                    if (navMenu) navMenu.classList.remove('open');
+                }
+
+                // 2. Role Lens Switcher
+                const lensBtn = e.target.closest('.lens-btn');
+                if (lensBtn) {
+                    document.querySelectorAll('.lens-btn').forEach(b => b.classList.remove('active'));
+                    lensBtn.classList.add('active');
+                    const key = lensBtn.getAttribute('data-lens');
+                    const headlineEl = document.getElementById('dynamicHeadline');
+                    const pitchEl = document.getElementById('dynamicPitch');
+                    if (lensData[key] && headlineEl && pitchEl) {
+                        headlineEl.textContent = lensData[key].headline;
+                        pitchEl.innerHTML = lensData[key].pitch;
+                    }
+                    return;
+                }
+
+                // 3. 03 / Interactive Career Explorer Tabs
+                const careerTab = e.target.closest('.career-tab');
+                if (careerTab) {
+                    document.querySelectorAll('.career-tab').forEach(t => t.classList.remove('active'));
+                    document.querySelectorAll('.career-panel').forEach(p => p.classList.remove('active'));
+                    careerTab.classList.add('active');
+                    const targetId = careerTab.getAttribute('data-target');
+                    const targetPanel = document.getElementById(targetId);
+                    if (targetPanel) targetPanel.classList.add('active');
+                    return;
+                }
+
+                // 4. 05 / Verified Qualifications Filter
+                const filterBtn = e.target.closest('#credFilters .filter-btn');
+                if (filterBtn) {
+                    document.querySelectorAll('#credFilters .filter-btn').forEach(b => b.classList.remove('active'));
+                    filterBtn.classList.add('active');
+                    const filter = filterBtn.getAttribute('data-filter');
+                    document.querySelectorAll('#credGrid .cred-card').forEach(card => {
+                        const cat = card.getAttribute('data-category');
+                        card.style.display = (filter === 'all' || cat === filter) ? 'block' : 'none';
+                    });
+                }
+            });
+        })();
+    </script>
 </body>
 </html>
