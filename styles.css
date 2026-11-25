@@ -36,10 +36,9 @@ body {
     color: var(--text-primary);
     line-height: 1.65;
     overflow-x: hidden;
-    padding-top: 68px; /* Kompensasi fixed navbar */
+    padding-top: 68px;
 }
 
-/* Container */
 .container {
     max-width: 1120px;
     width: 100%;
@@ -174,7 +173,7 @@ body {
 
 .hero-grid {
     display: grid;
-    grid-template-columns: 210px 1fr;
+    grid-template-columns: 215px 1fr;
     gap: 44px;
     align-items: center;
 }
@@ -206,13 +205,14 @@ body {
     background: rgba(255, 255, 255, 0.08);
     border: 1px solid rgba(255, 255, 255, 0.15);
     color: #cbd5e1;
-    font-size: 0.74rem;
+    font-size: 0.72rem;
     font-weight: 600;
     padding: 4px 12px;
     border-radius: 20px;
     display: inline-flex;
     align-items: center;
     gap: 6px;
+    text-align: center;
 }
 
 .verified-chip i {
@@ -723,6 +723,7 @@ a.pill:hover {
 
 .footer-list i.fa-envelope,
 .footer-list i.fa-linkedin,
+.footer-list i.fa-github,
 .footer-list i.fa-location-dot {
     color: #38bdf8;
 }
