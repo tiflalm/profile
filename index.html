@@ -9,7 +9,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-    <link rel="stylesheet" href="styles.css?v=21">
+    <link rel="stylesheet" href="styles.css?v=23">
 </head>
 <body>
 
@@ -131,7 +131,7 @@
             <div class="section-head">
                 <span class="eyebrow">02 / Selected Work & Technical Proof</span>
                 <h2>Featured Case Studies & Registered Patent</h2>
-                <p class="section-sub">Real systems built, deployed, and operated across computer vision AI, broadcast infrastructure, smart buildings, robotics, and software engineering.</p>
+                <p class="section-sub">Real systems built, deployed, and operated across computer vision AI, broadcast infrastructure, smart buildings, databases, electronics, and software engineering.</p>
             </div>
 
             <!-- Flagship SIPEKA Card with 4-Step Pipeline & Production-Accurate Simulator -->
@@ -277,7 +277,7 @@
                 </div>
             </div>
 
-            <!-- 2x2 Bento Grid (4 Engineering & Academic Projects) -->
+            <!-- Bento Grid of Engineering & Academic Projects -->
             <div class="bento-grid">
                 <div class="bento-card">
                     <div class="bento-icon blue"><i class="fa-solid fa-tower-broadcast"></i></div>
@@ -329,6 +329,57 @@
                     </p>
                     <div class="tech-pills">
                         <span>C++ Modular</span><span>Bubble Sort</span><span>&lt;ctime&gt; Timestamp</span><span>Struct & Records</span>
+                    </div>
+                </div>
+
+                <div class="bento-card">
+                    <div class="bento-top-row">
+                        <div class="bento-icon rose"><i class="fa-solid fa-palette"></i></div>
+                        <button type="button" class="code-preview-btn rose-btn" id="openColorModal">
+                            <i class="fa-brands fa-python"></i> View Python Code
+                        </button>
+                    </div>
+                    <span class="bento-kicker">Digital Systems CLO 3 • Telkom University (2023)</span>
+                    <h4>Real-Time HSV Color Detection (`CLO3_TypeA.py`)</h4>
+                    <p>
+                        Built a live webcam object-color detector in Python using <strong>OpenCV &amp; NumPy</strong>: converts BGR frames to <strong>HSV</strong>, masks 6 color ranges (<em>Red, Yellow, Green, Blue, Black, White</em>), extracts external contours with area filtering (<code>&gt; 100 px</code>), and overlays labels.
+                    </p>
+                    <div class="tech-pills">
+                        <span>Python 3.11</span><span>OpenCV (cv2)</span><span>NumPy</span><span>BGR-to-HSV</span><span>Contour Filtering</span>
+                    </div>
+                </div>
+
+                <div class="bento-card">
+                    <div class="bento-top-row">
+                        <div class="bento-icon amber"><i class="fa-solid fa-database"></i></div>
+                        <button type="button" class="code-preview-btn amber-btn" id="openNeiraModal">
+                            <i class="fa-solid fa-table"></i> Schema &amp; SQL ACL
+                        </button>
+                    </div>
+                    <span class="bento-kicker">Database Systems (MariaDB) • Telkom University (2022/2023)</span>
+                    <h4>Sistem Pengelolaan Kamar Kost Neira</h4>
+                    <p>
+                        Designed an ERD and relational MariaDB schema (<code>kamar</code>, <code>penyewa_kost</code>, <code>kamar_kost</code>, <code>gedung</code>, <code>mengurus</code>) with foreign keys, <code>JOIN</code> &amp; <code>GROUP BY</code> queries, and role-based user privileges (<code>Yeni</code>, <code>Neira</code>, <code>Penyewa</code>).
+                    </p>
+                    <div class="tech-pills">
+                        <span>MariaDB / SQL</span><span>ERD &amp; Relational Schema</span><span>JOIN &amp; GROUP BY</span><span>Role Privileges (ACL)</span>
+                    </div>
+                </div>
+
+                <div class="bento-card full-bento">
+                    <div class="bento-top-row">
+                        <div class="bento-icon cyan"><i class="fa-solid fa-bolt"></i></div>
+                        <button type="button" class="code-preview-btn cyan-btn" id="openFlipflopModal">
+                            <i class="fa-solid fa-microchip"></i> Circuit & BOM Specs
+                        </button>
+                    </div>
+                    <span class="bento-kicker">Basic Electronics & Electric Circuits • Telkom University (2022/2023)</span>
+                    <h4>Bistable / Astable LED Flip-Flop PCB Circuit</h4>
+                    <p>
+                        Designed, simulated in <strong>Falstad</strong>, and soldered on a custom PCB using <strong>BC 547 transistors</strong>, <strong>100 µF capacitors</strong> (governing oscillation speed), <strong>470 Ω &amp; 10 kΩ resistors</strong>, dual red/blue LEDs, and a 9V battery power switch.
+                    </p>
+                    <div class="tech-pills">
+                        <span>BC 547 Transistor</span><span>100 µF Capacitor</span><span>Falstad Simulation</span><span>PCB Soldering</span><span>9V Power Circuit</span>
                     </div>
                 </div>
             </div>
@@ -765,6 +816,65 @@
         </div>
     </div>
 
+    <!-- Pop-Up Python Source Code Viewer for Real-Time HSV Color Detection -->
+    <div class="modal-backdrop" id="colorModal" aria-hidden="true">
+        <div class="modal-dialog code-modal-dialog" role="dialog" aria-modal="true" aria-labelledby="colorModalTitle">
+            <button type="button" class="modal-close" id="closeColorModal" aria-label="Close">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+            <span class="eyebrow light">Sistem Digital • Assessment CLO 3 (2023)</span>
+            <h3 id="colorModalTitle">CLO3_TypeA.py — Real-Time HSV Color Detection</h3>
+            <p class="modal-sub">Converts camera feed from BGR to HSV, applies color range masks, filters contours &gt; 100 px, and draws bounding contours + labels until <code>q</code> is pressed.</p>
+            <pre class="code-modal-pre"><code id="colorCodeBlock"></code></pre>
+        </div>
+    </div>
+
+    <!-- Pop-Up Schema & SQL ACL Viewer for Sistem Pengelolaan Kamar Kost Neira -->
+    <div class="modal-backdrop" id="neiraModal" aria-hidden="true">
+        <div class="modal-dialog code-modal-dialog" role="dialog" aria-modal="true" aria-labelledby="neiraModalTitle">
+            <button type="button" class="modal-close" id="closeNeiraModal" aria-label="Close">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+            <span class="eyebrow light">Basis Data • MariaDB (2022/2023)</span>
+            <h3 id="neiraModalTitle">Sistem Pengelolaan Kamar Kost Neira</h3>
+            <p class="modal-sub">Relational schema, foreign key constraints, multi-table queries, and user privilege configuration.</p>
+
+            <div class="spec-modal-grid">
+                <div class="spec-box">
+                    <strong>Tables &amp; Foreign Keys</strong>
+                    <p><code>kamar</code> (PK <code>Id_Kamar</code>, FKs to <code>gedung</code>, <code>kamar_kost</code>, <code>penyewa_kost</code>), <code>penyewa_kost</code>, <code>kamar_kost</code>, <code>gedung</code>, and <code>mengurus</code> (FKs to <code>pengurus_kost</code> &amp; <code>kamar</code>).</p>
+                </div>
+                <div class="spec-box">
+                    <strong>Queries &amp; User Privileges</strong>
+                    <p>Used <code>JOIN</code> and <code>GROUP BY</code> / <code>COUNT(*)</code> reports, plus user accounts <code>Yeni</code> (ALL privileges), <code>Neira</code> (SELECT, INSERT, UPDATE, DELETE, CREATE), and <code>Penyewa</code> (SELECT on <code>kamar</code>).</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Pop-Up Specs Viewer for LED Flip-Flop PCB Circuit -->
+    <div class="modal-backdrop" id="flipflopModal" aria-hidden="true">
+        <div class="modal-dialog code-modal-dialog" role="dialog" aria-modal="true" aria-labelledby="flipflopModalTitle">
+            <button type="button" class="modal-close" id="closeFlipflopModal" aria-label="Close">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+            <span class="eyebrow light">Elektronika Dasar &amp; Rangkaian Elektrik • 2022/2023</span>
+            <h3 id="flipflopModalTitle">Rangkaian Sederhana Lampu Flip-Flop</h3>
+            <p class="modal-sub">Telkom University (D3 Computer Technology) • Falstad Simulation &amp; PCB Assembly</p>
+
+            <div class="spec-modal-grid">
+                <div class="spec-box">
+                    <strong>Active &amp; Timing Components</strong>
+                    <p>2× BC 547 transistors, 2× 100 µF capacitors (smaller capacitance increases flip-flop speed), 2× 470 Ω resistors, 2× 10 kΩ resistors, 1× red LED, 1× blue LED, 9V battery + battery clip + switch.</p>
+                </div>
+                <div class="spec-box">
+                    <strong>Assembly &amp; Verification</strong>
+                    <p>Verified schematic logic in Falstad before PCB layout, component pin inspection, careful soldering to prevent solder bridges, and dual-LED alternating toggle testing.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <!-- Clean, Self-Contained Interactive Engine -->
     <script>
         (function () {
@@ -927,7 +1037,7 @@ int main (){
 	
 	cout << " =============================================== \\n";
 	cout << " =       SELAMAT DATANG DI APLIKASI SIBUKU     = \\n";
-	cout << " =============================================== \\n";
+	cout << " = ============================================= \\n";
 	
 	cout << " Nama: ";     getline (cin, mjn.nama);
 	cout << " NIM: ";      getline (cin, mjn.nim);
@@ -998,9 +1108,74 @@ int main (){
 }`
             };
 
+            const colorDetectionCode = `import cv2
+import numpy as np
+
+
+# Fungsi untuk mendeteksi warna
+def detect_color(hsv_image, lower_range, upper_range, color_name):
+    mask = cv2.inRange(hsv_image, lower_range, upper_range)
+    contours, _ = cv2.findContours(mask, cv2.RETR_EXTERNAL, cv2.CHAIN_APPROX_SIMPLE)
+
+    for contour in contours:
+        area = cv2.contourArea(contour)
+        if area > 100:  # Hanya mendeteksi benda dengan area minimal 100 piksel
+            cv2.drawContours(frame, [contour], 0, (0, 255, 0), 2)
+            cv2.putText(frame, color_name, (contour[0][0][0], contour[0][0][1]), cv2.FONT_HERSHEY_SIMPLEX, 0.7,
+                        (0, 255, 0), 2)
+
+
+# Inisialisasi kamera
+cap = cv2.VideoCapture(0)
+
+while True:
+    # Ambil frame dari kamera
+    ret, frame = cap.read()
+
+    if not ret:
+        break
+
+    # Ubah ruang warna dari BGR ke HSV
+    frame_hsv = cv2.cvtColor(frame, cv2.COLOR_BGR2HSV)
+
+    # Definisikan range warna yang akan dideteksi
+    lower_red = np.array([0, 100, 100])
+    upper_red = np.array([10, 255, 255])
+    lower_yellow = np.array([20, 100, 100])
+    upper_yellow = np.array([30, 255, 255])
+    lower_green = np.array([50, 100, 100])
+    upper_green = np.array([70, 255, 255])
+    lower_blue = np.array([90, 100, 100])
+    upper_blue = np.array([120, 255, 255])
+    lower_black = np.array([0, 0, 0])
+    upper_black = np.array([180, 255, 30])
+    lower_white = np.array([0, 0, 200])
+    upper_white = np.array([180, 30, 255])
+
+    # Panggil fungsi detect_color untuk setiap range warna
+    detect_color(frame_hsv, lower_red, upper_red, "Red")
+    detect_color(frame_hsv, lower_yellow, upper_yellow, "Yellow")
+    detect_color(frame_hsv, lower_green, upper_green, "Green")
+    detect_color(frame_hsv, lower_blue, upper_blue, "Blue")
+    detect_color(frame_hsv, lower_black, upper_black, "Black")
+    detect_color(frame_hsv, lower_white, upper_white, "White")
+
+    # Tampilkan frame dengan kotak dan teks warna yang dideteksi
+    cv2.imshow("Color Detection", frame)
+
+    # Tunggu tombol 'q' untuk keluar dari program
+    if cv2.waitKey(1) & 0xFF == ord('q'):
+        break
+
+# Tutup kamera dan jendela
+cap.release()
+cv2.destroyAllWindows()`;
+
             const sibukuCodeBlock = document.getElementById('sibukuCodeBlock');
             const sibukuVersionDesc = document.getElementById('sibukuVersionDesc');
+            const colorCodeBlock = document.getElementById('colorCodeBlock');
             if (sibukuCodeBlock) sibukuCodeBlock.textContent = sibukuCodes.v2;
+            if (colorCodeBlock) colorCodeBlock.textContent = colorDetectionCode;
 
             // 3. Production-Accurate SIPEKA Telemetry Simulator
             const earSlider = document.getElementById('earSlider');
@@ -1175,11 +1350,14 @@ int main (){
                 });
             }
 
-            // 4. Modals Logic (Contact Channel & SIBUKU Code Viewer)
+            // 4. Modals Logic
             const talkModal = document.getElementById('talkModal');
             const modalTitle = document.getElementById('modalTitle');
             const modalEmailBtn = document.getElementById('modalEmailBtn');
             const sibukuModal = document.getElementById('sibukuModal');
+            const colorModal = document.getElementById('colorModal');
+            const neiraModal = document.getElementById('neiraModal');
+            const flipflopModal = document.getElementById('flipflopModal');
 
             function openTalkModal(track) {
                 if (!talkModal || !modalTitle || !modalEmailBtn) return;
@@ -1194,8 +1372,15 @@ int main (){
                 document.body.style.overflow = 'hidden';
             }
 
+            function openModal(modalEl) {
+                if (!modalEl) return;
+                modalEl.classList.add('open');
+                modalEl.setAttribute('aria-hidden', 'false');
+                document.body.style.overflow = 'hidden';
+            }
+
             function closeAllModals() {
-                [talkModal, sibukuModal].forEach(m => {
+                [talkModal, sibukuModal, colorModal, neiraModal, flipflopModal].forEach(m => {
                     if (m) {
                         m.classList.remove('open');
                         m.setAttribute('aria-hidden', 'true');
@@ -1214,7 +1399,6 @@ int main (){
 
             // 5. Global Click Delegation
             document.addEventListener('click', function (e) {
-                // Mobile Menu Toggle
                 const toggleBtn = e.target.closest('#mobileToggle');
                 if (toggleBtn) {
                     const navMenu = document.getElementById('navMenu');
@@ -1227,7 +1411,6 @@ int main (){
                     if (navMenu) navMenu.classList.remove('open');
                 }
 
-                // Role Lens Switcher
                 const lensBtn = e.target.closest('.lens-btn');
                 if (lensBtn) {
                     document.querySelectorAll('.lens-btn').forEach(b => b.classList.remove('active'));
@@ -1242,7 +1425,6 @@ int main (){
                     return;
                 }
 
-                // Interactive Career Explorer Tabs
                 const careerTab = e.target.closest('.career-tab');
                 if (careerTab) {
                     document.querySelectorAll('.career-tab').forEach(t => t.classList.remove('active'));
@@ -1254,7 +1436,6 @@ int main (){
                     return;
                 }
 
-                // Credentials Filter
                 const filterBtn = e.target.closest('#credFilters .filter-btn');
                 if (filterBtn) {
                     document.querySelectorAll('#credFilters .filter-btn').forEach(b => b.classList.remove('active'));
@@ -1267,17 +1448,11 @@ int main (){
                     return;
                 }
 
-                // Open SIBUKU C++ Code Modal
-                if (e.target.closest('#openSibukuModal')) {
-                    if (sibukuModal) {
-                        sibukuModal.classList.add('open');
-                        sibukuModal.setAttribute('aria-hidden', 'false');
-                        document.body.style.overflow = 'hidden';
-                    }
-                    return;
-                }
+                if (e.target.closest('#openSibukuModal')) { openModal(sibukuModal); return; }
+                if (e.target.closest('#openColorModal')) { openModal(colorModal); return; }
+                if (e.target.closest('#openNeiraModal')) { openModal(neiraModal); return; }
+                if (e.target.closest('#openFlipflopModal')) { openModal(flipflopModal); return; }
 
-                // Switch SIBUKU Code Version (v2.0 vs v1.0)
                 const verBtn = e.target.closest('.code-ver-btn');
                 if (verBtn) {
                     document.querySelectorAll('.code-ver-btn').forEach(b => b.classList.remove('active'));
@@ -1294,19 +1469,23 @@ int main (){
                     return;
                 }
 
-                // Open Blur Modal when a Role Track Card is clicked
                 const card = e.target.closest('.talk-card[data-track]');
                 if (card) {
                     openTalkModal(card.getAttribute('data-track'));
                     return;
                 }
 
-                // Close Any Blur Modal
                 if (
                     e.target.closest('#closeTalkModal') ||
                     e.target.closest('#closeSibukuModal') ||
+                    e.target.closest('#closeColorModal') ||
+                    e.target.closest('#closeNeiraModal') ||
+                    e.target.closest('#closeFlipflopModal') ||
                     e.target === talkModal ||
-                    e.target === sibukuModal
+                    e.target === sibukuModal ||
+                    e.target === colorModal ||
+                    e.target === neiraModal ||
+                    e.target === flipflopModal
                 ) {
                     closeAllModals();
                 }
