@@ -9,7 +9,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-    <link rel="stylesheet" href="styles.css?v=6">
+    <link rel="stylesheet" href="styles.css?v=7">
 </head>
 <body>
 
@@ -631,84 +631,55 @@
             </div>
         </section>
 
-        <!-- SECTION 6: RECRUITER CONVERSATION STARTER (TRIGGERS POP-UP MODAL) -->
+        <!-- SECTION 6: CONVERSATION & COLLABORATION INVITATION -->
         <section id="lets-talk" class="section">
             <div class="talk-box">
                 <div class="talk-header">
                     <span class="eyebrow light">06 / Start a Conversation</span>
                     <h2>Let's discuss how I can support your engineering or IT operations</h2>
-                    <p>Click a role track below to open a quick message pop-up and send via Email or LinkedIn.</p>
+                    <p>Open for full-time opportunities, technical collaborations, and project discussions. Feel free to reach out or connect across any of these focus areas:</p>
                 </div>
 
                 <div class="talk-grid">
                     <!-- Track 1 -->
-                    <button type="button" class="talk-card" data-role="IT & Technical Support" data-subject="Interview Inquiry - IT Support / Technical Support" data-msg="Hi Thiflah,&#10;&#10;We reviewed your portfolio and would love to schedule a chat regarding an IT / Technical Support role.">
+                    <div class="talk-card">
                         <i class="fa-solid fa-headset"></i>
                         <div>
                             <strong>IT & Technical Support</strong>
                             <span>Troubleshooting, Windows/Linux, broadcast & user support</span>
                         </div>
-                        <i class="fa-solid fa-arrow-up-right-from-square"></i>
-                    </button>
+                    </div>
 
                     <!-- Track 2 -->
-                    <button type="button" class="talk-card" data-role="IT Infrastructure & Networking" data-subject="Interview Inquiry - IT Infrastructure & Networking" data-msg="Hi Thiflah,&#10;&#10;We reviewed your networking and infrastructure background on your portfolio and would love to connect.">
+                    <div class="talk-card">
                         <i class="fa-solid fa-network-wired"></i>
                         <div>
                             <strong>IT Infrastructure & Networking</strong>
                             <span>Cisco/Huawei routing, network security, IIoT & systems</span>
                         </div>
-                        <i class="fa-solid fa-arrow-up-right-from-square"></i>
-                    </button>
+                    </div>
 
                     <!-- Track 3 -->
-                    <button type="button" class="talk-card" data-role="Computer Vision & AI" data-subject="Interview Inquiry - Computer Vision & AI" data-msg="Hi Thiflah,&#10;&#10;We were impressed by your SIPEKA patent and Computer Vision work and would love to talk.">
+                    <div class="talk-card">
                         <i class="fa-solid fa-eye"></i>
                         <div>
                             <strong>Computer Vision & AI</strong>
                             <span>Real-time YOLOv8/OpenCV inference & applied AI systems</span>
                         </div>
-                        <i class="fa-solid fa-arrow-up-right-from-square"></i>
-                    </button>
+                    </div>
+                </div>
+
+                <div class="talk-cta-bar">
+                    <a href="https://www.linkedin.com/in/tiflaalma/" target="_blank" rel="noopener" class="btn btn-primary">
+                        <i class="fa-brands fa-linkedin"></i> Connect & Message on LinkedIn
+                    </a>
+                    <a href="mailto:difla78@gmail.com" class="btn btn-secondary">
+                        <i class="fa-solid fa-envelope"></i> Email Me (difla78@gmail.com)
+                    </a>
                 </div>
             </div>
         </section>
     </main>
-
-    <!-- POP-UP MODAL FOR EMAIL OR LINKEDIN MESSAGE -->
-    <div class="contact-modal-overlay" id="contactModalOverlay" aria-hidden="true">
-        <div class="contact-modal" role="dialog" aria-modal="true" aria-labelledby="modalRoleTitle">
-            <div class="modal-top">
-                <div>
-                    <span class="modal-kicker">Start a Conversation</span>
-                    <h3 id="modalRoleTitle">IT & Technical Support</h3>
-                </div>
-                <button type="button" class="modal-close-btn" id="modalCloseBtn" aria-label="Close pop-up">
-                    <i class="fa-solid fa-xmark"></i>
-                </button>
-            </div>
-
-            <p class="modal-subtitle">
-                Customize your message below, then choose whether to send it directly to my <strong>Email</strong> or message me on <strong>LinkedIn</strong>:
-            </p>
-
-            <label for="modalMessageBox" class="modal-label">Message Preview:</label>
-            <textarea id="modalMessageBox" class="modal-textarea" rows="4"></textarea>
-
-            <div class="modal-actions">
-                <a href="#" id="modalEmailBtn" class="modal-btn email">
-                    <i class="fa-solid fa-envelope"></i> Send to Email (difla78@gmail.com)
-                </a>
-                <button type="button" id="modalLinkedinBtn" class="modal-btn linkedin">
-                    <i class="fa-brands fa-linkedin"></i> Copy & Open LinkedIn
-                </button>
-            </div>
-
-            <div class="modal-copy-feedback" id="modalCopyFeedback">
-                <i class="fa-solid fa-circle-check"></i> Message copied! Opening LinkedIn profile...
-            </div>
-        </div>
-    </div>
 
     <!-- Presisi 3-Column Dark Executive Footer -->
     <footer id="contact" class="site-footer">
@@ -943,35 +914,7 @@
                 });
             }
 
-            // 3. Pop-up Modal Logic for Section 06
-            const modalOverlay = document.getElementById('contactModalOverlay');
-            const modalRoleTitle = document.getElementById('modalRoleTitle');
-            const modalMessageBox = document.getElementById('modalMessageBox');
-            const modalEmailBtn = document.getElementById('modalEmailBtn');
-            const modalLinkedinBtn = document.getElementById('modalLinkedinBtn');
-            const modalCopyFeedback = document.getElementById('modalCopyFeedback');
-            let currentEmailSubject = "Interview Inquiry";
-
-            function syncEmailHref() {
-                if (!modalEmailBtn || !modalMessageBox) return;
-                const bodyText = encodeURIComponent(modalMessageBox.value);
-                const subjText = encodeURIComponent(currentEmailSubject);
-                modalEmailBtn.href = `mailto:difla78@gmail.com?subject=${subjText}&body=${bodyText}`;
-            }
-
-            if (modalMessageBox) {
-                modalMessageBox.addEventListener('input', syncEmailHref);
-            }
-
-            function closeContactModal() {
-                if (modalOverlay) {
-                    modalOverlay.classList.remove('open');
-                    modalOverlay.setAttribute('aria-hidden', 'true');
-                }
-                if (modalCopyFeedback) modalCopyFeedback.classList.remove('show');
-            }
-
-            // 4. Global Click Delegation
+            // 3. Global Click Delegation
             document.addEventListener('click', function (e) {
                 // Mobile Menu Toggle
                 const toggleBtn = e.target.closest('#mobileToggle');
@@ -1023,48 +966,7 @@
                         const cat = card.getAttribute('data-category');
                         card.style.display = (filter === 'all' || cat === filter) ? 'block' : 'none';
                     });
-                    return;
                 }
-
-                // Open Pop-up Modal when clicking Section 06 Role Card
-                const talkCard = e.target.closest('.talk-card');
-                if (talkCard && modalOverlay) {
-                    const role = talkCard.getAttribute('data-role') || 'Role Inquiry';
-                    currentEmailSubject = talkCard.getAttribute('data-subject') || 'Interview Inquiry';
-                    const defaultMsg = talkCard.getAttribute('data-msg') || '';
-
-                    if (modalRoleTitle) modalRoleTitle.textContent = role;
-                    if (modalMessageBox) modalMessageBox.value = defaultMsg;
-                    if (modalCopyFeedback) modalCopyFeedback.classList.remove('show');
-                    syncEmailHref();
-
-                    modalOverlay.classList.add('open');
-                    modalOverlay.setAttribute('aria-hidden', 'false');
-                    return;
-                }
-
-                // Close Pop-up Modal (Close button or outside click)
-                if (e.target.closest('#modalCloseBtn') || e.target === modalOverlay) {
-                    closeContactModal();
-                    return;
-                }
-
-                // LinkedIn button inside Pop-up Modal
-                if (e.target.closest('#modalLinkedinBtn')) {
-                    const textToCopy = modalMessageBox ? modalMessageBox.value : '';
-                    if (navigator.clipboard && textToCopy) {
-                        navigator.clipboard.writeText(textToCopy).catch(() => {});
-                    }
-                    if (modalCopyFeedback) modalCopyFeedback.classList.add('show');
-                    setTimeout(() => {
-                        window.open('https://www.linkedin.com/in/tiflaalma/', '_blank', 'noopener');
-                    }, 450);
-                }
-            });
-
-            // Close Pop-up Modal on Escape key
-            document.addEventListener('keydown', function (e) {
-                if (e.key === 'Escape') closeContactModal();
             });
         })();
     </script>
