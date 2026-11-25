@@ -1106,39 +1106,42 @@ input[type="range"] {
 }
 
 .talk-card {
-    background: rgba(255, 255, 255, 0.04);
-    border: 1px solid rgba(255, 255, 255, 0.09);
+    background: transparent;
+    border: 1px solid transparent;
     border-radius: 12px;
-    padding: 18px 20px;
+    padding: 16px;
     display: flex;
     align-items: center;
     gap: 14px;
     cursor: pointer;
+    user-select: none;
     transition: all 0.2s ease;
 }
 
-.talk-card:hover {
+.talk-card:hover,
+.talk-card:focus-visible {
     background: rgba(59, 130, 246, 0.14);
-    border-color: rgba(96, 165, 250, 0.5);
+    border-color: rgba(96, 165, 250, 0.45);
     transform: translateY(-2px);
+    outline: none;
 }
 
 .talk-card i {
-    font-size: 1.2rem;
+    font-size: 1.35rem;
     color: #3b82f6;
     flex-shrink: 0;
 }
 
 .talk-card strong {
     display: block;
-    font-size: 0.94rem;
+    font-size: 0.96rem;
     font-weight: 700;
     color: #ffffff;
 }
 
 .talk-card span {
     display: block;
-    font-size: 0.78rem;
+    font-size: 0.8rem;
     color: #94a3b8;
     margin-top: 3px;
     line-height: 1.45;
@@ -1242,7 +1245,7 @@ input[type="range"] {
     position: fixed;
     inset: 0;
     z-index: 2000;
-    background: rgba(9, 13, 22, 0.68);
+    background: rgba(9, 13, 22, 0.72);
     backdrop-filter: blur(12px);
     -webkit-backdrop-filter: blur(12px);
     display: none;
@@ -1259,13 +1262,13 @@ input[type="range"] {
 .modal-dialog {
     position: relative;
     background: #0f172a;
-    border: 1px solid rgba(96, 165, 250, 0.3);
+    border: 1px solid rgba(96, 165, 250, 0.35);
     border-radius: 18px;
     padding: 30px;
     width: 100%;
     max-width: 440px;
     color: #ffffff;
-    box-shadow: 0 24px 60px rgba(0, 0, 0, 0.55);
+    box-shadow: 0 24px 60px rgba(0, 0, 0, 0.6);
 }
 
 .modal-close {
