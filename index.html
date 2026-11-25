@@ -9,7 +9,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-    <link rel="stylesheet" href="styles.css?v=23">
+    <link rel="stylesheet" href="styles.css?v=24">
 </head>
 <body>
 
@@ -131,7 +131,7 @@
             <div class="section-head">
                 <span class="eyebrow">02 / Selected Work & Technical Proof</span>
                 <h2>Featured Case Studies & Registered Patent</h2>
-                <p class="section-sub">Real systems built, deployed, and operated across computer vision AI, broadcast infrastructure, smart buildings, databases, electronics, and software engineering.</p>
+                <p class="section-sub">Real systems built, deployed, and operated across computer vision AI, broadcast infrastructure, smart buildings, robotics, databases, electronics, and software engineering.</p>
             </div>
 
             <!-- Flagship SIPEKA Card with 4-Step Pipeline & Production-Accurate Simulator -->
@@ -304,14 +304,31 @@
                 </div>
 
                 <div class="bento-card">
-                    <div class="bento-icon emerald"><i class="fa-solid fa-robot"></i></div>
-                    <span class="bento-kicker">Embedded & Renewable IoT</span>
-                    <h4>PID Line-Following Robot & Solar Hydroponics</h4>
+                    <div class="bento-top-row">
+                        <div class="bento-icon emerald"><i class="fa-solid fa-robot"></i></div>
+                        <button type="button" class="code-preview-btn emerald-btn" id="openLineFollowerModal">
+                            <i class="fa-solid fa-microchip"></i> PID Code &amp; Track Log
+                        </button>
+                    </div>
+                    <span class="bento-kicker">Autonomous Robotics &amp; Analog/PID Control • Telkom University (2023)</span>
+                    <h4>Line Follower — Digital PID + Bluetooth &amp; Analog Comparator</h4>
                     <p>
-                        Built an Arduino Nano autonomous robot with real-time Bluetooth PID tuning via MIT App Inventor, plus an off-grid solar-powered IoT hydroponic pH & nutrient monitor synced to Google Firebase.
+                        Built two line-following robots: a <strong>Digital PID Line Follower</strong> (8-channel ADC auto-calibration, <code>Kp/Kd/Ki</code> &amp; speed tuning via Serial/Bluetooth, H-bridge PWM) and an <strong>Analog Line Follower</strong> (photodiodes, LM324 comparator + 50kΩ VR, dual TIP41A/TIP41C motor drivers) tested on white-and-black tracks.
                     </p>
                     <div class="tech-pills">
-                        <span>C++ / Arduino</span><span>PID Control</span><span>Firebase IoT</span><span>Solar Power</span>
+                        <span>C++ / Arduino PID</span><span>8-Ch ADC Calibration</span><span>LM324 Comparator</span><span>TIP41A/C H-Bridge</span><span>Bluetooth Tuning</span>
+                    </div>
+                </div>
+
+                <div class="bento-card">
+                    <div class="bento-icon emerald"><i class="fa-solid fa-solar-panel"></i></div>
+                    <span class="bento-kicker">Renewable IoT</span>
+                    <h4>Solar Hydroponics & Bluetooth PID Line Follower</h4>
+                    <p>
+                        Built an off-grid solar-powered IoT hydroponic pH &amp; nutrient monitor synced to Google Firebase, alongside autonomous line-tracking hardware &amp; control systems.
+                    </p>
+                    <div class="tech-pills">
+                        <span>Firebase IoT</span><span>Solar Power</span><span>Sensor Telemetry</span><span>Embedded Control</span>
                     </div>
                 </div>
 
@@ -319,7 +336,7 @@
                     <div class="bento-top-row">
                         <div class="bento-icon violet"><i class="fa-solid fa-book-bookmark"></i></div>
                         <button type="button" class="code-preview-btn" id="openSibukuModal">
-                            <i class="fa-solid fa-code"></i> View C++ Code (v1 & v2)
+                            <i class="fa-solid fa-code"></i> View C++ Code (v1 &amp; v2)
                         </button>
                     </div>
                     <span class="bento-kicker">Iterative Academic Software • Telkom University (2022–2023)</span>
@@ -328,7 +345,7 @@
                         Iteratively built and refactored across two programming semesters: upgraded from a monolithic CLI into modular <code>void</code> procedures with <strong>Bubble Sort</strong> book-code ordering, real-time system timestamps (<code>&lt;ctime&gt;</code> / <code>strftime</code>), <strong>H+7 due-date policy</strong>, and automated <strong>Rp 50.000/day</strong> late fine calculation.
                     </p>
                     <div class="tech-pills">
-                        <span>C++ Modular</span><span>Bubble Sort</span><span>&lt;ctime&gt; Timestamp</span><span>Struct & Records</span>
+                        <span>C++ Modular</span><span>Bubble Sort</span><span>&lt;ctime&gt; Timestamp</span><span>Struct &amp; Records</span>
                     </div>
                 </div>
 
@@ -366,14 +383,14 @@
                     </div>
                 </div>
 
-                <div class="bento-card full-bento">
+                <div class="bento-card">
                     <div class="bento-top-row">
                         <div class="bento-icon cyan"><i class="fa-solid fa-bolt"></i></div>
                         <button type="button" class="code-preview-btn cyan-btn" id="openFlipflopModal">
-                            <i class="fa-solid fa-microchip"></i> Circuit & BOM Specs
+                            <i class="fa-solid fa-microchip"></i> Circuit &amp; BOM Specs
                         </button>
                     </div>
-                    <span class="bento-kicker">Basic Electronics & Electric Circuits • Telkom University (2022/2023)</span>
+                    <span class="bento-kicker">Basic Electronics &amp; Electric Circuits • Telkom University (2022/2023)</span>
                     <h4>Bistable / Astable LED Flip-Flop PCB Circuit</h4>
                     <p>
                         Designed, simulated in <strong>Falstad</strong>, and soldered on a custom PCB using <strong>BC 547 transistors</strong>, <strong>100 µF capacitors</strong> (governing oscillation speed), <strong>470 Ω &amp; 10 kΩ resistors</strong>, dual red/blue LEDs, and a 9V battery power switch.
@@ -797,6 +814,40 @@
         </div>
     </div>
 
+    <!-- Pop-Up Line Follower Viewer (Digital PID Code & Analog Logbook Summary) -->
+    <div class="modal-backdrop" id="lineFollowerModal" aria-hidden="true">
+        <div class="modal-dialog code-modal-dialog" role="dialog" aria-modal="true" aria-labelledby="lineFollowerModalTitle">
+            <button type="button" class="modal-close" id="closeLineFollowerModal" aria-label="Close">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+            <span class="eyebrow light">Telkom University • D3 Computer Technology</span>
+            <h3 id="lineFollowerModalTitle">Line Follower — Digital PID &amp; Analog Modules</h3>
+            <p class="modal-sub" id="lineFollowerTabDesc">Digital PID controller (8-channel ADC calibration, Serial/Bluetooth commands &amp; PID motor control) alongside Analog Line Follower module notes.</p>
+
+            <div class="code-version-tabs">
+                <button type="button" class="code-ver-btn lf-tab-btn active" data-lf="digital">Digital Line Follower (PID + Bluetooth)</button>
+                <button type="button" class="code-ver-btn lf-tab-btn" data-lf="analog">Analog Logbook (Mod 1–3, Jun 2023)</button>
+            </div>
+
+            <div id="lfDigitalView">
+                <pre class="code-modal-pre"><code id="lineFollowerCodeBlock"></code></pre>
+            </div>
+
+            <div id="lfAnalogView" style="display:none;">
+                <div class="spec-modal-grid">
+                    <div class="spec-box">
+                        <strong>Modul 1–3 Hardware (23 May – 8 Jun 2023)</strong>
+                        <p>Photodiodes + white LEDs &amp; 1kΩ/330Ω resistors, LM324 comparator with 50kΩ VR &amp; red/yellow LEDs + 560Ω resistors, and dual TIP41A/TIP41C motor driver PCBs.</p>
+                    </div>
+                    <div class="spec-box">
+                        <strong>Field Test Evaluation (13 Jun 2023)</strong>
+                        <p>Tested on white-and-black track; noted insufficient track lighting during the manual run and documented hardware/sensor calibration findings.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <!-- Pop-Up C++ Source Code Viewer for SIBUKU (v2.0 Modular & v1.0 Base) -->
     <div class="modal-backdrop" id="sibukuModal" aria-hidden="true">
         <div class="modal-dialog code-modal-dialog" role="dialog" aria-modal="true" aria-labelledby="sibukuModalTitle">
@@ -808,8 +859,8 @@
             <p class="modal-sub" id="sibukuVersionDesc">v2.0 (Advanced Semester): Modular procedures, Bubble Sort ascending book codes, &lt;ctime&gt; system timestamps &amp; H+7 return policy.</p>
 
             <div class="code-version-tabs">
-                <button type="button" class="code-ver-btn active" data-ver="v2">v2.0 — Modular + Bubble Sort + &lt;ctime&gt;</button>
-                <button type="button" class="code-ver-btn" data-ver="v1">v1.0 — Base CLI Prototype</button>
+                <button type="button" class="code-ver-btn sib-ver-btn active" data-ver="v2">v2.0 — Modular + Bubble Sort + &lt;ctime&gt;</button>
+                <button type="button" class="code-ver-btn sib-ver-btn" data-ver="v1">v1.0 — Base CLI Prototype</button>
             </div>
 
             <pre class="code-modal-pre"><code id="sibukuCodeBlock"></code></pre>
@@ -901,7 +952,69 @@
                 }
             };
 
-            // 2. SIBUKU Code Versions (v2.0 Modular & v1.0 Base)
+            // 2. Line Follower Digital Code
+            const lineFollowerDigitalCode = `// Define pin numbers
+int errsum_max = 1000; 
+int errsum_min = -1000;
+int kiriMaju = 6;      // MOTOR KIRI MAJU
+int kiriMundur = 5;    // MOTOR KIRI MUNDUR
+int kananMaju = 9;     // MOTOR KANAN MAJU
+int kananMundur = 10;  // MOTOR KANAN MUNDUR
+int pinSwLeftUp = 3;
+int pinSwLeftDown = 2;
+int pinSwRightUp = 11;
+int pinSwRightDown = 12;
+int ledLeft = 7;
+int ledMid = 13;
+int ledRight = 8;
+String state;
+String start = "Stop";
+String kalibrasi = "Stop";
+int BluetoothData;
+char buff[100];
+int counter = 0;
+
+// Sensitivity thresholds
+int peka = 900;
+
+// Sensor arrays
+int adc_sensor[8], sendat[8], pekax[8],
+    sensorMax[8] = {0, 0, 0, 0, 0, 0, 0, 0},
+    sensorMin[8] = {1023, 1023, 1023, 1023, 1023, 1023, 1023, 1023},
+    robotSpeedRight, robotSpeedLeft,
+    robotSpeed = 200,  // SPEED RANGE 0-255
+    kp = 20,           // KP
+    kd = 10,           // KD
+    ki = 0,            // KI
+    lastError = 0,
+    error = 0,
+    x,
+    rate,
+    sensorBit,
+    maxpwm = 250,
+    t;
+int errsum = 0;
+
+void follow_line() {
+  readSensor();
+  pv();
+
+  rate = error - lastError;
+  lastError = error;
+  errsum += error;
+
+  if (errsum > errsum_max) errsum = errsum_max;
+  if (errsum < errsum_min) errsum = errsum_min;
+
+  int moveControl = (kp * error) + (rate * kd) + (ki * errsum);
+
+  robotSpeedRight = robotSpeed - moveControl;
+  robotSpeedLeft = robotSpeed + moveControl;
+
+  setMotor(robotSpeedLeft, robotSpeedRight);
+}`;
+
+            // 3. SIBUKU Code Versions (v2.0 Modular & v1.0 Base)
             const sibukuCodes = {
                 v2: `#include <iostream>
 #include <ctime>
@@ -1171,13 +1284,15 @@ while True:
 cap.release()
 cv2.destroyAllWindows()`;
 
+            const lineFollowerCodeBlock = document.getElementById('lineFollowerCodeBlock');
             const sibukuCodeBlock = document.getElementById('sibukuCodeBlock');
             const sibukuVersionDesc = document.getElementById('sibukuVersionDesc');
             const colorCodeBlock = document.getElementById('colorCodeBlock');
+            if (lineFollowerCodeBlock) lineFollowerCodeBlock.textContent = lineFollowerDigitalCode;
             if (sibukuCodeBlock) sibukuCodeBlock.textContent = sibukuCodes.v2;
             if (colorCodeBlock) colorCodeBlock.textContent = colorDetectionCode;
 
-            // 3. Production-Accurate SIPEKA Telemetry Simulator
+            // 4. Production-Accurate SIPEKA Telemetry Simulator
             const earSlider = document.getElementById('earSlider');
             const marSlider = document.getElementById('marSlider');
             const tiltSlider = document.getElementById('tiltSlider');
@@ -1350,10 +1465,11 @@ cv2.destroyAllWindows()`;
                 });
             }
 
-            // 4. Modals Logic
+            // 5. Modals Logic
             const talkModal = document.getElementById('talkModal');
             const modalTitle = document.getElementById('modalTitle');
             const modalEmailBtn = document.getElementById('modalEmailBtn');
+            const lineFollowerModal = document.getElementById('lineFollowerModal');
             const sibukuModal = document.getElementById('sibukuModal');
             const colorModal = document.getElementById('colorModal');
             const neiraModal = document.getElementById('neiraModal');
@@ -1380,7 +1496,7 @@ cv2.destroyAllWindows()`;
             }
 
             function closeAllModals() {
-                [talkModal, sibukuModal, colorModal, neiraModal, flipflopModal].forEach(m => {
+                [talkModal, lineFollowerModal, sibukuModal, colorModal, neiraModal, flipflopModal].forEach(m => {
                     if (m) {
                         m.classList.remove('open');
                         m.setAttribute('aria-hidden', 'true');
@@ -1397,7 +1513,7 @@ cv2.destroyAllWindows()`;
                 }
             });
 
-            // 5. Global Click Delegation
+            // 6. Global Click Delegation
             document.addEventListener('click', function (e) {
                 const toggleBtn = e.target.closest('#mobileToggle');
                 if (toggleBtn) {
@@ -1448,14 +1564,35 @@ cv2.destroyAllWindows()`;
                     return;
                 }
 
+                if (e.target.closest('#openLineFollowerModal')) { openModal(lineFollowerModal); return; }
                 if (e.target.closest('#openSibukuModal')) { openModal(sibukuModal); return; }
                 if (e.target.closest('#openColorModal')) { openModal(colorModal); return; }
                 if (e.target.closest('#openNeiraModal')) { openModal(neiraModal); return; }
                 if (e.target.closest('#openFlipflopModal')) { openModal(flipflopModal); return; }
 
-                const verBtn = e.target.closest('.code-ver-btn');
+                const lfTabBtn = e.target.closest('.lf-tab-btn');
+                if (lfTabBtn) {
+                    document.querySelectorAll('.lf-tab-btn').forEach(b => b.classList.remove('active'));
+                    lfTabBtn.classList.add('active');
+                    const lfMode = lfTabBtn.getAttribute('data-lf');
+                    const digView = document.getElementById('lfDigitalView');
+                    const anaView = document.getElementById('lfAnalogView');
+                    const descEl = document.getElementById('lineFollowerTabDesc');
+                    if (lfMode === 'digital') {
+                        if (digView) digView.style.display = 'block';
+                        if (anaView) anaView.style.display = 'none';
+                        if (descEl) descEl.textContent = 'Digital PID controller (8-channel ADC calibration, Serial/Bluetooth commands & PID motor control) alongside Analog Line Follower module notes.';
+                    } else {
+                        if (digView) digView.style.display = 'none';
+                        if (anaView) anaView.style.display = 'block';
+                        if (descEl) descEl.textContent = 'Logbook Modul Line Follower Mikroelektronika (Jun 2023): Photodioda, Comparator LM324, Driver Motor TIP41A/C & evaluasi lintasan.';
+                    }
+                    return;
+                }
+
+                const verBtn = e.target.closest('.sib-ver-btn');
                 if (verBtn) {
-                    document.querySelectorAll('.code-ver-btn').forEach(b => b.classList.remove('active'));
+                    document.querySelectorAll('.sib-ver-btn').forEach(b => b.classList.remove('active'));
                     verBtn.classList.add('active');
                     const ver = verBtn.getAttribute('data-ver');
                     if (sibukuCodeBlock && sibukuCodes[ver]) {
@@ -1477,11 +1614,13 @@ cv2.destroyAllWindows()`;
 
                 if (
                     e.target.closest('#closeTalkModal') ||
+                    e.target.closest('#closeLineFollowerModal') ||
                     e.target.closest('#closeSibukuModal') ||
                     e.target.closest('#closeColorModal') ||
                     e.target.closest('#closeNeiraModal') ||
                     e.target.closest('#closeFlipflopModal') ||
                     e.target === talkModal ||
+                    e.target === lineFollowerModal ||
                     e.target === sibukuModal ||
                     e.target === colorModal ||
                     e.target === neiraModal ||
