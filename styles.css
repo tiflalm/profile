@@ -520,14 +520,19 @@ code, pre {
 
 .sipeka-split {
     display: grid;
-    grid-template-columns: 1.15fr 1fr;
+    grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr);
     gap: 28px;
     align-items: start;
 }
 
+.sipeka-left,
+.ear-demo-box {
+    min-width: 0;
+}
+
 .steps-flow {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
     gap: 14px;
     margin-bottom: 20px;
 }
@@ -564,6 +569,7 @@ code, pre {
 .flow-item p {
     font-size: 0.8rem;
     color: var(--text-muted);
+    line-height: 1.5;
 }
 
 .flow-item code {
@@ -607,20 +613,21 @@ code, pre {
     background: #0b1120;
     color: #f8fafc;
     border-radius: 14px;
-    padding: 20px;
+    padding: 22px;
     border: 1px solid #1e293b;
 }
 
 .ear-header-row {
     display: flex;
+    flex-wrap: wrap;
     justify-content: space-between;
     align-items: center;
     gap: 8px;
-    margin-bottom: 6px;
+    margin-bottom: 8px;
 }
 
 .ear-kicker {
-    font-size: 0.78rem;
+    font-size: 0.8rem;
     font-weight: 700;
     color: #38bdf8;
 }
@@ -652,17 +659,25 @@ code, pre {
     font-size: 0.78rem;
     color: #94a3b8;
     margin-bottom: 14px;
+    line-height: 1.5;
+}
+
+.ear-top code {
+    color: #e2e8f0;
+    background: rgba(255, 255, 255, 0.08);
+    padding: 1px 5px;
+    border-radius: 4px;
 }
 
 .ear-readout-card {
     display: grid;
-    grid-template-columns: 150px 1fr;
+    grid-template-columns: 140px minmax(0, 1fr);
     gap: 14px;
     align-items: center;
     background: #111827;
     border: 1px solid #1e293b;
     border-radius: 10px;
-    padding: 10px 12px;
+    padding: 12px;
     margin-bottom: 14px;
 }
 
@@ -674,7 +689,7 @@ code, pre {
 
 .telemetry-readout {
     font-size: 0.8rem;
-    line-height: 1.55;
+    line-height: 1.6;
 }
 
 .telemetry-readout small {
@@ -754,11 +769,13 @@ input[type="range"] {
     background: #060a14;
     border: 1px solid #1e293b;
     border-radius: 8px;
-    padding: 9px 11px;
-    font-size: 0.7rem;
+    padding: 10px 12px;
+    font-size: 0.72rem;
+    line-height: 1.5;
     color: #7dd3fc;
+    white-space: pre-wrap;
+    word-break: break-word;
     overflow-x: auto;
-    white-space: nowrap;
 }
 
 /* Bento Grid */
