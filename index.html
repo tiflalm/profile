@@ -9,7 +9,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-    <link rel="stylesheet" href="styles.css?v=9">
+    <link rel="stylesheet" href="styles.css?v=14">
 </head>
 <body>
 
@@ -52,7 +52,7 @@
                     IT Support | Technical Support | IT Infrastructure & Networking | Computer Vision & AI
                 </p>
                 <p class="hero-pitch" id="dynamicPitch">
-                    Computer Technology graduate with hands-on internship and lab experience across <strong>IT streaming support at detikcom</strong>, <strong>industrial electrical logging (149,821.2 kWh)</strong>, and a <strong>patent-registered Computer Vision prototype (SIPEKA)</strong>.
+                    Computer Technology graduate experienced in <strong>IT streaming support (Detikcom)</strong>, electrical & smart building systems, <strong>and real-time Computer Vision AI</strong>.
                 </p>
 
                 <div class="hero-actions">
@@ -633,7 +633,7 @@
 
                 <div class="talk-grid">
                     <!-- Track 1 -->
-                    <div class="talk-card">
+                    <div class="talk-card" role="button" tabindex="0" data-track="IT & Technical Support">
                         <i class="fa-solid fa-headset"></i>
                         <div>
                             <strong>IT & Technical Support</strong>
@@ -642,7 +642,7 @@
                     </div>
 
                     <!-- Track 2 -->
-                    <div class="talk-card">
+                    <div class="talk-card" role="button" tabindex="0" data-track="IT Infrastructure & Networking">
                         <i class="fa-solid fa-network-wired"></i>
                         <div>
                             <strong>IT Infrastructure & Networking</strong>
@@ -651,7 +651,7 @@
                     </div>
 
                     <!-- Track 3 -->
-                    <div class="talk-card">
+                    <div class="talk-card" role="button" tabindex="0" data-track="Computer Vision & AI">
                         <i class="fa-solid fa-eye"></i>
                         <div>
                             <strong>Computer Vision & AI</strong>
@@ -663,39 +663,91 @@
         </section>
     </main>
 
-<!-- Minimalist Direct Contact Footer -->
+    <!-- Balanced Centered Minimalist Footer -->
     <footer id="contact" class="site-footer">
-        <div class="container footer-contact-wrap">
+        <div class="container footer-center-wrap">
             <h4 class="footer-heading">Direct Contact</h4>
-            <ul class="footer-list">
-                <li><i class="fa-regular fa-envelope"></i> <a href="mailto:difla78@gmail.com">difla78@gmail.com</a></li>
-                <li><i class="fa-brands fa-linkedin"></i> <a href="https://www.linkedin.com/in/tiflaalma/" target="_blank" rel="noopener">linkedin.com/in/tiflaalma</a></li>
-                <li><i class="fa-brands fa-github"></i> <a href="https://github.com/tiflalm" target="_blank" rel="noopener">github.com/tiflalm</a></li>
-            </ul>
+            <div class="footer-contact-pills">
+                <a href="mailto:difla78@gmail.com" class="contact-pill">
+                    <i class="fa-regular fa-envelope"></i> difla78@gmail.com
+                </a>
+                <a href="https://www.linkedin.com/in/tiflaalma/" target="_blank" rel="noopener" class="contact-pill">
+                    <i class="fa-brands fa-linkedin"></i> linkedin.com/in/tiflaalma
+                </a>
+                <a href="https://github.com/tiflalm" target="_blank" rel="noopener" class="contact-pill">
+                    <i class="fa-brands fa-github"></i> github.com/tiflalm
+                </a>
+            </div>
+
+            <nav class="footer-nav" aria-label="Footer Navigation">
+                <a href="#about">About</a>
+                <span>•</span>
+                <a href="#impact">Selected Work</a>
+                <span>•</span>
+                <a href="#experience">Career Explorer</a>
+                <span>•</span>
+                <a href="#stack">Tech Stack</a>
+                <span>•</span>
+                <a href="#credentials">Credentials</a>
+            </nav>
         </div>
+
         <div class="container footer-bottom">
             <span>© <span id="year">2026</span> Thiflah Sa'diyah Alma Sholihah. All rights reserved.</span>
         </div>
     </footer>
-    <!-- Embedded Interactive Engine -->
+
+    <!-- Pop-Up Channel Selector (Blur Backdrop) -->
+    <div class="modal-backdrop" id="talkModal" aria-hidden="true">
+        <div class="modal-dialog" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+            <button type="button" class="modal-close" id="closeTalkModal" aria-label="Close">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+            <span class="eyebrow light">Connect About</span>
+            <h3 id="modalTitle">IT & Technical Support</h3>
+            <p class="modal-sub">Choose your preferred channel to reach out:</p>
+
+            <div class="modal-channel-list">
+                <a href="mailto:difla78@gmail.com" id="modalEmailBtn" class="modal-channel-card">
+                    <div class="channel-icon email"><i class="fa-regular fa-envelope"></i></div>
+                    <div class="channel-info">
+                        <strong>Send an Email</strong>
+                        <span>difla78@gmail.com</span>
+                    </div>
+                    <i class="fa-solid fa-arrow-up-right-from-square channel-ext"></i>
+                </a>
+
+                <a href="https://www.linkedin.com/in/tiflaalma/" target="_blank" rel="noopener" class="modal-channel-card">
+                    <div class="channel-icon linkedin"><i class="fa-brands fa-linkedin-in"></i></div>
+                    <div class="channel-info">
+                        <strong>Message on LinkedIn</strong>
+                        <span>linkedin.com/in/tiflaalma</span>
+                    </div>
+                    <i class="fa-solid fa-arrow-up-right-from-square channel-ext"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Clean, Self-Contained Interactive Engine -->
     <script>
         (function () {
             const yearEl = document.getElementById('year');
             if (yearEl) yearEl.textContent = new Date().getFullYear();
 
-            // 1. Recruiter Role Lens Data (Grounded & Proportional)
+            // 1. Recruiter Role Lens Data
             const lensData = {
                 all: {
                     headline: "IT Support | Technical Support | IT Infrastructure & Networking | Computer Vision & AI",
-                    pitch: "Computer Technology graduate with hands-on internship and lab experience across <strong>IT streaming support at detikcom</strong>, <strong>industrial electrical logging (149,821.2 kWh)</strong>, and a <strong>patent-registered Computer Vision prototype (SIPEKA)</strong>."
+                    pitch: "Computer Technology graduate experienced in <strong>IT streaming support (Detikcom)</strong>, electrical & smart building systems, <strong>and real-time Computer Vision AI</strong>."
                 },
                 support: {
                     headline: "IT Support & Technical Support — Live Broadcast, Lab & End-User Operations",
-                    pitch: "Google IT Support Certified graduate with internship experience troubleshooting live streams at <strong>detikcom</strong> (vMix, OBS, Wirecast, ATEM, AnyDesk) and 1.5 years as a lab assistant supporting <strong>100+ students per batch</strong> across 6 computing courses."
+                    pitch: "Google IT Support Certified graduate with internship experience troubleshooting live streams at <strong>Detikcom</strong> (vMix, OBS, Wirecast, ATEM, AnyDesk) and 1.5 years as a lab assistant supporting <strong>100+ students per batch</strong> across 6 computing courses."
                 },
                 infra: {
                     headline: "IT Infrastructure, Network Security & Smart Building Integration",
-                    pitch: "<strong>Huawei HCIA-Security (1000/1000)</strong>, <strong>HCIA-Datacom (905/1000)</strong>, and <strong>Cisco CCNAv7</strong> certified graduate with practical lab and internship training in IPsec VPNs, Wireshark, Smart Building BAS (Kemnaker RI), and SDP electrical monitoring."
+                    pitch: "<strong>Huawei HCIA-Security (1000/1000)</strong>, <strong>HCIA-Datacom (905/1000)</strong>, and <strong>Cisco CCNAv7</strong> certified graduate with practical lab and internship experience in IPsec VPNs, Wireshark, Smart Building BAS (Kemnaker RI), and SDP electrical monitoring."
                 },
                 ai: {
                     headline: "Computer Vision & Applied AI — Registered Patent Holder (SIPEKA)",
@@ -876,7 +928,40 @@
                 });
             }
 
-            // 3. Global Click Delegation
+            // 3. Pop-up Channel Selector Logic
+            const talkModal = document.getElementById('talkModal');
+            const modalTitle = document.getElementById('modalTitle');
+            const modalEmailBtn = document.getElementById('modalEmailBtn');
+
+            function openTalkModal(track) {
+                if (!talkModal || !modalTitle || !modalEmailBtn) return;
+                modalTitle.textContent = track;
+                const subject = encodeURIComponent(`Opportunity / Discussion: ${track}`);
+                const body = encodeURIComponent(`Hi Thiflah,\n\nI came across your portfolio and would like to connect regarding ${track}.\n\nBest regards,`);
+                modalEmailBtn.href = `mailto:difla78@gmail.com?subject=${subject}&body=${body}`;
+                talkModal.classList.add('open');
+                talkModal.setAttribute('aria-hidden', 'false');
+                document.body.style.overflow = 'hidden';
+            }
+
+            function closeTalkModal() {
+                if (!talkModal) return;
+                talkModal.classList.remove('open');
+                talkModal.setAttribute('aria-hidden', 'true');
+                document.body.style.overflow = '';
+            }
+
+            document.addEventListener('keydown', function (e) {
+                if (e.key === 'Escape' && talkModal && talkModal.classList.contains('open')) {
+                    closeTalkModal();
+                }
+                if ((e.key === 'Enter' || e.key === ' ') && e.target.matches('.talk-card[data-track]')) {
+                    e.preventDefault();
+                    openTalkModal(e.target.getAttribute('data-track'));
+                }
+            });
+
+            // 4. Global Click Delegation
             document.addEventListener('click', function (e) {
                 // Mobile Menu Toggle
                 const toggleBtn = e.target.closest('#mobileToggle');
@@ -928,6 +1013,19 @@
                         const cat = card.getAttribute('data-category');
                         card.style.display = (filter === 'all' || cat === filter) ? 'block' : 'none';
                     });
+                    return;
+                }
+
+                // Open Blur Modal when a Role Track Card is clicked
+                const card = e.target.closest('.talk-card[data-track]');
+                if (card) {
+                    openTalkModal(card.getAttribute('data-track'));
+                    return;
+                }
+
+                // Close Blur Modal
+                if (e.target.closest('#closeTalkModal') || e.target === talkModal) {
+                    closeTalkModal();
                 }
             });
         })();
