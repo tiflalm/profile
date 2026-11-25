@@ -245,14 +245,14 @@ body {
 .hero-actions {
     display: flex;
     flex-wrap: wrap;
-    gap: 10px;
+    gap: 12px;
 }
 
 .btn {
     display: inline-flex;
     align-items: center;
     gap: 8px;
-    padding: 11px 18px;
+    padding: 11px 20px;
     border-radius: 10px;
     font-size: 0.88rem;
     font-weight: 700;
@@ -279,19 +279,6 @@ body {
 
 .btn-secondary:hover {
     background: rgba(255, 255, 255, 0.16);
-    transform: translateY(-2px);
-}
-
-.btn-icon {
-    background: rgba(255, 255, 255, 0.08);
-    border: 1px solid rgba(255, 255, 255, 0.18);
-    color: #ffffff;
-    padding: 11px 14px;
-}
-
-.btn-icon:hover {
-    border-color: #60a5fa;
-    color: #60a5fa;
     transform: translateY(-2px);
 }
 
@@ -1167,7 +1154,6 @@ body {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 16px;
-    margin-bottom: 28px;
 }
 
 .talk-card {
@@ -1198,14 +1184,6 @@ body {
     font-size: 0.78rem;
     color: #94a3b8;
     margin-top: 2px;
-}
-
-.talk-cta-bar {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 12px;
-    padding-top: 22px;
-    border-top: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 /* Footer */
