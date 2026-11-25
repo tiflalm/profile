@@ -21,26 +21,34 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // 3. Filter kategori proyek
-    const filterBtns = document.querySelectorAll('.filter-btn');
-    const projectCards = document.querySelectorAll('.project-card');
+    // 3. Filter interaktif untuk kartu Experience & Projects
+    function setupFilter(filterContainerId, cardSelector, displayMode) {
+        const container = document.getElementById(filterContainerId);
+        if (!container) return;
 
-    filterBtns.forEach(btn => {
-        btn.addEventListener('click', () => {
-            filterBtns.forEach(b => b.classList.remove('active'));
-            btn.classList.add('active');
+        const buttons = container.querySelectorAll('.filter-btn');
+        const cards = document.querySelectorAll(cardSelector);
 
-            const filter = btn.getAttribute('data-filter');
-            projectCards.forEach(card => {
-                const category = card.getAttribute('data-category');
-                if (filter === 'all' || category === filter) {
-                    card.style.display = 'flex';
-                } else {
-                    card.style.display = 'none';
-                }
+        buttons.forEach(btn => {
+            btn.addEventListener('click', () => {
+                buttons.forEach(b => b.classList.remove('active'));
+                btn.classList.add('active');
+
+                const filter = btn.getAttribute('data-filter');
+                cards.forEach(card => {
+                    const category = card.getAttribute('data-category');
+                    if (filter === 'all' || category === filter) {
+                        card.style.display = displayMode;
+                    } else {
+                        card.style.display = 'none';
+                    }
+                });
             });
         });
-    });
+    }
+
+    setupFilter('expFilters', '.exp-card', 'block');
+    setupFilter('projectFilters', '.project-card', 'flex');
 
     // 4. Highlight menu navigasi aktif saat halaman di-scroll
     const sections = document.querySelectorAll('section[id]');
