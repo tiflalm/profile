@@ -1156,17 +1156,20 @@ body {
     gap: 16px;
 }
 
+/* Clickable Role Track Cards */
 .talk-card {
     background: rgba(255, 255, 255, 0.06);
     border: 1px solid rgba(255, 255, 255, 0.14);
     border-radius: 12px;
     padding: 18px;
     color: #ffffff;
-    text-decoration: none;
+    font-family: inherit;
+    text-align: left;
     display: flex;
     align-items: center;
     gap: 14px;
     cursor: pointer;
+    width: 100%;
     transition: all 0.2s ease;
 }
 
@@ -1210,7 +1213,111 @@ body {
 
 .talk-card:hover .talk-arrow {
     color: #60a5fa;
-    transform: translate(2px, -2px);
+    transform: translateX(3px);
+}
+
+/* Blur Pop-Up Modal */
+.modal-backdrop {
+    position: fixed;
+    inset: 0;
+    z-index: 2000;
+    background: rgba(9, 13, 22, 0.72);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    display: none;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+}
+
+.modal-backdrop.open {
+    display: flex;
+    animation: fadeIn 0.2s ease;
+}
+
+.modal-dialog {
+    position: relative;
+    background: #0f172a;
+    border: 1px solid rgba(96, 165, 250, 0.35);
+    border-radius: 18px;
+    padding: 32px;
+    width: 100%;
+    max-width: 500px;
+    color: #ffffff;
+    box-shadow: 0 24px 60px rgba(0, 0, 0, 0.55);
+}
+
+.modal-close {
+    position: absolute;
+    top: 18px;
+    right: 18px;
+    background: rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(255, 255, 255, 0.14);
+    color: #cbd5e1;
+    width: 34px;
+    height: 34px;
+    border-radius: 50%;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s;
+}
+
+.modal-close:hover {
+    background: rgba(239, 68, 68, 0.22);
+    border-color: #f87171;
+    color: #ffffff;
+}
+
+.modal-dialog h3 {
+    font-size: 1.35rem;
+    font-weight: 800;
+    margin-bottom: 6px;
+}
+
+.modal-sub {
+    font-size: 0.88rem;
+    color: #94a3b8;
+    margin-bottom: 18px;
+}
+
+.modal-label {
+    display: block;
+    font-size: 0.78rem;
+    font-weight: 700;
+    color: #93c5fd;
+    margin-bottom: 6px;
+}
+
+.modal-textarea {
+    width: 100%;
+    background: rgba(255, 255, 255, 0.06);
+    border: 1px solid rgba(255, 255, 255, 0.16);
+    border-radius: 10px;
+    padding: 12px 14px;
+    color: #f8fafc;
+    font-family: inherit;
+    font-size: 0.88rem;
+    line-height: 1.55;
+    resize: vertical;
+    margin-bottom: 20px;
+}
+
+.modal-textarea:focus {
+    outline: none;
+    border-color: #60a5fa;
+}
+
+.modal-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.modal-actions .btn {
+    flex: 1;
+    justify-content: center;
 }
 
 /* Footer */
