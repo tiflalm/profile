@@ -370,16 +370,16 @@
                     <div class="bento-top-row">
                         <div class="bento-icon amber"><i class="fa-solid fa-database"></i></div>
                         <button type="button" class="code-preview-btn amber-btn" id="openNeiraModal">
-                            <i class="fa-solid fa-table"></i> SQL Queries &amp; CLI Log
+                            <i class="fa-solid fa-table"></i> SQL Queries &amp; Schema
                         </button>
                     </div>
                     <span class="bento-kicker">Database Systems (MariaDB) • Telkom University (2022/2023)</span>
                     <h4>Sistem Pengelolaan Kamar Kost Neira</h4>
                     <p>
-                        Designed and built relational tables in MariaDB (<code>pengurus_kost</code>, <code>kamar_kost</code>, <code>penyewa_kost</code>, <code>gedung</code>) with primary keys, <code>ALTER TABLE</code> foreign key constraints, <code>DESC</code> inspection, and full CLI session logging.
+                        Designed and built relational tables in MariaDB (<code>pengurus_kost</code>, <code>kamar_kost</code>, <code>penyewa_kost</code>, <code>gedung</code>) with primary keys, <code>ALTER TABLE</code> foreign key constraints, and <code>DESC</code> table definitions.
                     </p>
                     <div class="tech-pills">
-                        <span>MariaDB 10.4</span><span>DDL &amp; Foreign Keys</span><span>ALTER TABLE</span><span>CLI Session Log</span>
+                        <span>MariaDB 10.4</span><span>DDL &amp; Foreign Keys</span><span>ALTER TABLE</span><span>Relational Schema</span>
                     </div>
                 </div>
 
@@ -945,7 +945,7 @@
         </div>
     </div>
 
-    <!-- Pop-Up Schema, SQL Query & CLI Log Viewer for Sistem Pengelolaan Kamar Kost Neira -->
+    <!-- Pop-Up Schema & SQL Query Viewer for Sistem Pengelolaan Kamar Kost Neira -->
     <div class="modal-backdrop" id="neiraModal" aria-hidden="true">
         <div class="modal-dialog code-modal-dialog" role="dialog" aria-modal="true" aria-labelledby="neiraModalTitle">
             <button type="button" class="modal-close" id="closeNeiraModal" aria-label="Close">
@@ -1447,8 +1447,8 @@ ALTER TABLE Pengurus_Kost ADD
 
 -- Catatan saat INSERT:
 -- ERROR 1452 (23000) muncul saat insert ke Pengurus_Kost karena nilai Tipe_Kamar
--- ('A,B,C' / 'B,C') belum tersedia di tabel parent kamar_kost (Foreign Key constraint).`,
-
+-- ('A,B,C' / 'B,C') belum tersedia di tabel parent kamar_kost (Foreign Key constraint).`
+            };
 
             const lineFollowerCodeBlock = document.getElementById('lineFollowerCodeBlock');
             const sibukuCodeBlock = document.getElementById('sibukuCodeBlock');
@@ -1820,13 +1820,9 @@ ALTER TABLE Pengurus_Kost ADD
                         neiraCodeBlock.textContent = neiraQueries[mode];
                     }
                     if (descEl) {
-                        if (mode === 'ddl') {
-                            descEl.textContent = 'DDL schema (CREATE DATABASE, CREATE TABLE, ALTER TABLE & FOREIGN KEY) for database Tubes.';
-                        } else if (mode === 'desc') {
-                            descEl.textContent = 'Column definitions from DESC across all 4 tables and notes on Foreign Key constraint behavior.';
-                        } else {
-                            descEl.textContent = 'MariaDB 10.4.27 CLI session log showing database reset, table creation, and query responses.';
-                        }
+                        descEl.textContent = mode === 'ddl'
+                            ? 'DDL schema (CREATE DATABASE, CREATE TABLE, ALTER TABLE & FOREIGN KEY) for database Tubes.'
+                            : 'Column definitions from DESC across all 4 tables and notes on Foreign Key constraint behavior.';
                     }
                     return;
                 }
