@@ -103,20 +103,20 @@
                 <span class="eyebrow">01 / About Me</span>
                 <h2>What I Bring to Your Team</h2>
                 <p class="about-lead">
-                    I bridge hardware, networks, and intelligent software—solving live operational bottlenecks on-site while building scalable automation and AI systems.
+                    I bridge hardware, networks, and intelligent software solving live operational bottlenecks on-site while building scalable automation and AI systems.
                 </p>
             </div>
 
             <div class="about-grid">
                 <div class="about-card">
                     <div class="about-num">01</div>
-                    <h4>Rapid IT & Broadcast Troubleshooting</h4>
+                    <h4>IT & Broadcast Troubleshooting</h4>
                     <p>Hands-on incident resolution across Windows/Linux systems, live multi-platform encoders (vMix, OBS, Wirecast, ATEM), and 6 university computing labs.</p>
                 </div>
                 <div class="about-card">
                     <div class="about-num">02</div>
                     <h4>Infrastructure, Security & IIoT</h4>
-                    <p>Certified in Huawei Security (1000/1000), Cisco CCNAv7, SNI ISO 45001:2018, and BNSP Electrical Power—experienced in IPsec VPNs, SDP metering, and smart buildings.</p>
+                    <p>Certified in Huawei Security (1000/1000), Cisco CCNAv7, SNI ISO 45001:2018, and BNSP Electrical Power experienced in IPsec VPNs, SDP metering, and smart buildings.</p>
                 </div>
                 <div class="about-card">
                     <div class="about-num">03</div>
@@ -311,7 +311,7 @@
                         </button>
                     </div>
                     <span class="bento-kicker">Autonomous Robotics &amp; Analog/PID Control • Telkom University (2023)</span>
-                    <h4>Line Follower — Digital PID + Bluetooth &amp; Analog Comparator</h4>
+                    <h4>Line Follower Digital PID + Bluetooth &amp; Analog Comparator</h4>
                     <p>
                         Built two line-following robots: a <strong>Digital PID Line Follower</strong> (8-channel ADC auto-calibration, <code>Kp/Kd/Ki</code> &amp; speed tuning via Serial/Bluetooth, H-bridge PWM) and an <strong>Analog Line Follower</strong> (photodiodes, LM324 comparator + 50kΩ VR, dual TIP41A/TIP41C motor drivers) tested on white-and-black tracks.
                     </p>
@@ -323,9 +323,9 @@
                 <div class="bento-card">
                     <div class="bento-icon emerald"><i class="fa-solid fa-solar-panel"></i></div>
                     <span class="bento-kicker">Renewable IoT</span>
-                    <h4>Solar Hydroponics & Bluetooth PID Line Follower</h4>
+                    <h4>Solar Hydroponics</h4>
                     <p>
-                        Built an off-grid solar-powered IoT hydroponic pH &amp; nutrient monitor synced to Google Firebase, alongside autonomous line-tracking hardware &amp; control systems.
+                        Built an off grid solar powered IoT hydroponic pH &amp; nutrient monitor synced to Google Firebase.
                     </p>
                     <div class="tech-pills">
                         <span>Firebase IoT</span><span>Solar Power</span><span>Sensor Telemetry</span><span>Embedded Control</span>
@@ -822,11 +822,11 @@
             </button>
             <span class="eyebrow light">Telkom University • D3 Computer Technology</span>
             <h3 id="lineFollowerModalTitle">Line Follower — Digital PID &amp; Analog Modules</h3>
-            <p class="modal-sub" id="lineFollowerTabDesc">Digital PID controller (8-channel ADC calibration, Serial/Bluetooth commands &amp; PID motor control) alongside Analog Line Follower module notes.</p>
+            <p class="modal-sub" id="lineFollowerTabDesc">Digital PID controller (8 channel ADC calibration, Serial/Bluetooth commands &amp; PID motor control) alongside Analog Line Follower module notes.</p>
 
             <div class="code-version-tabs">
                 <button type="button" class="code-ver-btn lf-tab-btn active" data-lf="digital">Digital Line Follower (PID + Bluetooth)</button>
-                <button type="button" class="code-ver-btn lf-tab-btn" data-lf="analog">Analog Logbook (Mod 1–3, Jun 2023)</button>
+                <button type="button" class="code-ver-btn lf-tab-btn" data-lf="analog">Analog Line Follower</button>
             </div>
 
             <div id="lfDigitalView">
@@ -836,11 +836,11 @@
             <div id="lfAnalogView" style="display:none;">
                 <div class="spec-modal-grid">
                     <div class="spec-box">
-                        <strong>Modul 1–3 Hardware (23 May – 8 Jun 2023)</strong>
+                        <strong> Hardware</strong>
                         <p>Photodiodes + white LEDs &amp; 1kΩ/330Ω resistors, LM324 comparator with 50kΩ VR &amp; red/yellow LEDs + 560Ω resistors, and dual TIP41A/TIP41C motor driver PCBs.</p>
                     </div>
                     <div class="spec-box">
-                        <strong>Field Test Evaluation (13 Jun 2023)</strong>
+                        <strong>Field Test Evaluation</strong>
                         <p>Tested on white-and-black track; noted insufficient track lighting during the manual run and documented hardware/sensor calibration findings.</p>
                     </div>
                 </div>
@@ -936,7 +936,7 @@
             const lensData = {
                 all: {
                     headline: "IT Support | Technical Support | IT Infrastructure & Networking | Computer Vision & AI",
-                    pitch: "Computer Technology graduate experienced in <strong>IT streaming support (Detikcom)</strong>, electrical & smart building systems, <strong>and real-time Computer Vision AI</strong>."
+                    pitch: "Computer Technology graduate experienced in <strong>IT streaming support (Detikcom)</strong>, electrical & smart building systems, and <strong>real-time Computer Vision AI</strong>."
                 },
                 support: {
                     headline: "IT Support & Technical Support — Live Broadcast, Lab & End-User Operations",
@@ -1585,7 +1585,7 @@ cv2.destroyAllWindows()`;
                     } else {
                         if (digView) digView.style.display = 'none';
                         if (anaView) anaView.style.display = 'block';
-                        if (descEl) descEl.textContent = 'Logbook Modul Line Follower Mikroelektronika (Jun 2023): Photodioda, Comparator LM324, Driver Motor TIP41A/C & evaluasi lintasan.';
+                        if (descEl) descEl.textContent = 'Line Follower : Photodioda, Comparator LM324, Driver Motor TIP41A/C & evaluasi lintasan.';
                     }
                     return;
                 }
