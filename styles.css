@@ -1190,60 +1190,59 @@ body {
 .site-footer {
     background: #090d16;
     color: #94a3b8;
-    padding: 60px 0 34px;
-    margin-top: 72px;
+    padding: 40px 0 26px;
+    margin-top: 64px;
 }
 
-.footer-grid {
-    display: grid;
-    grid-template-columns: 1.3fr 1fr 1.2fr;
-    gap: 40px;
-    padding-bottom: 44px;
-}
-
-.footer-name {
-    color: #ffffff;
-    font-size: 1.3rem;
-    margin-bottom: 12px;
+.footer-contact-wrap {
+    text-align: center;
+    padding-bottom: 26px;
 }
 
 .footer-heading {
     color: #ffffff;
-    font-size: 1.05rem;
-    margin-bottom: 16px;
+    font-size: 1rem;
+    font-weight: 700;
+    margin-bottom: 14px;
 }
 
 .footer-list {
     list-style: none;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 24px;
 }
 
 .footer-list li {
-    display: flex;
+    display: inline-flex;
     align-items: center;
-    gap: 10px;
-    margin-bottom: 12px;
+    gap: 8px;
     font-size: 0.9rem;
+}
+
+.footer-list i {
+    color: #60a5fa;
 }
 
 .footer-list a {
     color: #cbd5e1;
     text-decoration: none;
+    transition: color 0.2s;
 }
 
 .footer-list a:hover {
     color: #60a5fa;
 }
 
-.icon-gold { color: #f59e0b; }
-.icon-green { color: #10b981; }
-.icon-blue { color: #3b82f6; }
-
 .footer-bottom {
     border-top: 1px solid rgba(255, 255, 255, 0.08);
-    padding-top: 24px;
+    padding-top: 20px;
     display: flex;
-    justify-content: space-between;
-    font-size: 0.84rem;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    font-size: 0.83rem;
     color: #64748b;
 }
 
@@ -1256,9 +1255,6 @@ body {
     .bento-grid,
     .talk-grid {
         grid-template-columns: 1fr;
-    }
-    .footer-grid {
-        grid-template-columns: 1fr 1fr;
     }
 }
 
@@ -1280,13 +1276,11 @@ body {
     .steps-flow,
     .lab-matrix,
     .stack-grid,
-    .cred-grid,
-    .footer-grid {
+    .cred-grid {
         grid-template-columns: 1fr;
     }
-    .footer-bottom {
+    .footer-list {
         flex-direction: column;
-        gap: 8px;
-        text-align: center;
+        gap: 10px;
     }
 }
