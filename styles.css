@@ -1190,54 +1190,87 @@ body {
 .site-footer {
     background: #090d16;
     color: #94a3b8;
-    padding: 40px 0 26px;
+    padding: 44px 0 28px;
     margin-top: 64px;
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
 }
 
-.footer-contact-wrap {
+.footer-center-wrap {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     text-align: center;
-    padding-bottom: 26px;
+    padding-bottom: 28px;
 }
 
 .footer-heading {
     color: #ffffff;
-    font-size: 1rem;
+    font-size: 1.05rem;
     font-weight: 700;
-    margin-bottom: 14px;
+    margin-bottom: 16px;
+    letter-spacing: -0.2px;
 }
 
-.footer-list {
-    list-style: none;
+.footer-contact-pills {
     display: flex;
     justify-content: center;
+    align-items: center;
     flex-wrap: wrap;
-    gap: 24px;
+    gap: 14px;
+    margin-bottom: 22px;
 }
 
-.footer-list li {
+.contact-pill {
     display: inline-flex;
     align-items: center;
-    gap: 8px;
-    font-size: 0.9rem;
-}
-
-.footer-list i {
-    color: #60a5fa;
-}
-
-.footer-list a {
-    color: #cbd5e1;
+    gap: 9px;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    color: #e2e8f0;
     text-decoration: none;
+    font-size: 0.88rem;
+    font-weight: 600;
+    padding: 9px 18px;
+    border-radius: 999px;
+    transition: all 0.2s ease;
+}
+
+.contact-pill i {
+    color: #60a5fa;
+    font-size: 0.95rem;
+}
+
+.contact-pill:hover {
+    background: rgba(59, 130, 246, 0.16);
+    border-color: #60a5fa;
+    color: #ffffff;
+    transform: translateY(-2px);
+}
+
+.footer-nav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 12px;
+    font-size: 0.84rem;
+    color: #475569;
+}
+
+.footer-nav a {
+    color: #94a3b8;
+    text-decoration: none;
+    font-weight: 500;
     transition: color 0.2s;
 }
 
-.footer-list a:hover {
-    color: #60a5fa;
+.footer-nav a:hover {
+    color: #ffffff;
 }
 
 .footer-bottom {
     border-top: 1px solid rgba(255, 255, 255, 0.08);
-    padding-top: 20px;
+    padding-top: 22px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -1279,8 +1312,13 @@ body {
     .cred-grid {
         grid-template-columns: 1fr;
     }
-    .footer-list {
+    .footer-contact-pills {
         flex-direction: column;
-        gap: 10px;
+        width: 100%;
+    }
+    .contact-pill {
+        width: 100%;
+        max-width: 300px;
+        justify-content: center;
     }
 }
